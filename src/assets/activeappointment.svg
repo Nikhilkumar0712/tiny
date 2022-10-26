@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42" height="43" viewBox="0 0 42 43">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Avatar" width="42" height="43" rx="21" transform="translate(21 175)" fill="#204289"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_47" data-name="Mask Group 47" transform="translate(-21 -175)" clip-path="url(#clip-path)">
+    <path id="calendar-clock" d="M17,10a7,7,0,1,0,7,7A7.008,7.008,0,0,0,17,10Zm0,12a5,5,0,1,1,5-5A5.006,5.006,0,0,1,17,22Zm1-5.414,1.707,1.707-1.414,1.414L16,17.414V14h2v2.586ZM24,5v6.349a9.06,9.06,0,0,0-2-1.818V5a1,1,0,0,0-1-1H3A1,1,0,0,0,2,5V8H17a8.956,8.956,0,0,0-5.651,2H2V22H9.518a9.047,9.047,0,0,0,1.831,2H0V5A3,3,0,0,1,3,2H6V0H8V2h8V0h2V2h3A3,3,0,0,1,24,5Z" transform="translate(30 184.5)" fill="#204289"/>
+  </g>
+</svg>
