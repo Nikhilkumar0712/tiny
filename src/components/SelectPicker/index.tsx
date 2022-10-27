@@ -6,33 +6,47 @@ import makeStyles from "@material-ui/styles/makeStyles";
 interface CustomSelectPickerInterface {
   selectValue: any;
   handleSelectValue: (val: any) => any;
+  size: any;
+  fullWidth: boolean;
+  width: any;
+  selectData: any;
 }
 
 const useStyles = makeStyles({
   customOutline: {
+    '& .MuiSelect-select':{
+      fontSize : '13px',
+      color : '#104076'
+    },
     "& .MuiOutlinedInput-notchedOutline": {
       borderColor: "#104076",
       borderWidth: 1,
       borderRadius: "10px",
-      padding : '10px'
+      padding: "12px",
+      width: "100%"
     },
   },
 });
 
 const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
-  const { selectValue, handleSelectValue } = props;
+  const { selectValue, handleSelectValue, size, width, selectData } = props;
   const classes = useStyles();
 
   return (
     <FormControl
       variant="outlined"
-      fullWidth
       classes={{ root: classes.customOutline }}
+      style={{ minWidth: width }}
     >
-      <Select value={selectValue} onChange={handleSelectValue} displayEmpty>
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
+      <Select
+        size={size}
+        value={selectValue}
+        onChange={handleSelectValue}
+        displayEmpty
+      >
+        {selectData.map((item: any) => {
+          return <MenuItem value={item.value}>{item.name}</MenuItem>;
+        })}
       </Select>
     </FormControl>
   );

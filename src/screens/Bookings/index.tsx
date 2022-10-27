@@ -16,7 +16,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Link as RouterLink } from 'react-router-dom';
 
-const Appointments = () => {
+const Bookings = () => {
   const navigate = useNavigate();
 
   const handleOnClickBreadcrumItem = () => {
@@ -35,7 +35,7 @@ const Appointments = () => {
       Dashboard
     </Link>,
     <Typography key="2" sx={styles.breadcrumbSubtext}>
-      Appointments
+      Bookings
     </Typography>,
   ];
 
@@ -79,7 +79,7 @@ const Appointments = () => {
     {
       field: "DateTime",
       width: 220,
-      headerName: "Appointment Date & Time",
+      headerName: "Booking Date & Time",
       renderCell: (params) => {
         return (
           <>
@@ -97,17 +97,6 @@ const Appointments = () => {
         return (
           <>
             <Typography sx={styles.rowData}>{params.row.Doctor}</Typography>
-          </>
-        );
-      },
-    },
-    { 
-      field: "Chair", 
-      headerName: "Chair",
-      renderCell: (params) => {
-        return (
-          <>
-            <Typography sx={styles.chairColorText}><CircleIcon sx={styles.chairColor}/>  {params.row.Chair}</Typography>
           </>
         );
       },
@@ -154,7 +143,7 @@ const Appointments = () => {
            
           >
             <RemoveRedEyeOutlinedIcon  sx={styles.actionIcon} /> 
-              <RouterLink to="/AppointmentsView"><Typography sx={styles.rowData}> View </Typography></RouterLink>
+              <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> View </Typography></RouterLink>
               <MoreVertIcon sx={styles.actionIcon} />
           </Grid>
         )
@@ -169,7 +158,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -180,7 +168,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -191,7 +178,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "Treatment",
       Notes: "-",
       Actions: "-",
@@ -202,7 +188,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -213,7 +198,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "Treatment",
       Notes: "-",
       Actions: "-",
@@ -224,7 +208,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -235,7 +218,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -246,7 +228,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -257,7 +238,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -268,7 +248,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -279,7 +258,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -290,7 +268,6 @@ const Appointments = () => {
       Date: "31 Aug 2022",
       Time: " 06:00 Pm",
       Doctor: "Dr.Basava",
-      Chair: "Red",
       Type: "OP",
       Notes: "-",
       Actions: "-",
@@ -299,7 +276,7 @@ const Appointments = () => {
 
   return (
     <>
-      <Breadcrumbs title={"Appointments"} breadcrumbsArr={breadcrumbs} />
+      <Breadcrumbs title={"Bookings"} breadcrumbsArr={breadcrumbs} />
       <Box sx={styles.screenContainer}>
         <Grid container spacing={2}>
           <Grid item md={9}>
@@ -342,5 +319,5 @@ const Appointments = () => {
   );
 };
 
-const AppointmentsHoc = HocLayout(Appointments);
-export default AppointmentsHoc;
+const BookingsHoc = HocLayout(Bookings);
+export default BookingsHoc;

@@ -13,7 +13,7 @@ const HocLayout = (Component: any) => {
       <Grid item md={10}  sx={styles.mainGrid}>
         <Grid container spacing={3} sx={styles.headerContainer}>
           <Grid item md={4}>
-            <CustomInput />
+            <CustomInput size={'small'}  placeholder="Search Patients"   />
           </Grid>
           <Grid item md={6}>
             <Grid container spacing={2}>

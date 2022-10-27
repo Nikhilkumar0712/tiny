@@ -7,14 +7,15 @@ export const styles = {
         backgroundColor : 'primary.main',
         borderTopRightRadius : 20,
         borderBottomRightRadius : 20,
-        paddingTop : 3,
+        paddingTop : 2,
         paddingBottom : 3,
         paddingLeft : 2,
-        paddingRight : 2
+        paddingRight : 2,
+       
     },
     logoImage : {
-        height : '51px',
-        width : '51px'
+        height : '45px',
+        width : '45px'
     },
     logoText : {
         fontFamily : 'Poppins',
@@ -29,8 +30,8 @@ export const styles = {
         justifyContent : 'flex-start'
     },
     menuImage : {
-        height : 30,
-        width : 30
+        height : 26,
+        width : 26
     },
     menuFooterImage : {
         height : 20,
@@ -39,20 +40,20 @@ export const styles = {
     menuText : {
         fontFamily : 'Poppins',
         color : 'white',
-        fontSize : 15,
+        fontSize : 14,
         paddingLeft : 2
     },
     menuFooterText : {
         fontFamily : 'Poppins',
         color : 'white',
-        fontSize : 14,
+        fontSize : 13,
         paddingLeft : 2
     },
     menuItemContainer : {
-        paddingTop : 4
+        paddingTop : 2
     },
     menuItems : {
-        paddingTop : 25
+        paddingTop : 20
     },
     menuItemsActive : {
         backgroundColor : 'white',
@@ -64,7 +65,7 @@ export const styles = {
         fontFamily : 'Poppins',
         color : 'primary.main',
         paddingLeft : 2,
-        fontSize : 15
+        fontSize : 14
     },
     sidebarFooterContainer : {
         position : 'absolute',
@@ -81,13 +82,13 @@ export const styles = {
     subMenuText : {
         fontFamily : 'Poppins',
         color : 'white',
-        fontSize : 14,
+        fontSize : 13,
         paddingLeft : 4
     },
     subMenuTextActive : {
         fontFamily : 'Poppins',
         color : 'primary.main',
         paddingLeft : 4,
-        fontSize : 14
+        fontSize : 13
     }
 } 

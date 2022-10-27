@@ -5,22 +5,33 @@ import { withStyles } from '@material-ui/styles';
 
 import { styles } from "./styles";
 
+interface customInputInterface {
+  size: any;
+  placeholder: any
+}
 
-const StyledTextField = withStyles({
+const CustomInput = (props: customInputInterface) => {
+
+  const { size, placeholder } = props;
+
+  const StyledTextField = withStyles({
     root: {
+
       '& .MuiOutlinedInput-root': {
-        padding : '8px',
         '& fieldset': {
           borderRadius: `10px`,
-          borderColor : `#204289`,
-         
+          borderColor: `#204289`,
+        },
+        '& .MuiInputBase-input': {
+          fontSize: '13px',
+          padding: '11px'
         },
       },
     },
-})(TextField);
+  })(TextField);
 
 
-const CustomInput = () => {
+
   return (
     <Box>
       <StyledTextField
@@ -31,12 +42,11 @@ const CustomInput = () => {
             </InputAdornment>
           ),
         }}
-        sx={{ input: styles.input}} 
-
-        size="small"
+        sx={{ input: styles.input }}
+        size={size ? size : 'small'}
         fullWidth
-        placeholder="Search Patient"
-       
+        placeholder={placeholder}
+
       />
     </Box>
   );

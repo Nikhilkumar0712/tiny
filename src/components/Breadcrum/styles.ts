@@ -6,6 +6,6 @@ export const styles = {
         color : 'primary.main'
     },
     breadcrumContainer : {
-        marginTop : 25
+        marginTop : 10
     }
 }

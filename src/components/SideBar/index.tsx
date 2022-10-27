@@ -9,72 +9,72 @@ const sideMenuList = [
   {
     id: 1,
     name: "Dashboard",
-    image: require("../../assets/activedashboard.svg").default,
-    inactiveImage: require("../../assets/inactivedashboard.svg").default,
+    image: require("../../assets/activedashboard.svg"),
+    inactiveImage: require("../../assets/inactivedashboard.svg"),
     isCollapsible: false,
     screenName: "/Dashboard",
   },
   {
     id: 2,
     name: "Appointments",
-    image: require("../../assets/activeappointment.svg").default,
-    inactiveImage: require("../../assets/inactiveappointment.svg").default,
+    image: require("../../assets/activeappointment.svg"),
+    inactiveImage: require("../../assets/inactiveappointment.svg"),
     isCollapsible: true,
     screenName: "/Appointments",
   },
   {
     id: 3,
     name: "Manage Patients",
-    image: require("../../assets/activepatients.svg").default,
-    inactiveImage: require("../../assets/inactivepatients.svg").default,
+    image: require("../../assets/activepatients.svg"),
+    inactiveImage: require("../../assets/inactivepatients.svg"),
     isCollapsible: false,
     screenName: "/ManagePatients",
   },
   {
     id: 4,
     name: "Diagnosis",
-    image: require("../../assets/activetooth.svg").default,
-    inactiveImage: require("../../assets/inactivetooth.svg").default,
+    image: require("../../assets/activetooth.svg"),
+    inactiveImage: require("../../assets/inactivetooth.svg"),
     isCollapsible: false,
     screenName: "/Diagnosis",
   },
   {
     id: 5,
     name: "Treatment",
-    image: require("../../assets/activetreatment.svg").default,
-    inactiveImage: require("../../assets/inactivetreatment.svg").default,
+    image: require("../../assets/activetreatment.svg"),
+    inactiveImage: require("../../assets/inactivetreatment.svg"),
     isCollapsible: false,
     screenName: "/Treatment",
   },
   {
     id: 6,
     name: "Accounts",
-    image: require("../../assets/activeaccounts.svg").default,
-    inactiveImage: require("../../assets/inactiveaccounts.svg").default,
+    image: require("../../assets/activeaccounts.svg"),
+    inactiveImage: require("../../assets/inactiveaccounts.svg"),
     isCollapsible: false,
     screenName: "/Accounts",
   },
   {
     id: 7,
     name: "Invoices",
-    image: require("../../assets/activeinvoices.svg").default,
-    inactiveImage: require("../../assets/inactiveinvoices.svg").default,
+    image: require("../../assets/activeinvoices.svg"),
+    inactiveImage: require("../../assets/inactiveinvoices.svg"),
     isCollapsible: false,
     screenName: "/Invoices",
   },
   {
     id: 8,
     name: "Labs",
-    image: require("../../assets/activeinvoices.svg").default,
-    inactiveImage: require("../../assets/inactiveinvoices.svg").default,
+    image: require("../../assets/activeinvoices.svg"),
+    inactiveImage: require("../../assets/inactiveinvoices.svg"),
     isCollapsible: false,
     screenName: "/Labs",
   },
   {
     id: 9,
     name: "Inventory",
-    image: require("../../assets/activeinvoices.svg").default,
-    inactiveImage: require("../../assets/inactiveinvoices.svg").default,
+    image: require("../../assets/activeinvoices.svg"),
+    inactiveImage: require("../../assets/inactiveinvoices.svg"),  
     isCollapsible: false,
     screenName: "/Inventory",
   },
@@ -138,40 +138,31 @@ const SideMenuItem = (props: sidemenuInterface) => {
           </Box>
 
           <Collapse in={open} timeout="auto" unmountOnExit>
-          <Link to={`${item.screenName}`} style={styles.link}>
-            <Box style={styles.menuItems}>
-              <Typography
-                sx={
-                  location.pathname === '/Appointments'
-                    ? styles.subMenuTextActive
-                    : styles.subMenuText
-                }
-              >
-                View Appointments
-              </Typography>
-            </Box>
-            </Link>
-            <Link to={`${item.screenName}`} style={styles.link}>
-            <Box style={styles.menuItems}>
-              <Typography
-                sx={
-                  location.pathname === '/Bookings'
-                    ? styles.subMenuTextActive
-                    : styles.subMenuText
-                }
-              >
-                View Bookings
-              </Typography>
-            </Box>
-            </Link>
-            <Link to={`${item.screenName}`} style={styles.link}>
+
+            <Link to={`/Appointments`} style={styles.link}>
               <Box style={styles.menuItems}>
                 <Typography
-                  sx={
-                    location.pathname === '/ViewSlots'
-                      ? styles.subMenuTextActive
-                      : styles.subMenuText
-                  }
+                  sx={styles.subMenuText}
+                >
+                  View Appointments
+                </Typography>
+              </Box>
+            </Link>
+
+            <Link to={`/Bookings`} style={styles.link}>
+              <Box style={styles.menuItems}>
+                <Typography
+                  sx={styles.subMenuText}
+                >
+                  View Bookings
+                </Typography>
+              </Box>
+            </Link>
+
+            <Link to={`/SlotsView`} style={styles.link}>
+              <Box style={styles.menuItems}>
+                <Typography
+                  sx={styles.subMenuText}
                 >
                   Slots View
                 </Typography>
@@ -234,31 +225,6 @@ const SideBar = () => {
         {sideMenuList.map((item) => {
           return <SideMenuItem item={item} />;
         })}
-      </Box>
-      <Box sx={styles.sidebarFooterContainer}>
-        <Box style={styles.menuItems}>
-          <Box sx={styles.row}>
-            <Box
-              component="img"
-              sx={styles.menuFooterImage}
-              alt="Logo"
-              src={require("../../assets/settings.png")}
-            />
-            <Typography sx={styles.menuFooterText}>Settings</Typography>
-          </Box>
-        </Box>
-
-        <Box style={styles.menuItems}>
-          <Box sx={styles.row}>
-            <Box
-              component="img"
-              sx={styles.menuFooterImage}
-              alt="Logo"
-              src={require("../../assets/logout.png")}
-            />
-            <Typography sx={styles.menuFooterText}>Logout</Typography>
-          </Box>
-        </Box>
       </Box>
     </Box>
   );
