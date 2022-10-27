@@ -7,21 +7,17 @@ import NewBookings from './NewBookings';
 const Dashboard = () => {
     return (
         <>
-            <Box>
-
-
+            <Box mt={"18px"}>
+                <Analytics />
+            </Box>
+            <Box
+                display={"flex"}
+                gap={"30px"}>
                 <Box mt={"18px"}>
-                    <Analytics />
+                    <NewBookings />
                 </Box>
-                <Box
-                    display={"flex"}
-                    gap={"30px"}>
-                    <Box mt={"18px"}>
-                        <NewBookings />
-                    </Box>
-                    <Box mt={"18px"} flexGrow={1}>
-                        <DashboardBillingSummary />
-                    </Box>
+                <Box mt={"18px"} flexGrow={1}>
+                    <DashboardBillingSummary />
                 </Box>
             </Box>
         </>
