@@ -2,17 +2,15 @@ import React from "react";
 import { Box, TextField, InputAdornment } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import { withStyles } from '@material-ui/styles';
-
 import { styles } from "./styles";
-
 interface customInputInterface {
   size: any;
-  placeholder: any
+  placeholder: any,
+  InputProps:any
 }
-
 const CustomInput = (props: customInputInterface) => {
 
-  const { size, placeholder } = props;
+  const { size, placeholder ,  InputProps} = props;
 
   const StyledTextField = withStyles({
     root: {
@@ -30,23 +28,14 @@ const CustomInput = (props: customInputInterface) => {
     },
   })(TextField);
 
-
-
   return (
     <Box>
-      <StyledTextField
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <Search style={styles.icon} />
-            </InputAdornment>
-          ),
-        }}
+      <StyledTextField 
+        InputProps={props.InputProps}
         sx={{ input: styles.input }}
         size={size ? size : 'small'}
         fullWidth
         placeholder={placeholder}
-
       />
     </Box>
   );

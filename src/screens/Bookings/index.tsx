@@ -1,9 +1,10 @@
 import React from "react";
 import HocLayout from "../../components/HocLayout";
-import { Box, Link, Typography, Grid } from "@mui/material";
+import { Box, Link, Typography, Grid, InputAdornment } from "@mui/material";
 import Breadcrumbs from "../../components/Breadcrum";
 import { styles } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { Search } from "@mui/icons-material";
 import CustomCard from "../../components/Card";
 import CustomInput from "../../components/Input";
 import CustomDatePicker from "../../components/DatePicker";
@@ -288,7 +289,14 @@ const Bookings = () => {
                 alignItems="center"
               >
                 <Grid item>
-                  <CustomInput size={"small"} placeholder="Search Patients" />
+                  <CustomInput size={"small"} placeholder="Search Patients" 
+                   InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Search />
+                      </InputAdornment>
+                    ),
+                  }}/>
                 </Grid>
                 <Grid item>
                   <Grid container spacing={2}>
@@ -303,7 +311,7 @@ const Bookings = () => {
                       />
                     </Grid>
                     <Grid item md={6}>
-                      <CustomDatePicker />
+                      <CustomDatePicker fullWidth={''}/>
                     </Grid>
                   </Grid>
                 </Grid>

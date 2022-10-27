@@ -54,7 +54,7 @@ const BookingsView = () => {
                 <Grid item md={6}>
                   <Typography sx={styles.heading}>Patient Details</Typography>
                 </Grid>
-                <Grid item md={6}>
+                <Grid item md={8}>
                   <Grid
                     container
                     flexDirection={"row"}
@@ -65,19 +65,36 @@ const BookingsView = () => {
                       <CustomButton
                         handleButtonClick={buttonClicked}
                         title="Confirm Appointment"
+                        backgroundcolor={"#204289"}
+                        bordercolor={"#204289"}
+                        border={""}
+                        fontsize={"14px"}
+                        color={"info"}
+                        padding={"8px 20px"} 
                       />
                     </Grid>
-
                     <Grid item>
                       <CustomButton
                         handleButtonClick={buttonClicked}
                         title="Change Booking"
+                        backgroundcolor={"#204289"}
+                        bordercolor={"#204289"}
+                        border={""}
+                        fontsize={"14px"}
+                        color={"info"}
+                        padding={"8px 20px"} 
                       />
                     </Grid>
                     <Grid item>
                       <CustomButton
                         handleButtonClick={buttonClicked}
                         title="Cancel Booking"
+                        backgroundcolor={"#204289"}
+                        bordercolor={"#204289"}
+                        border={""}
+                        fontsize={"14px"}
+                        color={"info"}
+                        padding={"8px 20px"} 
                       />
                     </Grid>
                   </Grid>

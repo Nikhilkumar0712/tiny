@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, InputAdornment } from "@mui/material";
 import CustomInput from "../Input";
 import SideBar from "../SideBar";
 import { styles } from "./styles";
+import { Search } from "@mui/icons-material";
 
 const HocLayout = (Component: any) => {
   return (
@@ -10,10 +11,18 @@ const HocLayout = (Component: any) => {
       <Grid item md={2} sx={styles.sidebarGrid}>
         <SideBar />
       </Grid>
-      <Grid item md={10}  sx={styles.mainGrid}>
+      <Grid item md={10} sx={styles.mainGrid}>
         <Grid container spacing={3} sx={styles.headerContainer}>
           <Grid item md={4}>
-            <CustomInput size={'small'}  placeholder="Search Patients"   />
+            <CustomInput size={'small'} placeholder="Search Patients"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Search />
+                  </InputAdornment>
+                ),
+              }}
+            />
           </Grid>
           <Grid item md={6}>
             <Grid container spacing={2}>
@@ -59,7 +68,7 @@ const HocLayout = (Component: any) => {
             </Grid>
           </Grid>
         </Grid>
-      <Component />
+        <Component />
       </Grid>
     </Grid>
   );

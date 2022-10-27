@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_2425" data-name="Rectangle 2425" width="32" height="32" transform="translate(0.294)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_14" data-name="Mask Group 14" transform="translate(-0.294)" clip-path="url(#clip-path)">
+    <path id="stethoscope" d="M32,12a4,4,0,1,0-5.333,3.755v5.579a8,8,0,1,1-16,0v-.107a9.341,9.341,0,0,0,8-9.227V4a4,4,0,0,0-4-4h-4V2.667h4A1.333,1.333,0,0,1,16,4v8A6.667,6.667,0,1,1,2.667,12V4A1.333,1.333,0,0,1,4,2.667H8V0H4A4,4,0,0,0,0,4v8a9.341,9.341,0,0,0,8,9.227v.107a10.667,10.667,0,1,0,21.333,0V15.755A4,4,0,0,0,32,12Zm-4,1.333A1.333,1.333,0,1,1,29.333,12,1.333,1.333,0,0,1,28,13.333Z" transform="translate(0)" fill="#fff"/>
+  </g>
+</svg>

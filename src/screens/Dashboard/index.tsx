@@ -1,17 +1,27 @@
+import { Box } from '@mui/material';
 import React from 'react';
 import HocLayout from "../../components/HocLayout";
-import { useLocation } from 'react-router-dom';
+import Analytics from './Analytics';
+import { DashboardBillingSummary } from './BillingSummary';
+import NewBookings from './NewBookings';
 const Dashboard = () => {
-    const location = useLocation();
-    return(
-        <div>
-            <h1>Dashboard</h1>
-            <h1>{location.pathname}</h1>
-        </div>
-       
+    return (
+        <>
+            <Box mt={"18px"}>
+                <Analytics />
+            </Box>
+            <Box
+                display={"flex"}
+                gap={"30px"}>
+                <Box mt={"18px"}>
+                    <NewBookings />
+                </Box>
+                <Box mt={"18px"} flexGrow={1}>
+                    <DashboardBillingSummary />
+                </Box>
+            </Box>
+        </>
     )
 }
-
-
 const DashboardHoc = HocLayout(Dashboard)
 export default DashboardHoc;
