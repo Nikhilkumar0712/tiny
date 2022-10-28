@@ -4,7 +4,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import CustomTheme from "../Theme";
 import { BrowserRouter } from "react-router-dom";
 import Navigation from "./Navigation";
-
 const App = () => {
 
   return (

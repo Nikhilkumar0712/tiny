@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import CustomButton from '../../../components/Button'
 import CustomCard from '../../../components/Card'
+import { Grid } from '@mui/material';
 import CustomDatePicker from '../../../components/DatePicker'
 import CustomInput from '../../../components/Input'
 import CustomSelectPicker from '../../../components/SelectPicker'
@@ -40,6 +41,7 @@ const NewBookings = () => {
     const buttonClicked = () => { };
     return (
         <>
+
             <Box
                 display={"flex"}
                 justifyContent={"space-between"}
@@ -53,82 +55,85 @@ const NewBookings = () => {
             </Box>
             <Box mt={'18px'}>
                 <CustomCard>
-                    <Box>
-                        <CustomInput placeholder={"Enter Mobile Number"}
-                            InputProps={""}
-                            size={"Normal"} />
-                    </Box>
-                    <Box mt={2}>
-                        <CustomInput placeholder={"Enter Name"}
-                            InputProps={""}
-                            size={"Normal"} />
-                    </Box>
-                    <Box
-                        display={"flex"}
-                        gap={"10px"}>
-                        <Box mt={2} flexGrow={1}>
-                            <CustomDatePicker fullWidth={"fullWidth"} />
+                    <Box sx={Styles.overflow}>
+                        <Box
+                            padding={"5px"}>
+                            <Box>
+                                <CustomInput placeholder={"Enter Mobile Number"}
+                                    InputProps={""}
+                                    size={"small"} />
+                            </Box>
+                            <Box mt={2}>
+                                <CustomInput placeholder={"Enter Name"}
+                                    InputProps={""}
+                                    size={"small"} />
+                            </Box>
+                            <Box mt={2}>
+                                <CustomDatePicker fullWidth={"fullWidth"} />
+                            </Box>
+                            <Box mt={2}>
+                                <CustomInput placeholder={"Age"}
+                                    InputProps={""}
+                                    size={"small"} />
+                            </Box>
+                            <Box mt={2}>
+                                <CustomSelectPicker
+                                    selectValue={1}
+                                    size={"small"}
+                                    fullWidth={true}
+                                    handleSelectValue={(val: any) => console.log("hii")}
+                                    width={"100%"}
+                                    selectData={selectData}
+                                />
+                            </Box>
+                            <Box mt={2}>
+                                <CustomDatePicker fullWidth={"fullWidth"} />
+                            </Box>
+                            <Box
+                                display={"flex"}
+                                gap={"15px"}
+                                alignItems={"center"}
+                                mt={2}>
+                                <Box >
+                                    <CustomInput placeholder={"Time"}
+                                        InputProps={""}
+                                        size={"small"} />
+                                </Box>
+                                <Box flexGrow={1}>
+                                    <CustomSelectPicker
+                                        selectValue={1}
+                                        size={"small"}
+                                        fullWidth={true}
+                                        handleSelectValue={(val: any) => console.log("hii")}
+                                        width={"100%"}
+                                        selectData={TimeData}
+                                    />
+                                </Box>
+                            </Box>
+                            <Box mt={2} >
+                                <CustomSelectPicker
+                                    selectValue={1}
+                                    size={"small"}
+                                    fullWidth={true}
+                                    handleSelectValue={(val: any) => console.log("hii")}
+                                    width={'100%'}
+                                    selectData={SelectDoctor}
+                                />
+                            </Box>
+                            <Box mt={2}>
+                                <CustomInput placeholder={"Referred By"}
+                                    InputProps={""}
+                                    size={"small"} />
+                            </Box>  <Box mt={2}>
+                                <CustomInput placeholder={"Referred Title"}
+                                    InputProps={""}
+                                    size={"small"} />
+                            </Box>  <Box mt={2}>
+                                <CustomInput placeholder={"Referred Contact Number"}
+                                    InputProps={""}
+                                    size={"small"} />
+                            </Box>
                         </Box>
-                        <Box mt={2}>
-                            <CustomInput placeholder={"Age"}
-                                InputProps={""}
-                                size={"Normal"} />
-                        </Box>
-                        <Box mt={2}>
-                            <CustomSelectPicker
-                                selectValue={1}
-                                size={"small"}
-                                fullWidth={true}
-                                handleSelectValue={(val: any) => console.log("hii")}
-                                width={220}
-                                selectData={selectData}
-                            />
-                        </Box>
-                    </Box>
-                    <Box
-                        display={"flex"}
-                        gap={"10px"}>
-                        <Box mt={2} flexGrow={1}>
-                            <CustomDatePicker fullWidth={"fullWidth"} />
-                        </Box>
-                        <Box mt={2}>
-                            <CustomInput placeholder={"Time"}
-                                InputProps={""}
-                                size={"Normal"} />
-                        </Box>
-                        <Box mt={2}>
-                            <CustomSelectPicker
-                                selectValue={1}
-                                size={"small"}
-                                fullWidth={true}
-                                handleSelectValue={(val: any) => console.log("hii")}
-                                width={220}
-                                selectData={TimeData}
-                            />
-                        </Box>
-                    </Box>
-                    <Box mt={2} >
-                        <CustomSelectPicker
-                            selectValue={1}
-                            size={"small"}
-                            fullWidth={true}
-                            handleSelectValue={(val: any) => console.log("hii")}
-                            width={'100%'}
-                            selectData={SelectDoctor}
-                        />
-                    </Box>
-                    <Box mt={2}>
-                        <CustomInput placeholder={"Referred By"}
-                            InputProps={""}
-                            size={"Normal"} />
-                    </Box>  <Box mt={2}>
-                        <CustomInput placeholder={"Referred Title"}
-                            InputProps={""}
-                            size={"Normal"} />
-                    </Box>  <Box mt={2}>
-                        <CustomInput placeholder={"Referred Contact Number"}
-                            InputProps={""}
-                            size={"Normal"} />
                     </Box>
                     <Box
                         display={"flex"}
@@ -139,7 +144,7 @@ const NewBookings = () => {
                                 handleButtonClick={buttonClicked}
                                 backgroundcolor={"#FFFFFF"}
                                 bordercolor={"#9DA2AB"}
-                                padding={"8px 60px"}
+                                padding={"4px 50px"}
                                 border={"1px solid"}
                                 fontsize={"14px"}
                                 color={"primary"} />
@@ -152,7 +157,7 @@ const NewBookings = () => {
                                 border={"1px solid"}
                                 fontsize={"14px"}
                                 color={"info"}
-                                padding={"8px 60px"} />
+                                padding={"4px 50px"} />
                         </Box>
                     </Box>
                 </CustomCard>

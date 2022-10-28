@@ -35,7 +35,7 @@ const CustomDatePicker = (props:DatePickerWidth ) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
-
+      toolbarPlaceholder="hi"
         value={value}
         onChange={(newValue: any) => {
           setValue(newValue);

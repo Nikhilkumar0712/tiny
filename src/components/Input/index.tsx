@@ -6,11 +6,11 @@ import { styles } from "./styles";
 interface customInputInterface {
   size: any;
   placeholder: any,
-  InputProps:any
+  InputProps: any
 }
 const CustomInput = (props: customInputInterface) => {
 
-  const { size, placeholder ,  InputProps} = props;
+  const { size, placeholder, InputProps } = props;
 
   const StyledTextField = withStyles({
     root: {
@@ -30,9 +30,9 @@ const CustomInput = (props: customInputInterface) => {
 
   return (
     <Box>
-      <StyledTextField 
+      <StyledTextField
         InputProps={props.InputProps}
-        sx={{ input: styles.input }}
+        sx={styles.input}
         size={size ? size : 'small'}
         fullWidth
         placeholder={placeholder}

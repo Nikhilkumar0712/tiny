@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
 import CustomCard from '../../../components/Card'
-import {Styles} from './style'
+import { Styles } from './style'
 interface BillingSummaryData {
     item: {
         name: any,
@@ -9,13 +9,12 @@ interface BillingSummaryData {
         amount: any,
         date: any,
         image: any,
-        bgColor:any
+        bgColor: any
     }
 }
 const BillingSummary = (props: BillingSummaryData) => {
     return (
         <>
-
             <Box
                 display={"flex"}
                 alignItems={"center"}
@@ -25,7 +24,7 @@ const BillingSummary = (props: BillingSummaryData) => {
                         component={"img"}
                         alt=" Appointment"
                         src={props.item.image}
-                        padding={"15px"}
+                        padding={"10px"}
                         bgcolor={props.item.bgColor}
                         borderRadius={"50%"}>
                     </Box>
@@ -34,10 +33,11 @@ const BillingSummary = (props: BillingSummaryData) => {
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
-                    width={"100%"} 
-                    gap={"20px"} 
-                    flexDirection={"row"}>
-                    <Box>
+                    width={"100%"}>
+                    <Box
+                        display={"flex"}
+                        flexDirection={"column"}
+                        gap={"8px"}>
                         <Typography sx={Styles.name}>
                             {props.item.name}
                         </Typography>
@@ -45,8 +45,11 @@ const BillingSummary = (props: BillingSummaryData) => {
                             {props.item.referredBy}
                         </Typography>
                     </Box>
-                    <Box>
-                        <Typography  sx={Styles.subHeading}>
+                    <Box
+                        display={"flex"}
+                        flexDirection={"column"}
+                        gap={"8px"}>
+                        <Typography sx={Styles.subHeading}>
                             {props.item.date}
                         </Typography>
                         <Typography sx={Styles.amount}>
@@ -70,7 +73,7 @@ export const DashboardBillingSummary = () => {
             image: require("../../../assets/Doctoricu.svg"),
             amount: 'Rs 1200',
             date: "7 Sep 2022",
-            bgColor:"#FD7238"
+            bgColor: "#FD7238"
         },
         {
             id: 1,
@@ -79,7 +82,7 @@ export const DashboardBillingSummary = () => {
             image: require("../../../assets/inactivetreatment.svg"),
             amount: 'Rs 1200',
             date: "7 Sep 2022",
-            bgColor:"#5246A0"
+            bgColor: "#5246A0"
         },
         {
             id: 1,
@@ -88,7 +91,7 @@ export const DashboardBillingSummary = () => {
             image: require("../../../assets/inactivetooth.svg"),
             amount: 'Rs 1200',
             date: "7 Sep 2022",
-            bgColor:"#199A37"
+            bgColor: "#199A37"
         },
         {
             id: 1,
@@ -97,7 +100,7 @@ export const DashboardBillingSummary = () => {
             image: require("../../../assets/Doctoricu.svg"),
             amount: 'Rs 1200',
             date: "7 Sep 2022",
-            bgColor:"#5246A0"
+            bgColor: "#5246A0"
         },
         {
             id: 1,
@@ -106,7 +109,7 @@ export const DashboardBillingSummary = () => {
             image: require("../../../assets/Doctoricu.svg"),
             amount: 'Rs 1200',
             date: "7 Sep 2022",
-            bgColor:"#199A37"
+            bgColor: "#199A37"
         },
     ]
     return (

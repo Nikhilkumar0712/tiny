@@ -1,14 +1,10 @@
+
 export const Styles = {
-    MainHeading: {
-        fontFamily: 'Poppins',
-        fontSize: 14,
-        color: '#021025',
-        fontWeight:"550"
-    },
-    SideHeading: {
+    ViewALL: {
         fontFamily: 'Poppins',
         fontSize: 12,
-        color: 'primary.main'
+        color: '#204289',
+        textAlign: 'right'
     },
     name: {
         fontFamily: 'Poppins',
@@ -19,12 +15,20 @@ export const Styles = {
     subHeading: {
         fontFamily: 'Poppins',
         fontSize: 12,
-        color: '#9DA2AB',
-    },
-    amount: {
-        fontFamily: 'Poppins',
-        fontSize: 18,
         color: '#204289',
-        fontWeight: "600"
+    },
+    Tabpanel: {
+        padding: '0px'
+    },
+    overflow: {
+        height: '280px',
+        overflowY: "scroll"
+    },
+    padding: {
+        paddingTop: "10px"
+    },
+    TabColor: {
+        textTransform:"none",
+
     }
 }

@@ -7,20 +7,21 @@ interface Card {
     title: string,
     image: any,
     totalnumbers: any,
-    bgcolor:any
+    bgcolor: any
 }
 const Analytics = () => {
     return (
         <>
             <Box
                 display={"flex"}
+                width={'100%'}
                 gap={2}>
-                <Box flexGrow={'1'}>
+                <Box width={"100%"}>
                     <CustomCard>
                         <Box
                             display={"flex"}
                             justifyContent={"space-between"}
-                            alignItems={"center"}>
+                            alignItems={"baseline"}>
                             <Box>
                                 <Typography sx={Styles.breadcrumbSubtext}>
                                     Appointments
@@ -32,14 +33,11 @@ const Analytics = () => {
                                 flexDirection={"column"}>
                                 <Box
                                     display={"flex"}
-                                    gap={1}
                                     alignItems={"center"}>
                                     <Typography sx={Styles.today}>
                                         Today
                                     </Typography>
-                                    <Box>
-                                        <ArrowDropDownIcon />
-                                    </Box>
+                                    <ArrowDropDownIcon />
                                 </Box>
                                 <Box
                                     display={"flex"}
@@ -65,14 +63,15 @@ const Analytics = () => {
                             justifyContent={"space-between"}
                             alignItems={"center"}>
                             <Box
-                                padding={"15px"}
-                                bgcolor={"#FD7238"}
-                                borderRadius={"15px"}>
+                               >
                                 <Box
                                     component={"img"}
+                                    padding={"10px"}
+                                    bgcolor={"#FD7238"}
+                                    borderRadius={"15px"}
                                     alt=" Appointment"
-                                    src={require("../../../assets/Analytics Appointemnts Icons.svg")}
-                                   >
+                                    width={"50px"}
+                                    src={require("../../../assets/Analytics Appointemnts Icons.svg")}>
                                 </Box>
                             </Box>
                             <Box>
@@ -83,19 +82,19 @@ const Analytics = () => {
                         </Box>
                     </CustomCard>
                 </Box>
-                <Box flexGrow={'1'}>
+                <Box width={"100%"}>
                     <PatientandDoctors
                         title={"Total Patients"}
                         totalnumbers={"590"}
-                        image={require("../../../assets/AnalyticsDoctor.svg")} 
-                        bgcolor={"#5246A0"}/>
+                        image={require("../../../assets/AnalyticsDoctor.svg")}
+                        bgcolor={"#5246A0"} />
                 </Box>
-                <Box flexGrow={'1'}>
+                <Box width={"100%"}>
                     <PatientandDoctors
                         title={"Total Doctors"}
                         totalnumbers={"890"}
-                        image={require("../../../assets/Analytics Stethoscopes.svg")} 
-                        bgcolor={"#3DD230"}/>
+                        image={require("../../../assets/Analytics Stethoscopes.svg")}
+                        bgcolor={"#3DD230"} />
                 </Box>
             </Box>
         </>
@@ -105,35 +104,39 @@ export const PatientandDoctors = (props: Card) => {
     return (
         <>
             <CustomCard >
-                <Box
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}>
-                    <Box>
-                        <Typography sx={Styles.breadcrumbSubtext}>
-                            {props.title}
-                        </Typography>
-                    </Box>
-                </Box>
-                <Box
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"} 
-                    mt={"35px"}>
+                <Box >
                     <Box
-                        padding={"15px"}
-                        bgcolor={props.bgcolor}
-                        borderRadius={"15px"}>
-                        <Box
-                            component={"img"}
-                            alt=" Appointment"
-                            src={props.image}>
+                        display={"flex"}
+                        justifyContent={"space-between"}
+                        alignItems={"center"}>
+                        <Box>
+                            <Typography sx={Styles.breadcrumbSubtext}>
+                                {props.title}
+                            </Typography>
                         </Box>
                     </Box>
-                    <Box>
-                        <Typography sx={Styles.TotalAppointments}>
-                            {props.totalnumbers}
-                        </Typography>
+                    <Box
+                        display={"flex"}
+                        justifyContent={"space-between"}
+                        alignItems={"center"}
+                        mt={"30px"}>
+                        <Box
+                        >
+                            <Box
+                                padding={"10px"}
+                                bgcolor={props.bgcolor}
+                                borderRadius={"8px"}
+                                component={"img"}
+                                alt=" Appointment"
+                                width={"50px"}
+                                src={props.image}>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Typography sx={Styles.TotalAppointments}>
+                                {props.totalnumbers}
+                            </Typography>
+                        </Box>
                     </Box>
                 </Box>
             </CustomCard>

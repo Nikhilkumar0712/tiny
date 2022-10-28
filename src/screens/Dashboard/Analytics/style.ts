@@ -2,7 +2,8 @@ export const Styles = {
     breadcrumbSubtext: {
         fontFamily: 'Poppins',
         fontSize: 14,
-        color: '#021025'
+        color: '#021025',
+        fontWeight:"550"
     },
     today: {
         fontFamily: "poppins",
@@ -17,6 +18,7 @@ export const Styles = {
     TotalAppointments: {
         fontFamily: "poppins",
         fontSize: 25,
-        color: "#021025"
+        color: "#021025",
+        fontWeight:"550"
     }
 }
