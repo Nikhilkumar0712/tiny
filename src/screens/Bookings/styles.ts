@@ -6,6 +6,7 @@ export const styles = {
     },
     screenContainer : {
         marginTop  : 2,
+        width : '80%'
     },
     cardHeaderContainer : {
         display : 'flex',

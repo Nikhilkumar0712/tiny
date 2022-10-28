@@ -5,11 +5,13 @@ import CustomCard from "../../../components/Card";
 import { Typography, Link, Grid, Box } from "@mui/material";
 import Breadcrum from "../../../components/Breadcrum";
 import CustomButton from "../../../components/Button";
+import { DashboardBillingSummary } from "../../Dashboard/BillingSummary";
+import AppointmentandBookings from "../../Dashboard/AppointmentsandBookings";
 
 const AppointmentsView = () => {
-  const handleOnClickBreadcrumItem = () => {};
+  const handleOnClickBreadcrumItem = () => { };
 
-  const buttonClicked = () => {};
+  const buttonClicked = () => { };
 
   const breadcrumbs = [
     <Link
@@ -43,7 +45,7 @@ const AppointmentsView = () => {
       <Breadcrum title={"Appointment View"} breadcrumbsArr={breadcrumbs} />
       <Box sx={styles.screenContainer}>
         <Grid container spacing={2}>
-          <Grid item md={9}>
+          <Grid item md={8}>
             <CustomCard>
               <Grid
                 container
@@ -51,20 +53,27 @@ const AppointmentsView = () => {
                 justifyContent={"space-between"}
                 alignItems={"center"}
               >
-                <Grid item md={6}>
+                <Grid item md={2}>
                   <Typography sx={styles.heading}>Patient Details</Typography>
                 </Grid>
-                <Grid item md={6}>
+                <Grid item md={10}>
                   <Grid
                     container
                     flexDirection={"row"}
-                    justifyContent={"space-between"}
+                    justifyContent={"end"}
                     alignItems={"center"}
+                    gap={"8px"}
                   >
-                    <Grid item>
+                    <Grid item >
                       <CustomButton
                         handleButtonClick={buttonClicked}
                         title="Generate Bill"
+                        backgroundcolor={"#204289"}
+                        bordercolor={"#204289"}
+                        border={"1px solid"}
+                        fontsize={"14px"}
+                        color={"info"}
+                        padding={"3px 20px"}
                       />
                     </Grid>
 
@@ -72,12 +81,24 @@ const AppointmentsView = () => {
                       <CustomButton
                         handleButtonClick={buttonClicked}
                         title="Change Appointment"
+                        backgroundcolor={"#204289"}
+                        bordercolor={"#204289"}
+                        border={"1px solid"}
+                        fontsize={"14px"}
+                        color={"info"}
+                        padding={"3px 20px"}
                       />
                     </Grid>
                     <Grid item>
                       <CustomButton
                         handleButtonClick={buttonClicked}
                         title="Cancel Appointment"
+                        backgroundcolor={"#204289"}
+                        bordercolor={"#204289"}
+                        border={"1px solid"}
+                        fontsize={"14px"}
+                        color={"info"}
+                        padding={"3px 20px"}
                       />
                     </Grid>
                   </Grid>
@@ -277,6 +298,9 @@ const AppointmentsView = () => {
                 </Grid>
               </Box>
             </CustomCard>
+          </Grid>
+          <Grid item md={4}>
+            <AppointmentandBookings />
           </Grid>
         </Grid>
       </Box>

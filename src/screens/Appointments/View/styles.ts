@@ -11,8 +11,7 @@ export const styles = {
         fontFamily : 'Poppins',
         fontSize : 13,
         fontWeight : 500,
-        color : '#000',
-        marginTop : 4
+        color : '#000'
     },
     avatarImage : {
         width : 70,

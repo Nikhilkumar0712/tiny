@@ -12,7 +12,6 @@ export const styles = {
         fontSize : 13,
         fontWeight : 500,
         color : '#000',
-        marginTop : 4
     },
     avatarImage : {
         width : 70,

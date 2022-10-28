@@ -1,9 +1,10 @@
 import React from "react";
 import HocLayout from "../../components/HocLayout";
-import { Box, Link, Typography, Grid } from "@mui/material";
+import { Box, Link, Typography, Grid, InputAdornment } from "@mui/material";
 import Breadcrumbs from "../../components/Breadcrum";
 import { styles } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { Search } from "@mui/icons-material";
 import CustomCard from "../../components/Card";
 import CustomInput from "../../components/Input";
 import CustomDatePicker from "../../components/DatePicker";
@@ -15,6 +16,7 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Link as RouterLink } from 'react-router-dom';
+import NewBookings from "../Dashboard/NewBookings";
 
 const Bookings = () => {
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ const Bookings = () => {
   const breadcrumbs = [
     <Link
       underline="hover"
-      key="1"
+      key="1" 
       color="inherit"
       href="/Dashboard"
       onClick={handleOnClickBreadcrumItem}
@@ -101,8 +103,8 @@ const Bookings = () => {
         );
       },
     },
-    { 
-      field: "Type", 
+    {
+      field: "Type",
       headerName: "Type",
       renderCell: (params) => {
         return (
@@ -112,39 +114,39 @@ const Bookings = () => {
         );
       },
     },
-    { 
-      field: "Notes", 
+    {
+      field: "Notes",
       headerName: "Notes",
       renderCell: (params) => {
-        if(params.row.Type === "Treatment"){
-          return(
+        if (params.row.Type === "Treatment") {
+          return (
             <DescriptionIcon style={styles.notesIcon} />
           )
-        }else{
+        } else {
           return (
             <>
               <Typography sx={styles.rowData}>-</Typography>
             </>
           );
         }
-        
+
       },
     },
-    { 
-      field: "Actions", 
+    {
+      field: "Actions",
       headerName: "Actions",
-      width : 100,
+      width: 100,
       renderCell: (params) => {
-        return(
+        return (
           <Grid
             container
             flexDirection="row"
             justifyContent={"space-between"}
-           
+
           >
-            <RemoveRedEyeOutlinedIcon  sx={styles.actionIcon} /> 
-              <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> View </Typography></RouterLink>
-              <MoreVertIcon sx={styles.actionIcon} />
+            <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
+            <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> View </Typography></RouterLink>
+            <MoreVertIcon sx={styles.actionIcon} />
           </Grid>
         )
       },
@@ -279,7 +281,7 @@ const Bookings = () => {
       <Breadcrumbs title={"Bookings"} breadcrumbsArr={breadcrumbs} />
       <Box sx={styles.screenContainer}>
         <Grid container spacing={2}>
-          <Grid item md={9}>
+          <Grid item md={8}>
             <CustomCard>
               <Grid
                 container
@@ -288,7 +290,14 @@ const Bookings = () => {
                 alignItems="center"
               >
                 <Grid item>
-                  <CustomInput size={"small"} placeholder="Search Patients" />
+                  <CustomInput size={"small"} placeholder="Search Patients"
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <Search />
+                        </InputAdornment>
+                      ),
+                    }} />
                 </Grid>
                 <Grid item>
                   <Grid container spacing={2}>
@@ -303,7 +312,7 @@ const Bookings = () => {
                       />
                     </Grid>
                     <Grid item md={6}>
-                      <CustomDatePicker />
+                      <CustomDatePicker fullWidth={''} />
                     </Grid>
                   </Grid>
                 </Grid>
@@ -312,7 +321,9 @@ const Bookings = () => {
             </CustomCard>
           </Grid>
 
-          <Grid item md={3}></Grid>
+          <Grid item md={4}>
+            <NewBookings />
+          </Grid>
         </Grid>
       </Box>
     </>

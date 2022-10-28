@@ -3,6 +3,6 @@ export const styles = {
         color:'#204289'
     },
     input : {
-         color: "#204289"
+         color: "#204289",       
     }
 }

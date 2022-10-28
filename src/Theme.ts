@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 
 // A custom theme for this app
 const theme = createTheme({
-  
+
   palette: {
     primary: {
       main: '#204289',
@@ -13,6 +13,18 @@ const theme = createTheme({
     },
     error: {
       main: red.A400,
+    },
+    info: {
+      main: '#FFFFFF',
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1536,
     },
   },
   typography: {
