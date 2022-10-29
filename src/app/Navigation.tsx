@@ -7,7 +7,7 @@ import AppointmentsView from '../screens/Appointments/View';
 import Bookings from '../screens/Bookings';
 import BookingsView from '../screens/Bookings/View';
 import Receipt from '../screens/Receipt';
-
+import Billing from '../screens/Billing';
 const Navigation = () => {
     return(
         <Routes>
@@ -20,7 +20,7 @@ const Navigation = () => {
             <Route path="/ManagePatients" element={Dashboard} />
             <Route path="/Diagnosis" element={Dashboard} />
             <Route path="/Treatment" element={Dashboard} />
-            <Route path="/Billing" element={Dashboard} />
+            <Route path="/Billing" element={Billing} />
             <Route path="/Receipt" element={Receipt} />
             <Route path="/Invoices" element={Dashboard} />
             <Route path="/Labs" element={Dashboard} />
