@@ -15,29 +15,29 @@ import CustomCard from "../../components/Card";
 
 const Receipt = () => {
 
-    
-const columns: GridColDef[] = [
+
+  const columns: GridColDef[] = [
     {
       field: "ReceiptNo",
       headerName: "Receipt No",
-      width : 130,
+      width: 130,
       renderCell: (params) => {
         return (
-            <Typography sx={styles.rowData}>
-                {params.row.ReceiptNo} 
-            </Typography>
+          <Typography sx={styles.rowData}>
+            {params.row.ReceiptNo}
+          </Typography>
         );
       },
     },
     {
       field: "BillNo",
       headerName: "Bill No",
-      width : 130,
+      width: 130,
       renderCell: (params) => {
         return (
           <>
             <Typography sx={styles.rowData}>
-              {params.row.BillNo} 
+              {params.row.BillNo}
             </Typography>
           </>
         );
@@ -46,7 +46,7 @@ const columns: GridColDef[] = [
     {
       field: "BillDate",
       headerName: "Bill Date",
-      width : 130,
+      width: 130,
       renderCell: (params) => {
         return (
           <>
@@ -58,7 +58,7 @@ const columns: GridColDef[] = [
     {
       field: "TreatmentType",
       headerName: "Treatment Type",
-      width : 160,
+      width: 160,
       renderCell: (params) => {
         return (
           <>
@@ -70,55 +70,55 @@ const columns: GridColDef[] = [
     {
       field: "Amount",
       headerName: "Amount",
-      width : 130,
+      width: 130,
       renderCell: (params) => {
-        
-          return (
-            <>
-              <Typography sx={styles.rowData}>{params.row.Amount}</Typography>
-            </>
-          );
-       
+
+        return (
+          <>
+            <Typography sx={styles.rowData}>{params.row.Amount}</Typography>
+          </>
+        );
+
       },
     },
     {
-        field: "Mode",
-        headerName: "Mode",
-        width : 130,
-        renderCell: (params) => {
-          
-            return (
-              <>
-                <Typography sx={styles.rowData}>{params.row.Mode}</Typography>
-              </>
-            );
-         
-        },
+      field: "Mode",
+      headerName: "Mode",
+      width: 130,
+      renderCell: (params) => {
+
+        return (
+          <>
+            <Typography sx={styles.rowData}>{params.row.Mode}</Typography>
+          </>
+        );
+
       },
+    },
     {
       field: "Actions",
       headerName: "Actions",
-      width : 230,
+      width: 230,
       renderCell: (params) => {
         return (
           <Grid
             container
             flexDirection="row"
             justifyContent={"space-between"}
-         >
+          >
             <>
-                <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> View </Typography></RouterLink>
+              <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
+              <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> View </Typography></RouterLink>
             </>
 
             <>
-                <LocalPrintshopOutlinedIcon sx={styles.actionIcon} />
-                <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Print </Typography></RouterLink>
+              <LocalPrintshopOutlinedIcon sx={styles.actionIcon} />
+              <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Print </Typography></RouterLink>
             </>
 
             <>
-                <CloudDownloadOutlinedIcon sx={styles.actionIcon} />
-                <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Print </Typography></RouterLink>
+              <CloudDownloadOutlinedIcon sx={styles.actionIcon} />
+              <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Print </Typography></RouterLink>
             </>
 
           </Grid>
@@ -129,7 +129,7 @@ const columns: GridColDef[] = [
 
   const rows = [
     {
-      id : 1,
+      id: 1,
       ReceiptNo: 'R23',
       BillNo: "156",
       BillDate: "22 Sept 2022",
@@ -139,67 +139,65 @@ const columns: GridColDef[] = [
       Actions: "-",
     },
     {
-        id : 2,
-        ReceiptNo: 'R23',
-        BillNo: "156",
-        BillDate: "22 Sept 2022",
-        TreatmentType: "OP",
-        Amount: "7000",
-        Mode: "Cash",
-        Actions: "-",
-      },
-      {
-        id : 3,
-        ReceiptNo: 'R23',
-        BillNo: "156",
-        BillDate: "22 Sept 2022",
-        TreatmentType: "OP",
-        Amount: "7000",
-        Mode: "Cash",
-        Actions: "-",
-      },
-      {
-        id : 4,
-        ReceiptNo: 'R23',
-        BillNo: "156",
-        BillDate: "22 Sept 2022",
-        TreatmentType: "OP",
-        Amount: "7000",
-        Mode: "Cash",
-        Actions: "-",
-      },
-      {
-        id : 5,
-        ReceiptNo: 'R23',
-        BillNo: "156",
-        BillDate: "22 Sept 2022",
-        TreatmentType: "OP",
-        Amount: "7000",
-        Mode: "Cash",
-        Actions: "-",
-      },
-      {
-        id : 6,
-        ReceiptNo: 'R23',
-        BillNo: "156",
-        BillDate: "22 Sept 2022",
-        TreatmentType: "OP",
-        Amount: "7000",
-        Mode: "Cash",
-        Actions: "-",
-      },
-      {
-        id : 7,
-        ReceiptNo: 'R23',
-        BillNo: "156",
-        BillDate: "22 Sept 2022",
-        TreatmentType: "OP",
-        Amount: "7000",
-        Mode: "Cash",
-        Actions: "-",
-      },
-
-    
+      id: 2,
+      ReceiptNo: 'R23',
+      BillNo: "156",
+      BillDate: "22 Sept 2022",
+      TreatmentType: "OP",
+      Amount: "7000",
+      Mode: "Cash",
+      Actions: "-",
+    },
+    {
+      id: 3,
+      ReceiptNo: 'R23',
+      BillNo: "156",
+      BillDate: "22 Sept 2022",
+      TreatmentType: "OP",
+      Amount: "7000",
+      Mode: "Cash",
+      Actions: "-",
+    },
+    {
+      id: 4,
+      ReceiptNo: 'R23',
+      BillNo: "156",
+      BillDate: "22 Sept 2022",
+      TreatmentType: "OP",
+      Amount: "7000",
+      Mode: "Cash",
+      Actions: "-",
+    },
+    {
+      id: 5,
+      ReceiptNo: 'R23',
+      BillNo: "156",
+      BillDate: "22 Sept 2022",
+      TreatmentType: "OP",
+      Amount: "7000",
+      Mode: "Cash",
+      Actions: "-",
+    },
+    {
+      id: 6,
+      ReceiptNo: 'R23',
+      BillNo: "156",
+      BillDate: "22 Sept 2022",
+      TreatmentType: "OP",
+      Amount: "7000",
+      Mode: "Cash",
+      Actions: "-",
+    },
+    {
+      id: 7,
+      ReceiptNo: 'R23',
+      BillNo: "156",
+      BillDate: "22 Sept 2022",
+      TreatmentType: "OP",
+      Amount: "7000",
+      Mode: "Cash",
+      Actions: "-",
+    },
   ];
 
   const navigate = useNavigate();
@@ -224,27 +222,27 @@ const columns: GridColDef[] = [
       Accounts
     </Typography>,
     <Typography key="2" sx={styles.breadcrumbSubtext}>
-        Receipts
+      Receipts
     </Typography>,
   ];
 
 
-    return(
-        <>
-        <Breadcrumbs title={"Receipt"} breadcrumbsArr={breadcrumbs} />
-          <Box sx={styles.screenContainer}>
-          <Grid container>
-                <Grid item md={12}>
-                    <CustomCard>
-                        <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} />
-                    </CustomCard>
-                </Grid>
-            </Grid>
-         </Box>
-        </>
-       
-    )
-    
+  return (
+    <>
+      <Breadcrumbs title={"Receipt"} breadcrumbsArr={breadcrumbs} />
+      <Box sx={styles.screenContainer}>
+        <Grid container>
+          <Grid item md={12}>
+            <CustomCard>
+              <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} />
+            </CustomCard>
+          </Grid>
+        </Grid>
+      </Box>
+    </>
+
+  )
+
 }
 
 
