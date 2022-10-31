@@ -16,12 +16,14 @@ const useStyles = makeStyles({
   customOutline: {
     '& .MuiSelect-select':{
       fontSize : '13px',
-      color : '#104076'
+      color : '#104076',
+      
     },
     "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#104076",
+      borderRadius: `10px`,
+      borderColor: `#9DA2AB`,
+      boxShadow: "0px 0px 10px #00000014",
       borderWidth: 1,
-      borderRadius: "10px",
       padding: "12px",
       width: "100%"
     },
@@ -43,6 +45,7 @@ const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
         value={selectValue}
         onChange={handleSelectValue}
         displayEmpty
+        
       >
         {selectData.map((item: any) => {
           return <MenuItem value={item.value}>{item.name}</MenuItem>;

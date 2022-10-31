@@ -23,7 +23,7 @@ const ManagePatients = () => {
     {
       field: "PatientName",
       headerName: "Patient Name",
-      width: 150,
+      width: 180,
       renderCell: (params) => {
         return (
           <Box
@@ -41,7 +41,7 @@ const ManagePatients = () => {
     {
       field: "PatientId",
       headerName: "Patient Id",
-      width: 150,
+      width: 180,
       renderCell: (params) => {
         return (
           <>
@@ -67,7 +67,7 @@ const ManagePatients = () => {
     {
       field: "Gender",
       headerName: "Gender",
-      width: 150,
+      width: 180,
       renderCell: (params) => {
         return (
           <>
@@ -79,7 +79,7 @@ const ManagePatients = () => {
     {
       field: "ContactInfo",
       headerName: "Contact Info",
-      width: 150,
+      width: 180,
       renderCell: (params) => {
         return (
           <>
@@ -91,7 +91,7 @@ const ManagePatients = () => {
     {
       field: "Actions",
       headerName: "Actions",
-      width: 180,
+      width: 230,
       renderCell: (params) => {
         return (
           <Grid
@@ -100,30 +100,30 @@ const ManagePatients = () => {
           >
             <>
               <Grid
-                flexDirection={"column"}
+                flexDirection={"row"}
                 alignItems={"center"}
                 gap={"10px"}
                 textAlign={"center"}>
                 <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                <RouterLink to="/PatientProfile"><Typography sx={styles.rowData}> View </Typography></RouterLink>
+                <RouterLink to="/PatientProfile" style={{textDecoration: 'none' }}><Typography sx={styles.rowData}> View </Typography></RouterLink>
               </Grid>
             </>
             <>
               <Grid
-                flexDirection={"column"}
+                flexDirection={"row"}
                 textAlign={"center"}
                 alignItems={"center"}>
                 <EditIcon sx={styles.actionIcon} />
-                <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Edit </Typography></RouterLink>
+                <RouterLink to="/BookingsView" style={{textDecoration: 'none' }}><Typography sx={styles.rowData}> Edit </Typography></RouterLink>
               </Grid>
             </>
             <>
               <Grid
-                flexDirection={"column"}
+                flexDirection={"row"}
                 textAlign={"center"}
                 alignItems={"center"}>
                 <CustomSwitch />
-                <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Active </Typography></RouterLink>
+                <RouterLink to="/BookingsView" style={{textDecoration: 'none' }}><Typography sx={styles.rowData}> Active </Typography></RouterLink>
               </Grid>
             </>
           </Grid>

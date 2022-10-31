@@ -10,6 +10,10 @@ import Billing from '../screens/Billing';
 import ManagePatients from '../screens/ManagePatients';
 import PatientRegistrationhoc from '../screens/ManagePatients/PatientRegistration';
 import PatientProfilehoc from '../screens/ManagePatients/PatientProfile';
+import CaseHistory from '../screens/Diagnosis';
+import Examination from '../screens/Diagnosis/Examination';
+import Investigation from '../screens/Diagnosis/Investigation';
+import Prescription from '../screens/Diagnosis/Prescription';
 
 
 const Navigation = () => {
@@ -24,7 +28,10 @@ const Navigation = () => {
             <Route path="/ManagePatients" element={ManagePatients} />
             <Route path="/PatientRegistration" element={PatientRegistrationhoc} />
             <Route path="/PatientProfile" element={PatientProfilehoc} />
-            <Route path="/Diagnosis" element={Dashboard} />
+            <Route path="/Diagnosis" element={CaseHistory} />
+            <Route path="/Examination" element={Examination} />
+            <Route path="/Investigation" element={Investigation} />
+            <Route path="/Prescription" element={Prescription} />
             <Route path="/Treatment" element={Dashboard} />
             <Route path="/Billing" element={Billing} />
             <Route path="/Receipt" element={Receipt} />
@@ -35,4 +42,5 @@ const Navigation = () => {
             <Route path="/Inventory" element={Dashboard} />
         </Routes>
     )
+}
 export default Navigation;

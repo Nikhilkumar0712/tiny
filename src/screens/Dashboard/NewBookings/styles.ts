@@ -1,7 +1,7 @@
 export const Styles = {
     MainHeading: {
         fontFamily: 'Poppins',
-        fontSize: 14,
+        fontSize: 13,
         color: '#021025',
         fontWeight:"550"
     },
