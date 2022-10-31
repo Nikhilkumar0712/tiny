@@ -66,6 +66,7 @@ const AppointmentsView = () => {
                   >
                     <Grid item >
                       <CustomButton
+                       endIcon={""}
                         handleButtonClick={buttonClicked}
                         title="Generate Bill"
                         backgroundcolor={"#204289"}
@@ -79,6 +80,7 @@ const AppointmentsView = () => {
 
                     <Grid item>
                       <CustomButton
+                       endIcon={""}
                         handleButtonClick={buttonClicked}
                         title="Change Appointment"
                         backgroundcolor={"#204289"}
@@ -91,6 +93,7 @@ const AppointmentsView = () => {
                     </Grid>
                     <Grid item>
                       <CustomButton
+                       endIcon={""}
                         handleButtonClick={buttonClicked}
                         title="Cancel Appointment"
                         backgroundcolor={"#204289"}

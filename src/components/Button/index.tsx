@@ -18,7 +18,8 @@ interface CustomButtonInterface {
   | "info"
   | "warning",
   fontsize:string,
-  border: string
+  border: string,
+  endIcon:any
 }
 interface ButtonStylesprops {
   backgroundcolor: string,
@@ -72,7 +73,8 @@ const CustomButton = (props: CustomButtonInterface) => {
       padding={props.padding}
       border={props.border}
       fontsize={props.fontsize}
-      color={props.color}>
+      color={props.color}
+      endIcon={props.endIcon}>
       {title}
     </BootstrapButton >
 
