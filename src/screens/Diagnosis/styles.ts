@@ -38,20 +38,33 @@ export const styles = {
         color : '#021025',
         fontWeight : 600,
     },
-    label1 : {
-        fontFamily : 'Poppins',
-        fontSize : 14,
-        color : '#021025',
-        fontWeight : 600,
-        marginTop : 4
-    },
     formContainer : {
         marginLeft : 8,
-        marginTop : 4,
+        marginTop : 6,
         marginRight : 8
     },
     feildContainer : {
         marginTop : 3,
         marginLeft : 3
+    },
+    feildContainer1 : {
+        marginTop : 2,
+        marginLeft : 3
+    },
+    iconContainer : {
+        backgroundColor : 'primary.main',
+        padding : 2,
+        borderRadius : '10px',
+        height : 38,
+        width : 38,
+        display :'flex',
+        justifyContent : 'center',
+        alignItems : 'center'
+    },
+    addIcon : {
+        color : 'white',
+       
+        
     }
+   
 }

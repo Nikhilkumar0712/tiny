@@ -14,5 +14,29 @@ export const styles = {
         fontSize : 12,
         color : 'primary.main',
         fontWeight : 500
-    }
+    },
+    tableContainer : {
+
+    },
+    actionIcon : {
+        color : '#204289',
+        fontSize : 18,
+        
+    },
+    rowData : {
+        fontFamily : 'Poppins',
+        fontSize : 12,
+        color : 'primary.main',
+        
+    },
+    rowData1 : {
+        fontFamily : 'Poppins',
+        fontSize : 12,
+        color : 'primary.main',
+        marginLeft : 1
+    },
+    notesIcon : {
+        color : '#204289',
+        fontSize : 25
+    },
 }

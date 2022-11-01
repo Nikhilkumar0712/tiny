@@ -9,6 +9,9 @@ import CustomCard from "../../components/Card";
 import Header from "./Header";
 import { useLocation } from "react-router-dom";
 import CustomSelectPicker from "../../components/SelectPicker";
+import CustomInput from "../../components/Input";
+import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
+import CustomButton from "../../components/Button";
 
 const Diagnosis = () => {
   const location = useLocation();
@@ -129,6 +132,63 @@ const Diagnosis = () => {
     },
   ];
 
+  const allergyData = [
+    {
+      name: "Select Allergies",
+      value: "",
+    },
+    {
+      name: "allergy1",
+      value: "allergy1",
+    },
+    {
+      name: "allergy2",
+      value: "allergy2",
+    },
+  ];
+
+  const medicalInfo = [
+    {
+      name: "Enter medical information",
+      value: "",
+    },
+    {
+      name: "info1",
+      value: "info1",
+    },
+    {
+      name: "info2",
+      value: "info2",
+    },
+  ];
+
+  const habitData = [
+    {
+      name: "Enter Habit",
+      value: "",
+    },
+    {
+      name: "habit1",
+      value: "habit1",
+    },
+    {
+      name: "habit2",
+      value: "habit2",
+    },
+  ];
+
+  const handleChange = (event: any) => {
+    console.log(event);
+  };
+
+  const goToExamination = () => {
+    navigate('/Examination')
+  };
+
+  const buttonClicked = () => {
+    console.log('button clicked')
+  }
+
   return (
     <>
       <Grid container flexDirection={"row"} justifyContent={"space-between"}>
@@ -153,21 +213,26 @@ const Diagnosis = () => {
                 selectData={complaintData}
               />
             </Box>
-            <Typography sx={styles.label1}>History</Typography>
+
             <Box sx={styles.feildContainer}>
               <Grid
                 container
                 flexDirection={"row"}
                 justifyContent={"space-between"}
                 alignItems={"center"}
+                spacing={4}
               >
                 <Grid item md={6}>
                   <Grid
                     container
                     justifyContent={"space-evenly"}
                     alignItems={"center"}
-                    spacing={1}
+                    rowSpacing={2}
+                    spacing={4}
                   >
+                    <Grid item md={12}>
+                      <Typography sx={styles.label}>History</Typography>
+                    </Grid>
                     <Grid item md={6}>
                       <CustomSelectPicker
                         selectValue={""}
@@ -188,41 +253,149 @@ const Diagnosis = () => {
                         selectData={pastIllness}
                       />
                     </Grid>
-                    <Grid item md={12} sx={{marginTop:2}}>
-                        <CustomSelectPicker
-                          selectValue={""}
-                          size={"small"}
-                          fullWidth={true}
-                          handleSelectValue={(val: any) => console.log(val)}
-                          width={"100%"}
-                          selectData={familyIllness}
-                        />
+                    <Grid item md={12}>
+                      <CustomSelectPicker
+                        selectValue={""}
+                        size={"small"}
+                        fullWidth={true}
+                        handleSelectValue={(val: any) => console.log(val)}
+                        width={"100%"}
+                        selectData={familyIllness}
+                      />
                     </Grid>
-                    <Grid item md={12} sx={{marginTop:2}}>
-                        <CustomSelectPicker
-                          selectValue={""}
-                          size={"small"}
-                          fullWidth={true}
-                          handleSelectValue={(val: any) => console.log(val)}
-                          width={"100%"}
-                          selectData={drugHistory}
-                        />
+                    <Grid item md={12}>
+                      <CustomSelectPicker
+                        selectValue={""}
+                        size={"small"}
+                        fullWidth={true}
+                        handleSelectValue={(val: any) => console.log(val)}
+                        width={"100%"}
+                        selectData={drugHistory}
+                      />
                     </Grid>
-                    <Grid item md={12} sx={{marginTop:2}}>
-                        <CustomSelectPicker
-                          selectValue={""}
-                          size={"small"}
-                          fullWidth={true}
-                          handleSelectValue={(val: any) => console.log(val)}
-                          width={"100%"}
-                          selectData={underMedication}
-                        />
+                    <Grid item md={12}>
+                      <CustomSelectPicker
+                        selectValue={""}
+                        size={"small"}
+                        fullWidth={true}
+                        handleSelectValue={(val: any) => console.log(val)}
+                        width={"100%"}
+                        selectData={underMedication}
+                      />
                     </Grid>
                   </Grid>
-               </Grid>
-                <Grid item md={6}></Grid>
+                </Grid>
+                <Grid item md={6} sx={{ marginTop: 5 }}>
+                  <Grid
+                    container
+                    justifyContent={"space-evenly"}
+                    alignItems={"center"}
+                    rowSpacing={3}
+                  >
+                    <Grid item md={12}>
+                      <Typography sx={styles.label}>Allergies</Typography>
+                      <Box sx={styles.feildContainer1}>
+                        <CustomSelectPicker
+                          selectValue={["allergy1", "allergy2"]}
+                          size={"small"}
+                          fullWidth={true}
+                          handleSelectValue={(val: any) => handleChange(val)}
+                          width={"100%"}
+                          selectData={allergyData}
+                          multiple={true}
+                        />
+                      </Box>
+                    </Grid>
+
+                    <Grid item md={12}>
+                      <Typography sx={styles.label}>
+                        Medical Information
+                      </Typography>
+                      <Box sx={styles.feildContainer1}>
+                        <CustomSelectPicker
+                          selectValue={""}
+                          size={"small"}
+                          fullWidth={true}
+                          handleSelectValue={(val: any) => console.log(val)}
+                          width={"100%"}
+                          selectData={medicalInfo}
+                        />
+                      </Box>
+                    </Grid>
+
+                    <Grid item md={12}>
+                      <Typography sx={styles.label}>Habits</Typography>
+                      <Box sx={styles.feildContainer1}>
+                        <CustomSelectPicker
+                          selectValue={["habit1", "habit2"]}
+                          size={"small"}
+                          fullWidth={true}
+                          handleSelectValue={(val: any) => handleChange(val)}
+                          width={"100%"}
+                          selectData={habitData}
+                          multiple={true}
+                        />
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Grid>
               </Grid>
             </Box>
+            <Box sx={styles.feildContainer}>
+              <Grid container flexDirection={"row"} spacing={1}>
+                <Grid item md={12}>
+                  <Typography sx={styles.label}>
+                    Previous Dental Treatments
+                  </Typography>
+                </Grid>
+                <Grid item md={3}>
+                  <CustomInput
+                    placeholder={"Treatment Name"}
+                    InputProps={""}
+                    size={"small"}
+                  />
+                </Grid>
+                <Grid item md={3}>
+                  <CustomInput
+                    placeholder={"Treatment Month & Year"}
+                    InputProps={""}
+                    size={"small"}
+                  />
+                </Grid>
+                <Grid item md={3}>
+                  <Box sx={styles.iconContainer}>
+                    <AddOutlinedIcon sx={styles.addIcon} />
+                  </Box>
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
+
+          <Box sx={styles.feildContainer}>
+            <Grid container flexDirection={"row"} justifyContent={"flex-end"}>
+              <CustomButton
+                title={"Cancel"}
+                handleButtonClick={buttonClicked}
+                backgroundcolor={"#FFFFFF"}
+                bordercolor={"#9DA2AB"}
+                padding={"4px 50px"}
+                border={"1px solid"}
+                fontsize={"14px"}
+                color={"primary"}
+              />
+              <Box sx={{ marginLeft: 1 }}>
+                <CustomButton
+                  title={"Next"}
+                  handleButtonClick={goToExamination}
+                  backgroundcolor={"#204289"}
+                  bordercolor={"#204289"}
+                  border={"1px solid"}
+                  fontsize={"14px"}
+                  color={"info"}
+                  padding={"4px 50px"}
+                />
+              </Box>
+            </Grid>
           </Box>
         </CustomCard>
       </Box>

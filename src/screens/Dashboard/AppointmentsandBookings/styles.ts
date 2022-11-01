@@ -21,8 +21,8 @@ export const Styles = {
         padding: '0px'
     },
     overflow: {
-        height: '280px',
-        overflowY: "scroll"
+        // height: '280px',
+        // overflowY: "scroll"
     },
     padding: {
         paddingTop: "10px"

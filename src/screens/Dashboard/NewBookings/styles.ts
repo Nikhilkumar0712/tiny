@@ -11,7 +11,7 @@ export const Styles = {
         color: 'primary.main'
     },
     overflow: {
-        overflowY: "scroll",
-        height: "475px"
+        // overflowY: "scroll",
+        // height: "475px"
     }
 }
