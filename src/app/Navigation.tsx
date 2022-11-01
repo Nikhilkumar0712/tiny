@@ -9,6 +9,7 @@ import Receipt from '../screens/Receipt';
 import ManagePatients from '../screens/ManagePatients';
 import PatientRegistrationhoc from '../screens/ManagePatients/PatientRegistration';
 import PatientProfilehoc from '../screens/ManagePatients/PatientProfile';
+import Treatmentshoc from '../screens/Treatments';
 const Navigation = () => {
     return (
         <>
@@ -23,7 +24,7 @@ const Navigation = () => {
                 <Route path="/PatientRegistration" element={PatientRegistrationhoc} />
                 <Route path="/PatientProfile" element={PatientProfilehoc} />
                 <Route path="/Diagnosis" element={Dashboard} />
-                <Route path="/Treatment" element={Dashboard} />
+                <Route path="/Treatments" element={Treatmentshoc} />
                 <Route path="/Billing" element={Dashboard} />
                 <Route path="/Receipt" element={Receipt} />
                 <Route path="/Invoices" element={Dashboard} />

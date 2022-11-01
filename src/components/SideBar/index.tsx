@@ -44,7 +44,7 @@ const sideMenuList = [
     image: require("../../assets/activetreatment.svg"),
     inactiveImage: require("../../assets/inactivetreatment.svg"),
     isCollapsible: false,
-    screenName: "/Treatment",
+    screenName: "/Treatments",
   },
   {
     id: 6,

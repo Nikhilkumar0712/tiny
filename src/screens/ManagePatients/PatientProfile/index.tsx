@@ -66,7 +66,7 @@ const PatientProfile = () => {
             </Box>
             <Box sx={styles.screenContainer}>
                 <CustomCard>
-                    <Box
+                    {/* <Box
                         display={"flex"}
                         alignItems={"space-between"}
                         gap={"10px"}
@@ -143,7 +143,64 @@ const PatientProfile = () => {
                                 </Typography>
                             </Box>
                         </Box>
-                    </Box>
+                    </Box> */}
+                    <Grid container spacing={2}>
+                        <Grid item >
+                            <Box
+                                component={"img"}
+                                alt=" Appointment"
+                                src={require("../../../assets/user.png")}
+                                width={"100px"}>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Box>
+                                <Typography sx={styles.namehead}>
+                                    Patient Name : <span
+                                        style={styles.nametext}>Smrithi</span>
+                                </Typography>
+                            </Box>
+                            <Box mt={2}>
+                                <Typography sx={styles.namehead}>
+                                    Age : <span style={styles.nametext}>27 Yrs</span>
+                                </Typography>
+                            </Box>
+                            <Box mt={2}>
+                                <Typography sx={styles.namehead}>
+                                    Registered On : <span style={styles.nametext}>22 Sept 2022</span>
+                                </Typography>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Box>
+                                <Typography sx={styles.namehead}>
+                                    Patient ID :<span style={styles.nametext}>142567 </span>
+                                </Typography>
+                            </Box>
+                            <Box mt={2}>
+                                <Typography sx={styles.namehead}>
+                                    Gender : <span style={styles.nametext}>Male</span>
+                                </Typography>
+                            </Box>
+                            <Box mt={2}>
+                                <Typography sx={styles.namehead}>
+                                    Address : <span style={styles.nametext}>Slv Syam Enclave, Ameerpet, Hyderabad - 512345</span>
+                                </Typography>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Box>
+                                <Typography sx={styles.namehead}>
+                                    Contact No : <span style={styles.nametext}>9640373728</span>
+                                </Typography>
+                            </Box>
+                            <Box mt={2}>
+                                <Typography sx={styles.namehead}>
+                                    Email : <span style={styles.nametext}>nk812151@gmail.com</span>
+                                </Typography>
+                            </Box>
+                        </Grid>
+                    </Grid>
                 </CustomCard>
                 <Box mt={"30px"}>
                     <CustomCard>
@@ -174,7 +231,7 @@ const PatientProfile = () => {
                                 <PatientRecord />
                             </TabPanel>
                             <TabPanel value='6' sx={styles.TabPanel}>
-                                <OtherDetails/>
+                                <OtherDetails />
                             </TabPanel>
                         </TabContext>
                     </CustomCard>

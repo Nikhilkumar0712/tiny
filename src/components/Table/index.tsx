@@ -17,6 +17,7 @@ const CustomTable = (props : CustomTableInterface) => {
                 rows={rows}
                 columns={coloumns}
                 pageSize={itemsPerPage}
+                getRowHeight={()=>'auto'}
                 rowsPerPageOptions={[rowsPerPage]}
             />
         </div>
