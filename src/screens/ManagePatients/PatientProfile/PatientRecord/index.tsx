@@ -45,7 +45,7 @@ const PatientRecord = () => {
         },
         {
             field: "Date",
-            headerName: "Prescription Name",
+            headerName: "Date",
             width: 250,
             renderCell: (params) => {
                 return (

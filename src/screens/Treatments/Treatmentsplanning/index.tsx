@@ -73,7 +73,6 @@ const TreatmentPlanning = () => {
 
   const buttonClicked = () => { }
 
-
   return (
     <>
       <Box>

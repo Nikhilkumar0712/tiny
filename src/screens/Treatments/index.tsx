@@ -1,10 +1,11 @@
 import React from 'react'
 import HocLayout from '../../components/HocLayout'
-import TreatmentPlanning from './Treatmentsplanning'
+import ConsentForm from './ConsentForm'
+import TreatmentView from './TreatmentView'
 const Treatments = () => {
     return (
         <>
-            <TreatmentPlanning />
+         <ConsentForm/>
         </>
     )
 }
