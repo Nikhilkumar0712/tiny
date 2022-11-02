@@ -335,7 +335,7 @@ const Appointments = () => {
                       />
                     </Grid>
                     <Grid item md={6}>
-                      <CustomDatePicker fullWidth={''} />
+                      <CustomDatePicker fullWidth={true} />
                     </Grid>
                   </Grid>
                 </Grid>

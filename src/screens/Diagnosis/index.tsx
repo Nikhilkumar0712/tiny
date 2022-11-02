@@ -198,9 +198,14 @@ const Diagnosis = () => {
 
       <Box sx={styles.screenContainer}>
         <CustomCard>
-          <Box sx={styles.screenContainer}>
-            <Header path={location.pathname} />
-          </Box>
+          <Grid container  flexDirection={"row"} justifyContent={"space-between"} spacing={16}>
+            <Grid item md={6}>
+                <Header path={location.pathname} />
+            </Grid>
+            <Grid item md={6}>
+               
+            </Grid>
+        </Grid>
           <Box sx={styles.formContainer}>
             <Typography sx={styles.label}>Chief Complaint</Typography>
             <Box sx={styles.feildContainer}>

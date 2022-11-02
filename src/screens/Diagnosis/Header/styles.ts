@@ -3,19 +3,18 @@ export const styles  = {
         border: "1px solid #204289 !important",
         boxShadow: "0px 0px 10px #00000014",
         borderRadius : '10px',
-        width : '50%',
-        height : 50
+        height : 45
     },
     activeTabItemContainer : {
         backgroundColor : 'primary.main',
-        height : 49,
+        height : 44,
         borderRadius : '10px',
         display : 'flex',
         justifyContent : 'center',
         alignItems : 'center'
     },
     inactiveTabItemContainer:{
-        height : 49,
+        height : 44,
         display : 'flex',
         justifyContent : 'center',
         alignItems : 'center'

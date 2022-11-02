@@ -13,7 +13,7 @@ import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import CustomButton from "../../../components/Button";
 import DescriptionIcon from '@mui/icons-material/Description';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-
+import CustomDatePicker from '../../../components/DatePicker';
 
 const Investigation = () => {
 
@@ -290,8 +290,26 @@ const Investigation = () => {
       
       <Box sx={styles.screenContainer}>
         <CustomCard>
+       
           <Box sx={styles.screenContainer}>
-              <Header path={location.pathname} />
+            <Grid container  flexDirection={"row"} justifyContent={"space-between"} spacing={16}>
+                <Grid item md={6}>
+                    <Header path={location.pathname} />
+                </Grid>
+                <Grid item md={6}>
+                    <CustomDatePicker fullWidth={true}/>
+                </Grid>
+            </Grid>
+          </Box>
+          <Box sx={styles.screenContainer1}>
+            <Grid container flexDirection={'row'} justifyContent={'space-between'} >
+                <Grid item md={6}>
+                    <Typography sx={styles.doctorName}>Dr.Surendra    |    Sever Tooth Ache at 18 and 22</Typography>
+                </Grid>
+                <Grid item md={6}>
+                    <Typography sx={styles.investigation}>Select Major Investigation :    Investigation Name</Typography>
+                </Grid>
+            </Grid>
           </Box>
           <Box sx={styles.tableContainer}>
             <CustomTable

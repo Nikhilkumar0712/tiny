@@ -40,7 +40,7 @@ const SelectDoctor = [
 const NewBookings = () => {
     const buttonClicked = () => { };
     return (
-        <>
+        <Box sx={{ marginRight : 2}}>
 
             <Box
                 display={"flex"}
@@ -164,7 +164,7 @@ const NewBookings = () => {
                     </Box>
                 </CustomCard>
             </Box>
-        </>
+        </Box>
     )
 }
 

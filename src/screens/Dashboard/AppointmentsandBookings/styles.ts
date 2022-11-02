@@ -8,7 +8,7 @@ export const Styles = {
     },
     name: {
         fontFamily: 'Poppins',
-        fontSize: 14,
+        fontSize: 13,
         color: '#021025',
         fontWeight: "600"
     },

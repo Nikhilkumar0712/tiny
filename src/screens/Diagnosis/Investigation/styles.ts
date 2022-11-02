@@ -9,6 +9,11 @@ export const styles = {
         marginRight :2,
         marginBottom : 2
     },
+    screenContainer1 : {
+        marginTop  : 3,
+        marginRight :2,
+        marginBottom : 3
+    },
     cardHeader : {
         fontFamily : 'Poppins',
         fontSize : 12,
@@ -39,4 +44,18 @@ export const styles = {
         color : '#204289',
         fontSize : 25
     },
+    doctorName : {
+        fontFamily : 'Poppins',
+        fontSize : 13,
+        color : 'primary.main',
+        fontWeight : '500',
+        textAlign : 'left'
+    },
+    investigation : {
+        fontFamily : 'Poppins',
+        fontSize : 13,
+        color : 'primary.main',
+        fontWeight : '500',
+        textAlign : 'right'
+    }
 }
