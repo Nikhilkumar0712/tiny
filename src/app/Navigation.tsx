@@ -50,6 +50,7 @@ const Navigation = () => {
                 <Route path="/Inventory" element={Dashboard} />
             </Routes>
         </>
+    )
 }
 
 export default Navigation;
