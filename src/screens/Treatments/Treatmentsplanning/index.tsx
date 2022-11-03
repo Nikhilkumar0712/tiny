@@ -22,6 +22,7 @@ import {
   TableRow
 } from '@mui/material';
 import CustomCard from '../../../components/Card';
+import HocLayout from '../../../components/HocLayout';
 
 
 const TreatmentPlanning = () => {
@@ -381,5 +382,5 @@ const TreatmentPlanning = () => {
     </>
   )
 }
-
-export default TreatmentPlanning
+const TreatmentPlanninghoc=HocLayout(TreatmentPlanning)
+export default TreatmentPlanninghoc

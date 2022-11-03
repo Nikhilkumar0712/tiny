@@ -12,6 +12,7 @@ import Breadcrumbs from "../../../components/Breadcrum";
 import CustomCard from "../../../components/Card";
 import Image from '../../../assets/print.svg'
 import CustomButton from '../../../components/Button';
+import HocLayout from '../../../components/HocLayout';
 
 
 const ConsentForm = () => {
@@ -223,5 +224,5 @@ const ConsentForm = () => {
     )
 
 }
-
-export default ConsentForm;
+const ConsentFormhoc=HocLayout(ConsentForm)
+export default ConsentFormhoc

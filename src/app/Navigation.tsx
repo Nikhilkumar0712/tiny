@@ -10,6 +10,10 @@ import ManagePatients from '../screens/ManagePatients';
 import PatientRegistrationhoc from '../screens/ManagePatients/PatientRegistration';
 import PatientProfilehoc from '../screens/ManagePatients/PatientProfile';
 import Treatmentshoc from '../screens/Treatments';
+import TreatmentPlanninghoc from '../screens/Treatments/Treatmentsplanning';
+import VisitingPlanhoc from '../screens/Treatments/VisitingPlan';
+import ConsentFormhoc from '../screens/Treatments/ConsentForm';
+
 const Navigation = () => {
     return (
         <>
@@ -23,6 +27,9 @@ const Navigation = () => {
                 <Route path="/ManagePatients" element={ManagePatients} />
                 <Route path="/PatientRegistration" element={PatientRegistrationhoc} />
                 <Route path="/PatientProfile" element={PatientProfilehoc} />
+                <Route path="/TreatmentPlanning" element={TreatmentPlanninghoc} />
+                <Route path="/VisitingPlan" element={VisitingPlanhoc} />
+                <Route path="/ConsentForm" element={ConsentFormhoc} />
                 <Route path="/Diagnosis" element={Dashboard} />
                 <Route path="/Treatments" element={Treatmentshoc} />
                 <Route path="/Billing" element={Dashboard} />
