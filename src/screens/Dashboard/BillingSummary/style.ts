@@ -1,7 +1,7 @@
 export const Styles = {
     MainHeading: {
         fontFamily: 'Poppins',
-        fontSize: 14,
+        fontSize: 12,
         color: '#021025',
         fontWeight:"550"
     },
@@ -12,7 +12,7 @@ export const Styles = {
     },
     name: {
         fontFamily: 'Poppins',
-        fontSize: 16,
+        fontSize: 14,
         color: '#021025',
         fontWeight: "600"
     },
@@ -23,7 +23,7 @@ export const Styles = {
     },
     amount: {
         fontFamily: 'Poppins',
-        fontSize: 18,
+        fontSize: 15,
         color: '#204289',
         fontWeight: "600"
     }

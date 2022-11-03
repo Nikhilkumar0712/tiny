@@ -20,7 +20,9 @@ const CustomDatePicker = (props:DatePickerWidth ) => {
       '& .MuiOutlinedInput-root': {
         '& fieldset': {
           borderRadius: `10px`,
-          borderColor: `#204289`,
+          borderColor: `#9DA2AB`,
+          boxShadow: "0px 0px 10px #00000014",
+          borderWidth: 1,
         },
         '& .MuiInputBase-input': {
           fontSize: '13px',

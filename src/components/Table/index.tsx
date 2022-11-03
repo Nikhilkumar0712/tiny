@@ -8,8 +8,8 @@ interface CustomTableInterface {
     coloumns : any;
     itemsPerPage: any;
     rowsPerPage : any;
-    rowHeight? : number,
-    onCellClick:any
+   onCellClick:any
+    rowHeight? : number
 }
 
 const useStyles = makeStyles({

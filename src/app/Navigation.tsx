@@ -6,6 +6,7 @@ import AppointmentsView from '../screens/Appointments/View';
 import Bookings from '../screens/Bookings';
 import BookingsView from '../screens/Bookings/View';
 import Receipt from '../screens/Receipt';
+import Billing from '../screens/Billing';
 import ManagePatients from '../screens/ManagePatients';
 import PatientRegistrationhoc from '../screens/ManagePatients/PatientRegistration';
 import PatientProfilehoc from '../screens/ManagePatients/PatientProfile';
@@ -13,6 +14,11 @@ import Treatmentshoc from '../screens/Treatments';
 import TreatmentPlanninghoc from '../screens/Treatments/Treatmentsplanning';
 import VisitingPlanhoc from '../screens/Treatments/VisitingPlan';
 import ConsentFormhoc from '../screens/Treatments/ConsentForm';
+import CaseHistory from '../screens/Diagnosis';
+import Examination from '../screens/Diagnosis/Examination';
+import Investigation from '../screens/Diagnosis/Investigation';
+import Prescription from '../screens/Diagnosis/Prescription';
+
 
 const Navigation = () => {
     return (
@@ -30,7 +36,10 @@ const Navigation = () => {
                 <Route path="/TreatmentPlanning" element={TreatmentPlanninghoc} />
                 <Route path="/VisitingPlan" element={VisitingPlanhoc} />
                 <Route path="/ConsentForm" element={ConsentFormhoc} />
-                <Route path="/Diagnosis" element={Dashboard} />
+                <Route path="/Diagnosis" element={CaseHistory} />
+                <Route path="/Examination" element={Examination} />
+                <Route path="/Investigation" element={Investigation} />
+                <Route path="/Prescription" element={Prescription} />
                 <Route path="/Treatments" element={Treatmentshoc} />
                 <Route path="/Billing" element={Dashboard} />
                 <Route path="/Receipt" element={Receipt} />
@@ -41,6 +50,6 @@ const Navigation = () => {
                 <Route path="/Inventory" element={Dashboard} />
             </Routes>
         </>
-    )
 }
+
 export default Navigation;

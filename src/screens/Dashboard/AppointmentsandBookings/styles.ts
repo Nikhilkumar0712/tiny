@@ -8,7 +8,7 @@ export const Styles = {
     },
     name: {
         fontFamily: 'Poppins',
-        fontSize: 16,
+        fontSize: 13,
         color: '#021025',
         fontWeight: "600"
     },
@@ -21,8 +21,8 @@ export const Styles = {
         padding: '0px'
     },
     overflow: {
-        height: '280px',
-        overflowY: "scroll"
+        // height: '280px',
+        // overflowY: "scroll"
     },
     padding: {
         paddingTop: "10px"

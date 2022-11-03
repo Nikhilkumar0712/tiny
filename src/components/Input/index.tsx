@@ -6,11 +6,13 @@ import { styles } from "./styles";
 interface customInputInterface {
   size: any;
   placeholder: any,
-  InputProps: any
+  InputProps: any,
+  disabled ? :boolean,
+  multiline? : boolean
 }
 const CustomInput = (props: customInputInterface) => {
 
-  const { size, placeholder, InputProps } = props;
+  const { size, placeholder, InputProps,disabled,multiline } = props;
 
   const StyledTextField = withStyles({
     root: {
@@ -18,7 +20,10 @@ const CustomInput = (props: customInputInterface) => {
       '& .MuiOutlinedInput-root': {
         '& fieldset': {
           borderRadius: `10px`,
-          borderColor: `#204289`,
+          borderColor: `#9DA2AB`,
+          boxShadow: "0px 0px 10px #00000014",
+          borderWidth: 1,
+          
         },
         '& .MuiInputBase-input': {
           fontSize: '13px',
@@ -31,6 +36,8 @@ const CustomInput = (props: customInputInterface) => {
   return (
     <Box>
       <StyledTextField
+        disabled = {disabled}
+        multiline={multiline}
         InputProps={props.InputProps}
         sx={styles.input}
         size={size ? size : 'small'}

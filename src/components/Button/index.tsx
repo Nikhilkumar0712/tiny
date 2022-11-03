@@ -19,7 +19,7 @@ interface CustomButtonInterface {
   | "warning",
   fontsize:string,
   border: string,
-  endIcon:any
+  endIcon?:any
 }
 interface ButtonStylesprops {
   backgroundcolor: string,
