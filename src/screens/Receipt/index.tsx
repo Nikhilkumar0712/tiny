@@ -234,7 +234,8 @@ const Receipt = () => {
         <Grid container>
           <Grid item md={12}>
             <CustomCard>
-              <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} />
+              <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} 
+              onCellClick={""}/>
             </CustomCard>
           </Grid>
         </Grid>

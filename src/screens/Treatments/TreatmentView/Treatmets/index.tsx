@@ -113,7 +113,8 @@ const Treatments = () => {
     ];
     return (
         <>
-            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} />
+            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} 
+            onCellClick={""}/>
         </>
     )
 }

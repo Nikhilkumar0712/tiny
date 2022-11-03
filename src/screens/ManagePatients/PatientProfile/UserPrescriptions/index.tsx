@@ -92,7 +92,8 @@ const UserPrescription = () => {
     ];
     return (
         <Box>
-            <CustomTable coloumns={columns} rows={rows} itemsPerPage={4} rowsPerPage={4} />
+            <CustomTable coloumns={columns} rows={rows} itemsPerPage={4} rowsPerPage={4} 
+            onCellClick={""}/>
         </Box>
     )
 }

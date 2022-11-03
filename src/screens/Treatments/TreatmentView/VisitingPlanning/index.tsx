@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography, withStyles } from '@mui/material';
 import { styles } from './styles';
 import CustomTable from '../../../../components/Table';
 import { Link as RouterLink } from 'react-router-dom';
@@ -59,6 +59,7 @@ const VisitingPlanning = () => {
                         <Box
                             display={"flex"}
                             flexDirection={"column"}
+                            alignItems={"center"}
                             gap={'15px'}>
                             <Box
                                 display={"flex"} gap={"3px"}>
@@ -66,7 +67,7 @@ const VisitingPlanning = () => {
                                 <Typography sx={styles.rowData}>{params.row.Time1}</Typography>
                             </Box>
                             <Box
-                                display={"flex"} gap={"3px"}>
+                                display={"flex"} gap={"3px"} >
                                 <Typography sx={styles.rowData}>{params.row.Date2}</Typography>
                                 <Typography sx={styles.rowData}>{params.row.Time2}</Typography>
                             </Box>
@@ -152,11 +153,25 @@ const VisitingPlanning = () => {
             TreatmentStatus: "Status",
             PaymentStatus: 'Status',
         },
+        {
+            id: 2,
+            Visits: "Visit 1",
+            Treatment2: "Root Canal",
+            Date2: "31 Aug 2022",
+            Time2: "06:00 Pm",
+            Cost: "7000",
+            TreatmentStatus: "Status",
+            PaymentStatus: 'Status',
+        },
 
     ];
+
+
+
     return (
         <>
-            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} rowHeight={100} />
+            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} rowHeight={100} 
+            onCellClick={""}/>
         </>
     )
 }

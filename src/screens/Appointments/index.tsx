@@ -340,7 +340,8 @@ const Appointments = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} />
+              <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} 
+              onCellClick={""}/>
             </CustomCard>
           </Grid>
           <Grid item md={4}>

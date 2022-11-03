@@ -212,7 +212,8 @@ const ConsentForm = () => {
                                     padding={"4px 30px"}
                                     endIcon={""} />
                             </Box>
-                            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} />
+                            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} 
+                            onCellClick={""}/>
                         </CustomCard>
                     </Grid>
                 </Grid>

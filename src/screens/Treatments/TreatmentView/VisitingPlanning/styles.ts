@@ -23,5 +23,6 @@ export const styles = {
     },
     notes:{
         width:"15px"
-    }
+    },
+  
 }

@@ -42,6 +42,9 @@ const TreatmentView = () => {
         setValue(newValue);
     };
 
+ 
+
+
     const buttonClicked = () => { }
     return (
         <>
