@@ -8,7 +8,7 @@ interface CustomTableInterface {
     coloumns : any;
     itemsPerPage: any;
     rowsPerPage : any;
-   onCellClick:any
+   onCellClick?:any
     rowHeight? : number
 }
 
