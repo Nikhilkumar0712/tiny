@@ -5,8 +5,7 @@ export const styles = {
         color : 'primary.main'
     },
     screenContainer : {
-        marginTop  : 2,
-        width : '80%'
+        marginTop  : 2
     },
     cardHeaderContainer : {
         display : 'flex',

@@ -40,7 +40,7 @@ const SelectDoctor = [
 const NewBookings = () => {
     const buttonClicked = () => { };
     return (
-        <>
+        <Box sx={{ marginRight : 2}}>
 
             <Box
                 display={"flex"}
@@ -147,7 +147,8 @@ const NewBookings = () => {
                                 padding={"4px 50px"}
                                 border={"1px solid"}
                                 fontsize={"14px"}
-                                color={"primary"} />
+                                color={"primary"} 
+                                endIcon={""}/>
                         </Box>
                         <Box mt={"18px"}>
                             <CustomButton title={"Book"}
@@ -157,12 +158,13 @@ const NewBookings = () => {
                                 border={"1px solid"}
                                 fontsize={"14px"}
                                 color={"info"}
-                                padding={"4px 50px"} />
+                                padding={"4px 50px"}
+                                endIcon={""} />
                         </Box>
                     </Box>
                 </CustomCard>
             </Box>
-        </>
+        </Box>
     )
 }
 

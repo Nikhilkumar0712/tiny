@@ -7,10 +7,11 @@ interface CustomTableInterface {
     coloumns : any;
     itemsPerPage: any;
     rowsPerPage : any;
+    rowHeight? : number
 }
 
 const CustomTable = (props : CustomTableInterface) => {
-    const { rows , coloumns, itemsPerPage,rowsPerPage } = props;
+    const { rows , coloumns, itemsPerPage,rowsPerPage,rowHeight } = props;
     return(
         <div style={styles.tableContainer}>
             <DataGrid
@@ -18,6 +19,7 @@ const CustomTable = (props : CustomTableInterface) => {
                 columns={coloumns}
                 pageSize={itemsPerPage}
                 rowsPerPageOptions={[rowsPerPage]}
+                rowHeight={rowHeight ? rowHeight : 100}
             />
         </div>
         

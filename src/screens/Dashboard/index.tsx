@@ -24,13 +24,10 @@ const Dashboard = () => {
                         </Grid>
                     </Grid>
                     <Grid item xs={4} paddingLeft={"16px"}>
-
                         <NewBookings />
                     </Grid>
                 </Grid>
             </Box>
-
-
         </>
     )
 }

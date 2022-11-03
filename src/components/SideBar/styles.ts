@@ -3,7 +3,7 @@ export const styles = {
         backgroundColor : 'primary.main',
     },
     sidebarContainer : {    
-        height : '100vh',
+        height : '100%',
         backgroundColor : 'primary.main',
         borderTopRightRadius : 20,
         borderBottomRightRadius : 20,
