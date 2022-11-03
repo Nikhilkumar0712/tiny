@@ -18,9 +18,10 @@ export const styles = {
     nametext: {
         fontSize: 14,
         fontFamily: "poppins",
-        color: '#204289'
+        color: '#204289',
     },
     TabPanel:{
         padding:"0px"
-    }
+    },
+
 }

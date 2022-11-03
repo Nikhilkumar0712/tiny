@@ -120,9 +120,6 @@ const AppointmentandBookings = () => {
                         </Box>
                         <TabPanel value="1" sx={Styles.Tabpanel}>
                             <Box >
-                                <Typography sx={Styles.ViewALL}>
-                                    View All
-                                </Typography>
                                 <Box display={"flex"}
                                     gap={"10px"}
                                     alignItems={"center"}

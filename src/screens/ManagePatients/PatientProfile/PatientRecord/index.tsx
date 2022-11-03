@@ -45,7 +45,7 @@ const PatientRecord = () => {
         },
         {
             field: "Date",
-            headerName: "Prescription Name",
+            headerName: "Date",
             width: 250,
             renderCell: (params) => {
                 return (
@@ -113,7 +113,8 @@ const PatientRecord = () => {
     ];
     return (
         <Box>
-            <CustomTable coloumns={columns} rows={rows} itemsPerPage={4} rowsPerPage={4} />
+            <CustomTable coloumns={columns} rows={rows} itemsPerPage={4} rowsPerPage={4} 
+            onCellClick={""}/>
         </Box>
     )
 }

@@ -29,6 +29,7 @@ export const Styles = {
     },
     TabColor: {
         textTransform:"none",
+        padding: '0px'
 
     }
 }
