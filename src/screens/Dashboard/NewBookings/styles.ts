@@ -12,6 +12,7 @@ export const Styles = {
         marginRight : 2
     },
     overflow: {
+        padding : 2
         // overflowY: "scroll",
         // height: "475px"
     }

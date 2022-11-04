@@ -206,10 +206,15 @@ const SideMenuItem = (props: sidemenuInterface) => {
               </Box>
             </Box>
             <Collapse in={open} timeout="auto" unmountOnExit>
+            <Link to={`/SlotsView`} style={styles.link}>
+              <Box style={styles.menuItems}>
+                <Typography sx={styles.subMenuText}>Calendar</Typography>
+              </Box>
+            </Link>
             <Link to={`/Appointments`} style={styles.link}>
               <Box style={styles.menuItems}>
                 <Typography sx={styles.subMenuText}>
-                  View Appointments
+                  View Confirmed
                 </Typography>
               </Box>
             </Link>
@@ -220,11 +225,7 @@ const SideMenuItem = (props: sidemenuInterface) => {
               </Box>
             </Link>
 
-            <Link to={`/SlotsView`} style={styles.link}>
-              <Box style={styles.menuItems}>
-                <Typography sx={styles.subMenuText}>Slots View</Typography>
-              </Box>
-            </Link>
+            
           </Collapse>
             </>
             
