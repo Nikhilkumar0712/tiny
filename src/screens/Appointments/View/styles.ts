@@ -9,7 +9,7 @@ export const styles = {
         fontSize : 14,
         fontWeight : 500,
         color : '#021025',
-        margin  :2,
+        margin  :3,
         paddingLeft : 6
     },
     avatarImage : {
@@ -39,7 +39,8 @@ export const styles = {
         fontSize : 14,
         fontWeight : 500,
         color : '#021025',
-        marginBottom:0.5
+        marginBottom:0.5,
+        marginRight : 1
     },
     patientId : {
         fontFamily : 'Poppins',
@@ -53,7 +54,7 @@ export const styles = {
         fontFamily : 'Poppins',
         fontSize : 13,
         color : 'red',
-        marginLeft : 1,
-        marginTop : 1
+        marginLeft  :1,
+        marginRight : '17%'
     }
 }

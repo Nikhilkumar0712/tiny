@@ -26,15 +26,12 @@ const Appointments = () => {
   };
 
   const breadcrumbs = [
-    <RouterLink
-      to="/Dashboard"
-      style={styles.breadcrumbSubtext}
-    >
+    <RouterLink to="/Dashboard" style={styles.breadcrumbSubtext}>
       Dashboard
     </RouterLink>,
     <Typography key="2" sx={styles.breadcrumbSubtext}>
       Confirmed Appointments
-    </Typography>
+    </Typography>,
   ];
 
   const selectData = [
@@ -140,15 +137,18 @@ const Appointments = () => {
 
   return (
     <>
-    <Grid container justifyContent={'space-between'} alignItems={'center'}>
-       <Grid item md={8}>
-          <Breadcrumbs title={"Confirmed Appointments"} breadcrumbsArr={breadcrumbs} />
-       </Grid>
-       <Grid item md={4}>
+      <Grid container justifyContent={"space-between"} alignItems={"center"}>
+        <Grid item md={8}>
+          <Breadcrumbs
+            title={"Confirmed Appointments"}
+            breadcrumbsArr={breadcrumbs}
+          />
+        </Grid>
+        <Grid item md={4}>
           <Typography sx={styles.heading}>New Booking</Typography>
-       </Grid>
-    </Grid>
-      
+        </Grid>
+      </Grid>
+
       <Box sx={styles.screenContainer}>
         <Grid container spacing={1}>
           <Grid item md={8}>
@@ -196,18 +196,28 @@ const Appointments = () => {
                 <CustomTable header={tableHeadData}>
                   {rows.map((row) => (
                     <TableRow key={row.id}>
-                      <TableCell>
+                      <TableCell sx={{ padding: 0 }}>
                         <Grid
                           container
                           justifyContent={"space-around"}
                           alignItems={"center"}
                         >
                           <Box
+                            sx={{
+                              height: 60,
+                              width: 0.01,
+                              backgroundColor: "#3DD230",
+                              borderRadius : 10
+                            }}
+                          />
+
+                          <Box
                             component="img"
                             sx={{
                               height: 45,
                               width: 45,
                               borderRadius: 22,
+                              marginRight:1
                             }}
                             alt={row.PatientName}
                             src={require("../../assets/avtar.png")}
@@ -274,8 +284,14 @@ const Appointments = () => {
                           justifyContent={"space-between"}
                         >
                           <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                          <RouterLink to="/BookingsView" style={{textDecoration : 'none'}}>
-                            <Typography sx={styles.tableCell}> View </Typography>
+                          <RouterLink
+                            to="/AppointmentsView"
+                            style={{ textDecoration: "none" }}
+                          >
+                            <Typography sx={styles.tableCell}>
+                              {" "}
+                              View{" "}
+                            </Typography>
                           </RouterLink>
                           <MoreVertIcon sx={styles.actionIcon} />
                         </Grid>

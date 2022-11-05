@@ -24,13 +24,15 @@ export const styles  = {
         color : '#fff',
         fontSize : 13,
         fontWeight : 600,
-        textAlign : 'center'
+        textAlign : 'center',
+        textDecoration : 'none'
     },
     navItem : {
         fontFamily : 'Poppins',
         color : 'primary.main',
         fontSize : 13,
         fontWeight : 600,
-        textAlign : 'center'
+        textAlign : 'center',
+        textDecoration : 'none'
     }
 }

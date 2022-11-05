@@ -9,14 +9,14 @@ import CustomCard from "../../components/Card";
 import CustomInput from "../../components/Input";
 import CustomDatePicker from "../../components/DatePicker";
 import CustomSelectPicker from "../../components/SelectPicker";
-import CustomTable from "../../components/Table";
-import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import CircleIcon from '@mui/icons-material/Circle';
-import DescriptionIcon from '@mui/icons-material/Description';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import { Link as RouterLink } from 'react-router-dom';
+import CustomTable from "../../components/Tabel";
 import NewBookings from "../Dashboard/NewBookings";
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import CircleIcon from "@mui/icons-material/Circle";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import { Link as RouterLink } from "react-router-dom";
 
 const Bookings = () => {
   const navigate = useNavigate();
@@ -26,18 +26,11 @@ const Bookings = () => {
   };
 
   const breadcrumbs = [
-    <Link
-      underline="hover"
-      key="1" 
-      color="inherit"
-      href="/Dashboard"
-      onClick={handleOnClickBreadcrumItem}
-      sx={styles.breadcrumbSubtext}
-    >
+    <RouterLink to="/Dashboard" style={styles.breadcrumbSubtext}>
       Dashboard
-    </Link>,
+    </RouterLink>,
     <Typography key="2" sx={styles.breadcrumbSubtext}>
-      Bookings
+      Booked Appointments
     </Typography>,
   ];
 
@@ -52,235 +45,111 @@ const Bookings = () => {
     },
   ];
 
-  const columns: GridColDef[] = [
-    {
-      field: "Patient",
-      headerName: "Patient",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <Grid
-            container
-            flexDirection="row"
-            alignItems={"center"}
-          >
-            <Box
-              component="img"
-              sx={styles.avatarImage}
-              alt="Logo"
-              src={require("../../assets/avtar.png")}
-            />
-
-            <Typography sx={styles.patientName}>
-              {params.row.Patient}
-            </Typography>
-          </Grid>
-        );
-      },
-    },
-    {
-      field: "DateTime",
-      width: 220,
-      headerName: "Booking Date & Time",
-      renderCell: (params) => {
-        return (
-          <>
-            <Typography sx={styles.rowData}>
-              {params.row.Date} <br /> {params.row.Time}
-            </Typography>
-          </>
-        );
-      },
-    },
-    {
-      field: "Doctor",
-      headerName: "Doctor",
-      renderCell: (params) => {
-        return (
-          <>
-            <Typography sx={styles.rowData}>{params.row.Doctor}</Typography>
-          </>
-        );
-      },
-    },
-    {
-      field: "Type",
-      headerName: "Type",
-      renderCell: (params) => {
-        return (
-          <>
-            <Typography sx={styles.rowData}>{params.row.Type}</Typography>
-          </>
-        );
-      },
-    },
-    {
-      field: "Notes",
-      headerName: "Notes",
-      renderCell: (params) => {
-        if (params.row.Type === "Treatment") {
-          return (
-            <DescriptionIcon style={styles.notesIcon} />
-          )
-        } else {
-          return (
-            <>
-              <Typography sx={styles.rowData}>-</Typography>
-            </>
-          );
-        }
-
-      },
-    },
-    {
-      field: "Actions",
-      headerName: "Actions",
-      width: 100,
-      renderCell: (params) => {
-        return (
-          <Grid
-            container
-            flexDirection="row"
-            justifyContent={"space-between"}
-
-          >
-            <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-            <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> View </Typography></RouterLink>
-            <MoreVertIcon sx={styles.actionIcon} />
-          </Grid>
-        )
-      },
-    },
+  const tableHeadData = [
+    "Patient Name",
+    "Booking Date&Time",
+    "Doctor",
+    "Type",
+    "Notes",
+    "Actions",
   ];
 
   const rows = [
     {
-      id: 2,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
+      id: 1,
+      PatientName: "Vijay Reddy",
+      AppointmentDate: "31 Aug 2022",
+      AppointmentTime: "06:00 Pm",
       Doctor: "Dr.Basava",
+      
       Type: "OP",
-      Notes: "-",
-      Actions: "-",
+      Notes: "",
+      Actions: "",
     },
     {
       id: 2,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
+      PatientName: "Vijay Reddy",
+      AppointmentDate: "31 Aug 2022",
+      AppointmentTime: "06:00 Pm",
       Doctor: "Dr.Basava",
+     
       Type: "OP",
-      Notes: "-",
-      Actions: "-",
+      Notes: "",
+      Actions: "",
     },
     {
       id: 3,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
+      PatientName: "Vijay Reddy",
+      AppointmentDate: "31 Aug 2022",
+      AppointmentTime: "06:00 Pm",
       Doctor: "Dr.Basava",
-      Type: "Treatment",
-      Notes: "-",
-      Actions: "-",
+      
+      Type: "OP",
+      Notes: "",
+      Actions: "",
     },
     {
       id: 4,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
+      PatientName: "Vijay Reddy",
+      AppointmentDate: "31 Aug 2022",
+      AppointmentTime: "06:00 Pm",
       Doctor: "Dr.Basava",
+      
       Type: "OP",
-      Notes: "-",
-      Actions: "-",
+      Notes: "",
+      Actions: "",
     },
     {
       id: 5,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
+      PatientName: "Vijay Reddy",
+      AppointmentDate: "31 Aug 2022",
+      AppointmentTime: "06:00 Pm",
       Doctor: "Dr.Basava",
-      Type: "Treatment",
-      Notes: "-",
-      Actions: "-",
+      
+      Type: "OP",
+      Notes: "",
+      Actions: "",
     },
     {
       id: 6,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
+      PatientName: "Vijay Reddy",
+      AppointmentDate: "31 Aug 2022",
+      AppointmentTime: "06:00 Pm",
       Doctor: "Dr.Basava",
+      
       Type: "OP",
-      Notes: "-",
-      Actions: "-",
+      Notes: "",
+      Actions: "",
     },
     {
       id: 7,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
+      PatientName: "Vijay Reddy",
+      AppointmentDate: "31 Aug 2022",
+      AppointmentTime: "06:00 Pm",
       Doctor: "Dr.Basava",
+      
       Type: "OP",
-      Notes: "-",
-      Actions: "-",
-    },
-    {
-      id: 8,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
-      Doctor: "Dr.Basava",
-      Type: "OP",
-      Notes: "-",
-      Actions: "-",
-    },
-    {
-      id: 9,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
-      Doctor: "Dr.Basava",
-      Type: "OP",
-      Notes: "-",
-      Actions: "-",
-    },
-    {
-      id: 10,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
-      Doctor: "Dr.Basava",
-      Type: "OP",
-      Notes: "-",
-      Actions: "-",
-    },
-    {
-      id: 11,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
-      Doctor: "Dr.Basava",
-      Type: "OP",
-      Notes: "-",
-      Actions: "-",
-    },
-    {
-      id: 12,
-      Patient: "Vijay Reddy",
-      Date: "31 Aug 2022",
-      Time: " 06:00 Pm",
-      Doctor: "Dr.Basava",
-      Type: "OP",
-      Notes: "-",
-      Actions: "-",
+      Notes: "",
+      Actions: "",
     },
   ];
 
   return (
     <>
-      <Breadcrumbs title={"Bookings"} breadcrumbsArr={breadcrumbs} />
+      <Grid container justifyContent={"space-between"} alignItems={"center"}>
+        <Grid item md={8}>
+          <Breadcrumbs
+            title={"Booked Appointments"}
+            breadcrumbsArr={breadcrumbs}
+          />
+        </Grid>
+        <Grid item md={4}>
+          <Typography sx={styles.heading}>New Booking</Typography>
+        </Grid>
+      </Grid>
+
       <Box sx={styles.screenContainer}>
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
           <Grid item md={8}>
             <CustomCard>
               <Grid
@@ -288,19 +157,24 @@ const Bookings = () => {
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
+                sx={styles.filterContainer}
+                spacing={6}
               >
                 <Grid item>
-                  <CustomInput size={"small"} placeholder="Search Patients"
+                  <CustomInput
+                    size={"small"}
+                    placeholder="Search Patients"
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
                           <Search />
                         </InputAdornment>
                       ),
-                    }} />
+                    }}
+                  />
                 </Grid>
                 <Grid item>
-                  <Grid container spacing={2}>
+                  <Grid container spacing={1}>
                     <Grid item md={6}>
                       <CustomSelectPicker
                         selectValue={1}
@@ -312,16 +186,110 @@ const Bookings = () => {
                       />
                     </Grid>
                     <Grid item md={6}>
-                      <CustomDatePicker fullWidth={''} />
+                      <CustomDatePicker fullWidth={true} />
                     </Grid>
                   </Grid>
                 </Grid>
               </Grid>
-              <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} 
-              onCellClick={""}/>
+              <Box sx={styles.tableContainer}>
+                <CustomTable header={tableHeadData}>
+                  {rows.map((row) => (
+                    <TableRow key={row.id}>
+                      <TableCell sx={{ padding: 0 }}>
+                        <Grid
+                          container
+                          justifyContent={"space-around"}
+                          alignItems={"center"}
+                        >
+                          <Box
+                            sx={{
+                              height: 60,
+                              width: 0.01,
+                              backgroundColor: "#3DD230",
+                              borderRadius : 10
+                            }}
+                          />
+
+                          <Box
+                            component="img"
+                            sx={{
+                              height: 45,
+                              width: 45,
+                              borderRadius: 22,
+                              marginRight:1
+                            }}
+                            alt={row.PatientName}
+                            src={require("../../assets/avtar.png")}
+                          />
+                          <Typography sx={styles.tableCell}>
+                            {row.PatientName}
+                          </Typography>
+                        </Grid>
+                      </TableCell>
+                      <TableCell>
+                        <Typography sx={styles.appointmentDate}>
+                          {row.AppointmentDate}
+                        </Typography>
+                        <br />
+                        <Typography sx={styles.appointmentTime}>
+                          {row.AppointmentTime}
+                        </Typography>
+                      </TableCell>
+                      <TableCell>
+                        <Typography sx={styles.tableCell}>
+                          {row.Doctor}
+                        </Typography>
+                      </TableCell>
+                     
+                      <TableCell>
+                        <Typography sx={styles.tableCell}>
+                          {row.Type}
+                        </Typography>
+                      </TableCell>
+                      <TableCell>
+                        <Grid
+                          container
+                          justifyContent={"space-around"}
+                          alignItems={"center"}
+                        >
+                          <Box
+                            component="img"
+                            sx={{
+                              height: 25,
+                              width: 25,
+                              borderRadius: 22,
+                            }}
+                            alt={row.PatientName}
+                            src={require("../../assets/activeaccounts.svg")}
+                          />{" "}
+                          <Typography sx={styles.tableCell}>Notes</Typography>
+                        </Grid>
+                      </TableCell>
+                      <TableCell>
+                        <Grid
+                          container
+                          flexDirection="row"
+                          justifyContent={"space-between"}
+                        >
+                          <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
+                          <RouterLink
+                            to="/BookingsView"
+                            style={{ textDecoration: "none" }}
+                          >
+                            <Typography sx={styles.tableCell}>
+                              {" "}
+                              View{" "}
+                            </Typography>
+                          </RouterLink>
+                          <MoreVertIcon sx={styles.actionIcon} />
+                        </Grid>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </CustomTable>
+              </Box>
             </CustomCard>
           </Grid>
-
           <Grid item md={4}>
             <NewBookings />
           </Grid>

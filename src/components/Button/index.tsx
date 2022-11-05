@@ -44,13 +44,14 @@ const BootstrapButton = styled(Button)((props: ButtonStylesprops) => ({
   backgroundColor: props.backgroundcolor,
   borderColor: props.bordercolor,
   borderRadius : 10,
+  fontWeight : '200',
   fontFamily: [
     '"Poppins"',
   ].join(','),
   '&:hover': {
     backgroundColor: props.backgroundcolor,
-    borderColor: "none",
-    boxShadow: 'none',
+    border: '5px',
+    opacity : 0.9
   },
   '&:active': {
     boxShadow: 'none',

@@ -5,8 +5,8 @@ import CustomCard from "../../../components/Card";
 import { Typography, Link, Grid, Box } from "@mui/material";
 import Breadcrum from "../../../components/Breadcrum";
 import CustomButton from "../../../components/Button";
-import { DashboardBillingSummary } from "../../Dashboard/BillingSummary";
 import AppointmentandBookings from "../../Dashboard/AppointmentsandBookings";
+import CircleIcon from "@mui/icons-material/Circle";
 
 const AppointmentsView = () => {
   const handleOnClickBreadcrumItem = () => {};
@@ -51,12 +51,13 @@ const AppointmentsView = () => {
               flexDirection={"row"}
               justifyContent={"space-between"}
               alignItems={"center"}
-              p={2}
+              pr={2}
+              pt={2}
             >
-              <Grid item md={4}>
+              <Grid item md={5}>
                 <Typography sx={styles.heading}>Patient Details</Typography>
               </Grid>
-              <Grid item md={8}>
+              <Grid item md={7}>
                 <Grid
                   container
                   flexDirection={"row"}
@@ -240,8 +241,11 @@ const AppointmentsView = () => {
                   </Grid>
                 </Grid>
                 <Grid item md={4}>
-                  <Grid container flexDirection={"row"} alignItems={"center"}>
+                  <Grid container flexDirection={"row"} alignItems={"center"} justifyContent={'flex-end'}>
                     <Typography sx={styles.patientHeading}>Chair :</Typography>
+                    <CircleIcon
+                      style={{ color: 'red', fontSize: 11 }}
+                    />{" "}
                     <Typography sx={styles.chairtext}>Red</Typography>
                   </Grid>
                 </Grid>
@@ -289,7 +293,7 @@ const AppointmentsView = () => {
                 <Grid item md={4}>
                   <Grid container flexDirection={"row"} alignItems={"center"}>
                     <Typography sx={styles.patientHeading}>
-                      Referral Contact No :{" "}
+                        Referral Contact No : 
                     </Typography>
                     <Typography sx={styles.patientId}>8013981781</Typography>
                   </Grid>

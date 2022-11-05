@@ -9,7 +9,6 @@ export const styles = {
         marginTop  : 2,
         height : '100vh',
         marginRight : 1
-       
 
     },
     cardHeaderContainer : {

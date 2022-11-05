@@ -7,9 +7,7 @@ export const styles = {
     },
     screenContainer : {
         marginTop  : 2,
-        height : '100vh',
-       
-
+        height : '100vh'
     },
     cardHeaderContainer : {
         display : 'flex',
@@ -87,6 +85,11 @@ export const styles = {
         fontWeight : '600',
         marginTop : 6,
         marginLeft : 1
+    },
+    verticalLine : {
+      position : 'absolute',
+      //top : 40,
+      zIndex : 99999
     }
      
 }

@@ -18,7 +18,7 @@ import CaseHistory from '../screens/Diagnosis';
 import Examination from '../screens/Diagnosis/Examination';
 import Investigation from '../screens/Diagnosis/Investigation';
 import Prescription from '../screens/Diagnosis/Prescription';
-
+import Expenses from '../screens/Expenses';
 
 const Navigation = () => {
     return (
@@ -41,13 +41,14 @@ const Navigation = () => {
                 <Route path="/Investigation" element={Investigation} />
                 <Route path="/Prescription" element={Prescription} />
                 <Route path="/Treatments" element={Treatmentshoc} />
-                <Route path="/Billing" element={Dashboard} />
+                <Route path="/Billing" element={Billing} />
                 <Route path="/Receipt" element={Receipt} />
                 <Route path="/Invoices" element={Dashboard} />
                 <Route path="/Labs" element={Dashboard} />
                 <Route path="/Settings" element={Dashboard} />
                 <Route path="/Accounts" element={Dashboard} />
                 <Route path="/Inventory" element={Dashboard} />
+                <Route path="/Expenses" element={Expenses}></Route>
             </Routes>
         </>
     )

@@ -198,7 +198,7 @@ const Diagnosis = () => {
 
       <Box sx={styles.screenContainer}>
         <CustomCard>
-          <Grid container  flexDirection={"row"} justifyContent={"space-between"} spacing={16}>
+          <Grid container  flexDirection={"row"} justifyContent={"space-between"} spacing={16} sx={{padding : 2}}>
             <Grid item md={6}>
                 <Header path={location.pathname} />
             </Grid>
@@ -216,6 +216,7 @@ const Diagnosis = () => {
                 handleSelectValue={(val: any) => console.log(val)}
                 width={"100%"}
                 selectData={complaintData}
+                placeholderText={'Type patients chief complaints here'}
               />
             </Box>
 
@@ -246,6 +247,7 @@ const Diagnosis = () => {
                         handleSelectValue={(val: any) => console.log(val)}
                         width={"100%"}
                         selectData={presentIllness}
+                        placeholderText={'Present illness'}
                       />
                     </Grid>
                     <Grid item md={6}>
@@ -256,6 +258,7 @@ const Diagnosis = () => {
                         handleSelectValue={(val: any) => console.log(val)}
                         width={"100%"}
                         selectData={pastIllness}
+                        placeholderText={'Past illness'}
                       />
                     </Grid>
                     <Grid item md={12}>
@@ -266,6 +269,7 @@ const Diagnosis = () => {
                         handleSelectValue={(val: any) => console.log(val)}
                         width={"100%"}
                         selectData={familyIllness}
+                        placeholderText={'Family History Illness'}
                       />
                     </Grid>
                     <Grid item md={12}>
@@ -276,6 +280,7 @@ const Diagnosis = () => {
                         handleSelectValue={(val: any) => console.log(val)}
                         width={"100%"}
                         selectData={drugHistory}
+                        placeholderText={'Drug History'}
                       />
                     </Grid>
                     <Grid item md={12}>
@@ -286,6 +291,7 @@ const Diagnosis = () => {
                         handleSelectValue={(val: any) => console.log(val)}
                         width={"100%"}
                         selectData={underMedication}
+                        placeholderText={'Using any Medication'}
                       />
                     </Grid>
                   </Grid>
@@ -308,6 +314,7 @@ const Diagnosis = () => {
                           width={"100%"}
                           selectData={allergyData}
                           multiple={true}
+                          
                         />
                       </Box>
                     </Grid>
@@ -324,6 +331,7 @@ const Diagnosis = () => {
                           handleSelectValue={(val: any) => console.log(val)}
                           width={"100%"}
                           selectData={medicalInfo}
+                          placeholderText={'Enter medical information'}
                         />
                       </Box>
                     </Grid>
@@ -339,6 +347,7 @@ const Diagnosis = () => {
                           width={"100%"}
                           selectData={habitData}
                           multiple={true}
+                          
                         />
                       </Box>
                     </Grid>

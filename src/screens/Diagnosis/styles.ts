@@ -6,7 +6,7 @@ export const styles = {
     },
     screenContainer : {
         marginTop  : 2,
-        marginRight :2,
+        marginRight :1,
         marginBottom : 2
     },
     cardHeader : {
@@ -39,9 +39,9 @@ export const styles = {
         fontWeight : 600,
     },
     formContainer : {
-        marginLeft : 8,
-        marginTop : 6,
-        marginRight : 8
+        marginLeft : 10,
+        marginTop : 3,
+        marginRight : 10
     },
     feildContainer : {
         marginTop : 3,
