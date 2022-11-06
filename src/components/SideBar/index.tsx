@@ -126,14 +126,14 @@ const SideMenuItem = (props: sidemenuInterface) => {
                   sx={styles.menuImage}
                   alt="Logo"
                   src={
-                    location.pathname === "/Billing" || location.pathname ===  "Receipt"
+                    location.pathname === "/Billing" || location.pathname ===  "Receipt" || location.pathname === "Expenses"
                       ? item.image
                       : item.inactiveImage
                   }
                 />
                 <Typography
                   sx={
-                    location.pathname === "/Billing" || location.pathname ===  "Receipt"
+                    location.pathname === "/Billing" || location.pathname ===  "Receipt" || location.pathname === "Expenses"
                       ? styles.menuTextActive
                       : styles.menuText
                   }
@@ -159,6 +159,12 @@ const SideMenuItem = (props: sidemenuInterface) => {
             <Link to={`/Receipt`} style={styles.link}>
               <Box style={styles.menuItems}>
                 <Typography sx={styles.subMenuText}>Receipt</Typography>
+              </Box>
+            </Link>
+
+            <Link to={`/Expenses`} style={styles.link}>
+              <Box style={styles.menuItems}>
+                <Typography sx={styles.subMenuText}>Expenses</Typography>
               </Box>
             </Link>
 
@@ -206,10 +212,15 @@ const SideMenuItem = (props: sidemenuInterface) => {
               </Box>
             </Box>
             <Collapse in={open} timeout="auto" unmountOnExit>
+            <Link to={`/SlotsView`} style={styles.link}>
+              <Box style={styles.menuItems}>
+                <Typography sx={styles.subMenuText}>Calendar</Typography>
+              </Box>
+            </Link>
             <Link to={`/Appointments`} style={styles.link}>
               <Box style={styles.menuItems}>
                 <Typography sx={styles.subMenuText}>
-                  View Appointments
+                  View Confirmed
                 </Typography>
               </Box>
             </Link>
@@ -220,11 +231,7 @@ const SideMenuItem = (props: sidemenuInterface) => {
               </Box>
             </Link>
 
-            <Link to={`/SlotsView`} style={styles.link}>
-              <Box style={styles.menuItems}>
-                <Typography sx={styles.subMenuText}>Slots View</Typography>
-              </Box>
-            </Link>
+            
           </Collapse>
             </>
             

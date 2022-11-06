@@ -13,8 +13,8 @@ const HocLayout = (Component: any) => {
       </Grid>
       <Grid item md={10} sx={styles.mainGrid}>
         <Grid container spacing={3} sx={styles.headerContainer}>
-          <Grid item md={4}>
-            <CustomInput size={'small'} placeholder="Search Patients"
+          <Grid item md={4}> 
+            <CustomInput size={'small'} placeholder="Search Patients"  placeholderColor="#204289" placeholderColorOpacity={1} placeholderSize={15}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">

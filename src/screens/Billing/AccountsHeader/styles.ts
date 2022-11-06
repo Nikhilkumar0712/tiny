@@ -1,17 +1,18 @@
 export const styles = {
     cardContainer : {
-        marginRight : 2,
-        marginTop : 1
+      marginRight : 1,
+      marginTop : 2
     },
     avatarImage:{
-        width : 45,
-        height : 45,
-        borderRadius : 25
+        width : 38,
+        height : 38,
+        borderRadius : 20
     },
     patientName : {
         fontFamily : 'Poppins',
         fontSize : 13,
-        color : 'black'
+        color : '#021025',
+        fontWeight:'600'
     },
     patientId : {
         fontFamily : 'Poppins',

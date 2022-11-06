@@ -11,7 +11,8 @@ export const styles = {
         paddingBottom : 3,
         paddingLeft : 2,
         paddingRight : 2,
-       
+        position : 'fixed',
+        width : '16%'
     },
     logoImage : {
         height : '45px',

@@ -8,11 +8,14 @@ interface customInputInterface {
   placeholder: any,
   InputProps: any,
   disabled ? :boolean,
-  multiline? : boolean
+  multiline? : boolean,
+  placeholderColor?: any,
+  placeholderColorOpacity? : any,
+  placeholderSize? : any
 }
 const CustomInput = (props: customInputInterface) => {
 
-  const { size, placeholder, InputProps,disabled,multiline } = props;
+  const { size, placeholder, InputProps,disabled,multiline,placeholderColor,placeholderColorOpacity,placeholderSize } = props;
 
   const StyledTextField = withStyles({
     root: {
@@ -29,6 +32,11 @@ const CustomInput = (props: customInputInterface) => {
           fontSize: '13px',
           padding: '11px'
         },
+        "& input::placeholder": {
+          color: placeholderColor ? placeholderColor : '#9DA2AB',
+          fontSize: placeholderSize ? placeholderSize : 12,
+          opacity : placeholderColorOpacity ? placeholderColorOpacity : 1
+        }
       },
     },
   })(TextField);

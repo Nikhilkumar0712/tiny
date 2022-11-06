@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Grid, Box } from "@mui/material";
 import { styles } from "./styles";
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink } from "react-router-dom";
 interface HeaderInterface {
   path: string;
 }
@@ -18,14 +18,15 @@ const Header = (props: HeaderInterface) => {
                 : styles.inactiveTabItemContainer
             }
           >
-            <RouterLink to={'/Diagnosis'}>
-                <Typography
-                sx={path === "/Diagnosis" ? styles.activeNavItem : styles.navItem}
-                >
+            <RouterLink to={"/Diagnosis"} style={{ textDecoration: "none" }}>
+              <Typography
+                sx={
+                  path === "/Diagnosis" ? styles.activeNavItem : styles.navItem
+                }
+              >
                 Case History
-                </Typography>
+              </Typography>
             </RouterLink>
-            
           </Box>
         </Grid>
         <Grid item md={3}>
@@ -36,16 +37,17 @@ const Header = (props: HeaderInterface) => {
                 : styles.inactiveTabItemContainer
             }
           >
-            <RouterLink to={'/Examination'}>
-                <Typography
+            <RouterLink to={"/Examination"} style={{ textDecoration: "none" }}>
+              <Typography
                 sx={
-                    path === "/Examination" ? styles.activeNavItem : styles.navItem
+                  path === "/Examination"
+                    ? styles.activeNavItem
+                    : styles.navItem
                 }
-                >
+              >
                 Examination
-                </Typography>
+              </Typography>
             </RouterLink>
-            
           </Box>
         </Grid>
         <Grid item md={3}>
@@ -56,18 +58,20 @@ const Header = (props: HeaderInterface) => {
                 : styles.inactiveTabItemContainer
             }
           >
-            <RouterLink to={'/Investigation'}>
-                <Typography
+            <RouterLink
+              to={"/Investigation"}
+              style={{ textDecoration: "none" }}
+            >
+              <Typography
                 sx={
-                    path === "/Investigation"
+                  path === "/Investigation"
                     ? styles.activeNavItem
                     : styles.navItem
                 }
-                >
+              >
                 Investigation
-                </Typography>
+              </Typography>
             </RouterLink>
-            
           </Box>
         </Grid>
         <Grid item md={3}>
@@ -78,16 +82,17 @@ const Header = (props: HeaderInterface) => {
                 : styles.inactiveTabItemContainer
             }
           >
-            <RouterLink to={'/Prescription'}>
-                <Typography
+            <RouterLink to={"/Prescription"} style={{ textDecoration: "none" }}>
+              <Typography
                 sx={
-                    path === "/Prescription" ? styles.activeNavItem : styles.navItem
+                  path === "/Prescription"
+                    ? styles.activeNavItem
+                    : styles.navItem
                 }
-                >
+              >
                 Prescription
-                </Typography>
+              </Typography>
             </RouterLink>
-            
           </Box>
         </Grid>
       </Grid>

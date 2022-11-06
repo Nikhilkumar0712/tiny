@@ -14,7 +14,7 @@ import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlin
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 import AccountsHeader from "../Billing/AccountsHeader";
 
-const Receipt = () => {
+const Expenses = () => {
   const navigate = useNavigate();
 
 
@@ -23,7 +23,7 @@ const Receipt = () => {
       Dashboard
     </RouterLink>,
     <Typography key="2" sx={styles.breadcrumbSubtext}>
-      Receipt
+      Expenses
     </Typography>,
   ];
 
@@ -39,11 +39,10 @@ const Receipt = () => {
   ];
 
   const tableHeadData = [
-    "Receipt No",
-    "Receipt Date",
-    "Bill No",
-    "Bill Date",
-    "Treatment Type",
+    "Expenses ID",
+    "Expenses Type",
+    "Expenses For",
+    "Expenses Description",
     "Amount",
     "Mode",
     "Actions",
@@ -52,98 +51,71 @@ const Receipt = () => {
   const rows = [
     {
       id: 1,
-      ReceiptNo: "R23",
-      ReceiptDate: "22 Sept 2022",
-      BillNo: "156",
-      BillDate: "22 Sept 2022",
-      TreatmentType: "OP",
+      ExpensesID: "R23",
+      ExpensesType: "Asset",
+      ExpensesFor: "For Office",
+      ExpensesDescription: "description",
       Amount: "7000",
       Mode: "Cash",
-      Actions: "",
+      Actions: ""
     },
     {
       id: 2,
-      ReceiptNo: "R23",
-      ReceiptDate: "22 Sept 2022",
-      BillNo: "156",
-      BillDate: "22 Sept 2022",
-      TreatmentType: "OP",
+      ExpensesID: "R23",
+      ExpensesType: "Asset",
+      ExpensesFor: "For Office",
+      ExpensesDescription: "description",
       Amount: "7000",
       Mode: "Cash",
-      Actions: "",
+      Actions: ""
     },
     {
       id: 3,
-      ReceiptNo: "R23",
-      ReceiptDate: "22 Sept 2022",
-      BillNo: "156",
-      BillDate: "22 Sept 2022",
-      TreatmentType: "OP",
+      ExpensesID: "R23",
+      ExpensesType: "Asset",
+      ExpensesFor: "For Office",
+      ExpensesDescription: "description",
       Amount: "7000",
       Mode: "Cash",
-      Actions: "",
+      Actions: ""
     },
     {
       id: 4,
-      ReceiptNo: "R23",
-      ReceiptDate: "22 Sept 2022",
-      BillNo: "156",
-      BillDate: "22 Sept 2022",
-      TreatmentType: "OP",
+      ExpensesID: "R23",
+      ExpensesType: "Asset",
+      ExpensesFor: "For Office",
+      ExpensesDescription: "description",
       Amount: "7000",
       Mode: "Cash",
-      Actions: "",
+      Actions: ""
     },
     {
       id: 5,
-      ReceiptNo: "R23",
-      ReceiptDate: "22 Sept 2022",
-      BillNo: "156",
-      BillDate: "22 Sept 2022",
-      TreatmentType: "OP",
+      ExpensesID: "R23",
+      ExpensesType: "Asset",
+      ExpensesFor: "For Office",
+      ExpensesDescription: "description",
       Amount: "7000",
       Mode: "Cash",
-      Actions: "",
+      Actions: ""
     },
     {
       id: 6,
-      ReceiptNo: "R23",
-      ReceiptDate: "22 Sept 2022",
-      BillNo: "156",
-      BillDate: "22 Sept 2022",
-      TreatmentType: "OP",
+      ExpensesID: "R23",
+      ExpensesType: "Asset",
+      ExpensesFor: "For Office",
+      ExpensesDescription: "description",
       Amount: "7000",
       Mode: "Cash",
-      Actions: "",
+      Actions: ""
     },
-    {
-      id: 7,
-      ReceiptNo: "R23",
-      ReceiptDate: "22 Sept 2022",
-      BillNo: "156",
-      BillDate: "22 Sept 2022",
-      TreatmentType: "OP",
-      Amount: "7000",
-      Mode: "Cash",
-      Actions: "",
-    },
-    {
-      id: 8,
-      ReceiptNo: "R23",
-      ReceiptDate: "22 Sept 2022",
-      BillNo: "156",
-      BillDate: "22 Sept 2022",
-      TreatmentType: "OP",
-      Amount: "7000",
-      Mode: "Cash",
-      Actions: "",
-    },
+   
   ];
 
   return (
     <>
       <Grid container  alignItems={"center"} justifyContent={'space-between'}>
-         <Breadcrumbs title={"Receipt"} breadcrumbsArr={breadcrumbs} />
+         <Breadcrumbs title={"Expenses"} breadcrumbsArr={breadcrumbs} />
          <AccountsHeader />
       </Grid>
 
@@ -157,27 +129,22 @@ const Receipt = () => {
                     <TableRow key={row.id}>
                       <TableCell>
                         <Typography sx={styles.tableCell}>
-                          {row.ReceiptNo}
+                          {row.ExpensesID}
                         </Typography>
                       </TableCell>
                       <TableCell>
                         <Typography sx={styles.tableCell}>
-                          {row.ReceiptDate}
+                          {row.ExpensesType}
                         </Typography>
                       </TableCell>
                       <TableCell>
                         <Typography sx={styles.tableCell}>
-                          {row.BillNo}
+                          {row.ExpensesFor}
                         </Typography>
                       </TableCell>
                       <TableCell>
                         <Typography sx={styles.tableCell}>
-                          {row.BillDate}
-                        </Typography>
-                      </TableCell>
-                      <TableCell>
-                        <Typography sx={styles.tableCell}>
-                          {row.TreatmentType}
+                          {row.ExpensesDescription}
                         </Typography>
                       </TableCell>
                       <TableCell>
@@ -256,5 +223,5 @@ const Receipt = () => {
   );
 };
 
-const ReceiptHoc = HocLayout(Receipt);
-export default ReceiptHoc;
+const ExpensesHoc = HocLayout(Expenses);
+export default ExpensesHoc;

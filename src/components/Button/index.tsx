@@ -38,19 +38,20 @@ interface ButtonStylesprops {
 const BootstrapButton = styled(Button)((props: ButtonStylesprops) => ({
   textTransform: 'none',
   fontSize: props.fontsize,
-  fontWeight: 500,
-  border: props.border,
+   border: props.border,
   color: props.color,
   padding: props.padding,
   backgroundColor: props.backgroundcolor,
   borderColor: props.bordercolor,
+  borderRadius : 10,
+  fontWeight : '400',
   fontFamily: [
     '"Poppins"',
   ].join(','),
   '&:hover': {
-    backgroundColor: props.backgroundcolor,
-    borderColor: "none",
     boxShadow: 'none',
+    backgroundColor: "none",
+    borderColor: "none",
   },
   '&:active': {
     boxShadow: 'none',

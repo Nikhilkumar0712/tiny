@@ -8,8 +8,7 @@ export const styles = {
     screenContainer : {
         marginTop  : 2,
         height : '100vh',
-        marginRight : 1,
-        marginBottom : 2
+        marginRight : 1
 
     },
     cardHeaderContainer : {
@@ -64,8 +63,7 @@ export const styles = {
         color : '#204289',
         textAlign : 'center',
         textDecoration: 'none',
-        marginLeft : 1,
-        marginTop : 0.5
+        marginLeft : 1
     },
     appointmentDate : {
         fontFamily : 'Poppins',
@@ -95,26 +93,6 @@ export const styles = {
       position : 'absolute',
       //top : 40,
       zIndex : 99999
-    },
-    screenContainer1 : {
-        marginTop  : 2,
-        marginLeft :4,
-        marginRight : 4,
-        marginBottom : 3
-    },
-    doctorName : {
-        fontFamily : 'Poppins',
-        fontSize : 13,
-        color : 'primary.main',
-        fontWeight : '500',
-        textAlign : 'left'
-    },
-    investigation : {
-        fontFamily : 'Poppins',
-        fontSize : 13,
-        color : 'primary.main',
-        fontWeight : '500',
-        textAlign : 'right'
     }
      
 }

@@ -1,10 +1,8 @@
 import React from "react";
-import { Select, MenuItem, FormControl,Box } from "@mui/material";
+import { Select, MenuItem, FormControl, Box, Typography,Grid } from "@mui/material";
 import { styles } from "./styles";
 import makeStyles from "@material-ui/styles/makeStyles";
-import OutlinedInput from '@mui/material/OutlinedInput';
-import Chip from '@mui/material/Chip';
-
+import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 
 interface CustomSelectPickerInterface {
   selectValue: any;
@@ -14,6 +12,7 @@ interface CustomSelectPickerInterface {
   width: any;
   selectData: any;
   multiple?: boolean;
+  placeholderText?: any;
 }
 
 const useStyles = makeStyles({
@@ -34,9 +33,15 @@ const useStyles = makeStyles({
 });
 
 const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
-
-  const { selectValue, handleSelectValue, size, width, selectData, multiple } =
-    props;
+  const {
+    selectValue,
+    handleSelectValue,
+    size,
+    width,
+    selectData,
+    multiple,
+    placeholderText,
+  } = props;
 
   const classes = useStyles();
 
@@ -66,18 +71,21 @@ const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
           size={size}
           renderValue={(selected) => (
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-              {selected.map((value : any) => (
-                <Chip key={value} label={value} color="primary" />
+              {selected.map((value: any) => (
+                <Box sx={styles.tagBackground}>
+                  <Grid container flexDirection={'row'}>
+                      <Typography sx={styles.tagvalue} key={value}>{value}</Typography>
+                      <HighlightOffOutlinedIcon sx={styles.actionIcon} />
+                  </Grid>
+                </Box>
+                
               ))}
             </Box>
           )}
           MenuProps={MenuProps}
         >
           {selectData.map((item: any) => (
-            <MenuItem
-              key={item.value}
-              value={item.value}
-            >
+            <MenuItem key={item.value} value={item.value}>
               {item.name}
             </MenuItem>
           ))}
@@ -88,6 +96,17 @@ const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
           value={selectValue}
           onChange={handleSelectValue}
           displayEmpty
+          renderValue={
+            selectValue !== ""
+              ? undefined
+              : () => {
+                  return (
+                    <Typography style={{ fontSize: 12, color: "#9DA2AB" }}>
+                      {placeholderText}
+                    </Typography>
+                  );
+                }
+          }
         >
           {selectData.map((item: any) => {
             return <MenuItem value={item.value}>{item.name}</MenuItem>;

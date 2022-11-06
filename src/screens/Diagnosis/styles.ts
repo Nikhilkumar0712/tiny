@@ -6,7 +6,7 @@ export const styles = {
     },
     screenContainer : {
         marginTop  : 2,
-        marginRight :2,
+        marginRight :1,
         marginBottom : 2
     },
     cardHeader : {
@@ -37,11 +37,19 @@ export const styles = {
         fontSize : 14,
         color : '#021025',
         fontWeight : 600,
+       
+    },
+    label1 : {
+        fontFamily : 'Poppins',
+        fontSize : 14,
+        color : '#021025',
+        fontWeight : 600,
+        marginBottom : 2
     },
     formContainer : {
-        marginLeft : 8,
-        marginTop : 6,
-        marginRight : 8
+        marginLeft : 10,
+        marginTop : 3,
+        marginRight : 10
     },
     feildContainer : {
         marginTop : 3,
@@ -63,8 +71,11 @@ export const styles = {
     },
     addIcon : {
         color : 'white',
-       
-        
-    }
-   
+    },
+    buttonContainer:{
+        marginRight : 6,
+        marginBottom : 3,
+        marginTop : 3   
+    },
+    
 }
