@@ -182,12 +182,12 @@ const Diagnosis = () => {
   };
 
   const goToExamination = () => {
-    navigate('/Examination')
+    navigate("/Examination");
   };
 
   const buttonClicked = () => {
-    console.log('button clicked')
-  }
+    console.log("button clicked");
+  };
 
   return (
     <>
@@ -198,28 +198,37 @@ const Diagnosis = () => {
 
       <Box sx={styles.screenContainer}>
         <CustomCard>
-          <Grid container  flexDirection={"row"} justifyContent={"space-between"} spacing={16} sx={{padding : 2}}>
+          <Grid
+            container
+            flexDirection={"row"}
+            justifyContent={"space-between"}
+            spacing={16}
+            sx={{ padding: 2 }}
+          >
             <Grid item md={6}>
-                <Header path={location.pathname} />
+              <Header path={location.pathname} />
             </Grid>
-            <Grid item md={6}>
-               
-            </Grid>
-        </Grid>
+            <Grid item md={6}></Grid>
+          </Grid>
           <Box sx={styles.formContainer}>
-            <Typography sx={styles.label}>Chief Complaint</Typography>
             <Box sx={styles.feildContainer}>
-              <CustomSelectPicker
-                selectValue={""}
-                size={"small"}
-                fullWidth={true}
-                handleSelectValue={(val: any) => console.log(val)}
-                width={"100%"}
-                selectData={complaintData}
-                placeholderText={'Type patients chief complaints here'}
-              />
+              <Grid container>
+                <Grid item md={12}>
+                  <Typography sx={styles.label1}>Chief Complaint</Typography>
+                  <Box sx={{ marginLeft: 4 }}>
+                    <CustomSelectPicker
+                      selectValue={""}
+                      size={"small"}
+                      fullWidth={true}
+                      handleSelectValue={(val: any) => console.log(val)}
+                      width={"100%"}
+                      selectData={complaintData}
+                      placeholderText={"Type patients chief complaints here"}
+                    />
+                  </Box>
+                </Grid>
+              </Grid>
             </Box>
-
             <Box sx={styles.feildContainer}>
               <Grid
                 container
@@ -229,74 +238,76 @@ const Diagnosis = () => {
                 spacing={4}
               >
                 <Grid item md={6}>
-                  <Grid
-                    container
-                    justifyContent={"space-evenly"}
-                    alignItems={"center"}
-                    rowSpacing={2}
-                    spacing={4}
-                  >
-                    <Grid item md={12}>
-                      <Typography sx={styles.label}>History</Typography>
-                    </Grid>
-                    <Grid item md={6}>
-                      <CustomSelectPicker
-                        selectValue={""}
-                        size={"small"}
-                        fullWidth={true}
-                        handleSelectValue={(val: any) => console.log(val)}
-                        width={"100%"}
-                        selectData={presentIllness}
-                        placeholderText={'Present illness'}
-                      />
-                    </Grid>
-                    <Grid item md={6}>
-                      <CustomSelectPicker
-                        selectValue={""}
-                        size={"small"}
-                        fullWidth={true}
-                        handleSelectValue={(val: any) => console.log(val)}
-                        width={"100%"}
-                        selectData={pastIllness}
-                        placeholderText={'Past illness'}
-                      />
-                    </Grid>
-                    <Grid item md={12}>
-                      <CustomSelectPicker
-                        selectValue={""}
-                        size={"small"}
-                        fullWidth={true}
-                        handleSelectValue={(val: any) => console.log(val)}
-                        width={"100%"}
-                        selectData={familyIllness}
-                        placeholderText={'Family History Illness'}
-                      />
-                    </Grid>
-                    <Grid item md={12}>
-                      <CustomSelectPicker
-                        selectValue={""}
-                        size={"small"}
-                        fullWidth={true}
-                        handleSelectValue={(val: any) => console.log(val)}
-                        width={"100%"}
-                        selectData={drugHistory}
-                        placeholderText={'Drug History'}
-                      />
-                    </Grid>
-                    <Grid item md={12}>
-                      <CustomSelectPicker
-                        selectValue={""}
-                        size={"small"}
-                        fullWidth={true}
-                        handleSelectValue={(val: any) => console.log(val)}
-                        width={"100%"}
-                        selectData={underMedication}
-                        placeholderText={'Using any Medication'}
-                      />
-                    </Grid>
+                  <Grid item md={12}>
+                    <Typography sx={styles.label1}>History</Typography>
                   </Grid>
+                  <Box sx={{ marginLeft: 5 }}>
+                    <Grid
+                      container
+                      justifyContent={"space-evenly"}
+                      alignItems={"center"}
+                      rowSpacing={2}
+                      spacing={4}
+                    >
+                      <Grid item md={6}>
+                        <CustomSelectPicker
+                          selectValue={""}
+                          size={"small"}
+                          fullWidth={true}
+                          handleSelectValue={(val: any) => console.log(val)}
+                          width={"100%"}
+                          selectData={presentIllness}
+                          placeholderText={"Present illness"}
+                        />
+                      </Grid>
+                      <Grid item md={6}>
+                        <CustomSelectPicker
+                          selectValue={""}
+                          size={"small"}
+                          fullWidth={true}
+                          handleSelectValue={(val: any) => console.log(val)}
+                          width={"100%"}
+                          selectData={pastIllness}
+                          placeholderText={"Past illness"}
+                        />
+                      </Grid>
+                      <Grid item md={12}>
+                        <CustomSelectPicker
+                          selectValue={""}
+                          size={"small"}
+                          fullWidth={true}
+                          handleSelectValue={(val: any) => console.log(val)}
+                          width={"100%"}
+                          selectData={familyIllness}
+                          placeholderText={"Family History Illness"}
+                        />
+                      </Grid>
+                      <Grid item md={12}>
+                        <CustomSelectPicker
+                          selectValue={""}
+                          size={"small"}
+                          fullWidth={true}
+                          handleSelectValue={(val: any) => console.log(val)}
+                          width={"100%"}
+                          selectData={drugHistory}
+                          placeholderText={"Drug History"}
+                        />
+                      </Grid>
+                      <Grid item md={12}>
+                        <CustomSelectPicker
+                          selectValue={""}
+                          size={"small"}
+                          fullWidth={true}
+                          handleSelectValue={(val: any) => console.log(val)}
+                          width={"100%"}
+                          selectData={underMedication}
+                          placeholderText={"Using any Medication"}
+                        />
+                      </Grid>
+                    </Grid>
+                  </Box>
                 </Grid>
-                <Grid item md={6} sx={{ marginTop: 5 }}>
+                <Grid item md={6} sx={{ marginTop: 6 }}>
                   <Grid
                     container
                     justifyContent={"space-evenly"}
@@ -314,7 +325,6 @@ const Diagnosis = () => {
                           width={"100%"}
                           selectData={allergyData}
                           multiple={true}
-                          
                         />
                       </Box>
                     </Grid>
@@ -331,7 +341,7 @@ const Diagnosis = () => {
                           handleSelectValue={(val: any) => console.log(val)}
                           width={"100%"}
                           selectData={medicalInfo}
-                          placeholderText={'Enter medical information'}
+                          placeholderText={"Enter medical information"}
                         />
                       </Box>
                     </Grid>
@@ -347,7 +357,6 @@ const Diagnosis = () => {
                           width={"100%"}
                           selectData={habitData}
                           multiple={true}
-                          
                         />
                       </Box>
                     </Grid>
@@ -358,34 +367,38 @@ const Diagnosis = () => {
             <Box sx={styles.feildContainer}>
               <Grid container flexDirection={"row"} spacing={1}>
                 <Grid item md={12}>
-                  <Typography sx={styles.label}>
+                  <Typography sx={styles.label1}>
                     Previous Dental Treatments
                   </Typography>
                 </Grid>
-                <Grid item md={3}>
-                  <CustomInput
-                    placeholder={"Treatment Name"}
-                    InputProps={""}
-                    size={"small"}
-                  />
-                </Grid>
-                <Grid item md={3}>
-                  <CustomInput
-                    placeholder={"Treatment Month & Year"}
-                    InputProps={""}
-                    size={"small"}
-                  />
-                </Grid>
-                <Grid item md={3}>
-                  <Box sx={styles.iconContainer}>
-                    <AddOutlinedIcon sx={styles.addIcon} />
-                  </Box>
-                </Grid>
               </Grid>
+              <Box sx={{ marginLeft: 5 }}>
+                <Grid container flexDirection={"row"} spacing={1}>
+                  <Grid item md={3}>
+                    <CustomInput
+                      placeholder={"Treatment Name"}
+                      InputProps={""}
+                      size={"small"}
+                    />
+                  </Grid>
+                  <Grid item md={3}>
+                    <CustomInput
+                      placeholder={"Treatment Month & Year"}
+                      InputProps={""}
+                      size={"small"}
+                    />
+                  </Grid>
+                  <Grid item md={3}>
+                    <Box sx={styles.iconContainer}>
+                      <AddOutlinedIcon sx={styles.addIcon} />
+                    </Box>
+                  </Grid>
+                </Grid>
+              </Box>
             </Box>
           </Box>
 
-          <Box sx={styles.feildContainer}>
+          <Box sx={styles.buttonContainer}>
             <Grid container flexDirection={"row"} justifyContent={"flex-end"}>
               <CustomButton
                 title={"Cancel"}
@@ -393,7 +406,7 @@ const Diagnosis = () => {
                 backgroundcolor={"#FFFFFF"}
                 bordercolor={"#9DA2AB"}
                 padding={"4px 50px"}
-                border={"1px solid"}
+                border={"1.5px solid"}
                 fontsize={"14px"}
                 color={"primary"}
               />
@@ -403,7 +416,7 @@ const Diagnosis = () => {
                   handleButtonClick={goToExamination}
                   backgroundcolor={"#204289"}
                   bordercolor={"#204289"}
-                  border={"1px solid"}
+                  border={"1.5px solid"}
                   fontsize={"14px"}
                   color={"info"}
                   padding={"4px 50px"}

@@ -37,6 +37,14 @@ export const styles = {
         fontSize : 14,
         color : '#021025',
         fontWeight : 600,
+       
+    },
+    label1 : {
+        fontFamily : 'Poppins',
+        fontSize : 14,
+        color : '#021025',
+        fontWeight : 600,
+        marginBottom : 2
     },
     formContainer : {
         marginLeft : 10,
@@ -63,8 +71,11 @@ export const styles = {
     },
     addIcon : {
         color : 'white',
-       
-        
-    }
-   
+    },
+    buttonContainer:{
+        marginRight : 6,
+        marginBottom : 3,
+        marginTop : 3   
+    },
+    
 }

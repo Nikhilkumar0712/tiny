@@ -1,9 +1,8 @@
 import React from "react";
-import { Select, MenuItem, FormControl, Box, Typography } from "@mui/material";
+import { Select, MenuItem, FormControl, Box, Typography,Grid } from "@mui/material";
 import { styles } from "./styles";
 import makeStyles from "@material-ui/styles/makeStyles";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import Chip from "@mui/material/Chip";
+import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 
 interface CustomSelectPickerInterface {
   selectValue: any;
@@ -73,7 +72,13 @@ const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
           renderValue={(selected) => (
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
               {selected.map((value: any) => (
-                <Chip key={value} label={value} color="primary" />
+                <Box sx={styles.tagBackground}>
+                  <Grid container flexDirection={'row'}>
+                      <Typography sx={styles.tagvalue} key={value}>{value}</Typography>
+                      <HighlightOffOutlinedIcon sx={styles.actionIcon} />
+                  </Grid>
+                </Box>
+                
               ))}
             </Box>
           )}

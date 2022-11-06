@@ -223,12 +223,13 @@ const paymentModes = [
         </Grid>
         <Grid item md={4}>
           <CustomSelectPicker
-            selectValue={1}
+            selectValue={''}
             size={"small"}
             fullWidth={true}
             handleSelectValue={(val: any) => console.log(val)}
             width={"100%"}
             selectData={selectData}
+            placeholderText={'Select Doctor'}
           />
         </Grid>
       </Grid>
@@ -242,32 +243,35 @@ const paymentModes = [
       >
         <Grid item md={4}>
           <CustomSelectPicker
-            selectValue={1}
+            selectValue={''}
             size={"small"}
             fullWidth={true}
             handleSelectValue={(val: any) => console.log(val)}
             width={"100%"}
             selectData={schemeData}
+            placeholderText={'Select Scheme'}
           />
         </Grid>
         <Grid item md={4}>
           <CustomSelectPicker
-            selectValue={1}
+            selectValue={''}
             size={"small"}
             fullWidth={true}
             handleSelectValue={(val: any) => console.log(val)}
             width={"100%"}
             selectData={amountData}
+            placeholderText={'Amount'}
           />
         </Grid>
         <Grid item md={4}>
           <CustomSelectPicker
-            selectValue={1}
+            selectValue={''}
             size={"small"}
             fullWidth={true}
             handleSelectValue={(val: any) => console.log(val)}
             width={"100%"}
             selectData={typeData}
+            placeholderText={'Type of Bill'}
           />
         </Grid>
       </Grid>
@@ -281,12 +285,13 @@ const paymentModes = [
       >
         <Grid item md={4}>
           <CustomSelectPicker
-            selectValue={1}
+            selectValue={''}
             size={"small"}
             fullWidth={true}
             handleSelectValue={(val: any) => console.log(val)}
             width={"100%"}
             selectData={paymentModes}
+            placeholderText={'Select Mode of Payment'}
           />
         </Grid>
         <Grid item md={4}>
