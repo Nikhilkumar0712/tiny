@@ -110,7 +110,7 @@ const Receipt = () => {
       ReceiptNo: "R23",
       ReceiptDate: "22 Sept 2022",
       BillNo: "156",
-      BillDate: "22 Sept 2022",
+      BillDate: "22 Sept ",
       TreatmentType: "OP",
       Amount: "7000",
       Mode: "Cash",
