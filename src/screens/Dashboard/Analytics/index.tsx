@@ -18,66 +18,68 @@ const Analytics = () => {
                 gap={2}>
                 <Box width={"100%"}>
                     <CustomCard>
-                        <Box
-                            display={"flex"}
-                            justifyContent={"space-between"}
-                            alignItems={"baseline"}>
-                            <Box>
-                                <Typography sx={Styles.breadcrumbSubtext}>
-                                    Appointments
-                                </Typography>
-                            </Box>
+                        <Box sx={Styles.Container}>
                             <Box
                                 display={"flex"}
-                                gap={1}
-                                flexDirection={"column"}>
-                                <Box
-                                    display={"flex"}
-                                    alignItems={"center"}>
-                                    <Typography sx={Styles.today}>
-                                        Today
+                                justifyContent={"space-between"}
+                                alignItems={"baseline"}>
+                                <Box>
+                                    <Typography sx={Styles.breadcrumbSubtext}>
+                                        Appointments
                                     </Typography>
-                                    <ArrowDropDownIcon />
                                 </Box>
                                 <Box
                                     display={"flex"}
                                     gap={1}
-                                    alignItems={"center"}
-                                    justifyContent={"end"}>
+                                    flexDirection={"column"}>
                                     <Box
-                                        component={'img'}
-                                        src={require("../../../assets/Analytics.svg")}
-                                        alt='Analytics'
-                                        fontSize={'20px'}>
-                                    </Box>
-                                    <Box>
-                                        <Typography sx={Styles.AnalatyicsNumber}>
-                                            80%
+                                        display={"flex"}
+                                        alignItems={"center"}>
+                                        <Typography sx={Styles.today}>
+                                            Today
                                         </Typography>
+                                        <ArrowDropDownIcon />
+                                    </Box>
+                                    <Box
+                                        display={"flex"}
+                                        gap={1}
+                                        alignItems={"center"}
+                                        justifyContent={"end"}>
+                                        <Box
+                                            component={'img'}
+                                            src={require("../../../assets/Analytics.svg")}
+                                            alt='Analytics'
+                                            fontSize={'20px'}>
+                                        </Box>
+                                        <Box>
+                                            <Typography sx={Styles.AnalatyicsNumber}>
+                                                80%
+                                            </Typography>
+                                        </Box>
                                     </Box>
                                 </Box>
                             </Box>
-                        </Box>
-                        <Box
-                            display={"flex"}
-                            justifyContent={"space-between"}
-                            alignItems={"center"}>
                             <Box
-                               >
+                                display={"flex"}
+                                justifyContent={"space-between"}
+                                alignItems={"center"}>
                                 <Box
-                                    component={"img"}
-                                    padding={"10px"}
-                                    bgcolor={"#FD7238"}
-                                    borderRadius={"15px"}
-                                    alt=" Appointment"
-                                    width={"50px"}
-                                    src={require("../../../assets/Analytics Appointemnts Icons.svg")}>
+                                >
+                                    <Box
+                                        component={"img"}
+                                        padding={"10px"}
+                                        bgcolor={"#FD7238"}
+                                        borderRadius={"15px"}
+                                        alt=" Appointment"
+                                        width={"50px"}
+                                        src={require("../../../assets/Analytics Appointemnts Icons.svg")}>
+                                    </Box>
                                 </Box>
-                            </Box>
-                            <Box>
-                                <Typography sx={Styles.TotalAppointments}>
-                                    25
-                                </Typography>
+                                <Box>
+                                    <Typography sx={Styles.TotalAppointments}>
+                                        25
+                                    </Typography>
+                                </Box>
                             </Box>
                         </Box>
                     </CustomCard>
@@ -97,6 +99,7 @@ const Analytics = () => {
                         bgcolor={"#3DD230"} />
                 </Box>
             </Box>
+
         </>
     )
 }
@@ -104,7 +107,7 @@ export const PatientandDoctors = (props: Card) => {
     return (
         <>
             <CustomCard >
-                <Box >
+                <Box sx={Styles.Container}>
                     <Box
                         display={"flex"}
                         justifyContent={"space-between"}

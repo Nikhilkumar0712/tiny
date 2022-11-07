@@ -2,7 +2,7 @@ export const styles = {
     screenContainer: {
         marginTop: 2,
         marginRight: 2,
-        marginBottom: 2
+        marginBottom: 2,
     },
     breadcrumbSubtext: {
         fontFamily: 'Poppins',
@@ -20,7 +20,7 @@ export const styles = {
         fontFamily: "poppins",
         color: '#204289'
     },
-    TabPanel:{
-        padding:"0px"
+    TabPanel: {
+        padding: "0px"
     }
 }

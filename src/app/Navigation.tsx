@@ -19,6 +19,7 @@ import Examination from '../screens/Diagnosis/Examination';
 import Investigation from '../screens/Diagnosis/Investigation';
 import Prescription from '../screens/Diagnosis/Prescription';
 import Expenses from '../screens/Expenses';
+import TreatmentViewhoc from '../screens/Treatments/TreatmentView';
 
 const Navigation = () => {
     return (
@@ -41,6 +42,7 @@ const Navigation = () => {
                 <Route path="/Investigation" element={Investigation} />
                 <Route path="/Prescription" element={Prescription} />
                 <Route path="/Treatments" element={Treatmentshoc} />
+                <Route path="/TreatmentView" element={TreatmentViewhoc} />
                 <Route path="/Billing" element={Billing} />
                 <Route path="/Receipt" element={Receipt} />
                 <Route path="/Invoices" element={Dashboard} />

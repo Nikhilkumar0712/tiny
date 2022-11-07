@@ -9,25 +9,22 @@ interface PopOverProps {
   children: React.ReactNode,
   id: any,
   PopOver: any,
-  vertical: any,
-  horizontal: any,
+  anchorOrigin:any,
+  transformOrigin:any
+
 }
 const CustomPopOver = (props: PopOverProps) => {
 
-  const useStyles = makeStyles({
-    hi: {
-      top: "200px",
-      left: "200px"
-    }
-  });
-  const classes = useStyles();
+ 
+ 
   return (
     <>
       <div>
         <Popover
           open={props.open}
           onClose={props.onClose}
-          classes={{ root: classes.hi }}
+          anchorOrigin={props.anchorOrigin}
+          transformOrigin={props. transformOrigin}
         >
           {props.children}
         </Popover>

@@ -8,34 +8,36 @@ const TreatmentDetailsHeader = () => {
             <Box>
                 <Box mt={'10px'}>
                     <CustomCard>
-                        <Grid container spacing={2}>
-                            <Grid item xs={6}>
-                                <Box>
+                        <Box p={2}>
+                            <Grid container spacing={2}>
+                                <Grid item xs={6}>
+                                    <Box>
+                                        <Typography sx={styles.name}>
+                                            Treatment Course : <span style={styles.nameanswer}>
+                                                Root Canal
+                                            </span>
+                                        </Typography>
+                                        <Typography sx={styles.name} mt={"10px"}>
+                                            Treatment Group : <span style={styles.nameanswer}>
+                                                Root Canal
+                                            </span>
+                                        </Typography>
+                                    </Box>
+                                </Grid>
+                                <Grid item xs={6}>
                                     <Typography sx={styles.name}>
-                                        Treatment Course : <span style={styles.nameanswer}>
-                                            Root Canal
+                                        Examination Date : <span style={styles.nameanswer}>
+                                            22 Sept 2022
                                         </span>
                                     </Typography>
                                     <Typography sx={styles.name} mt={"10px"}>
-                                        Treatment Group : <span style={styles.nameanswer}>
-                                            Root Canal
+                                        Doctor Name : <span style={styles.nameanswer}>
+                                            Surendra
                                         </span>
                                     </Typography>
-                                </Box>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={6}>
-                                <Typography sx={styles.name}>
-                                    Examination Date : <span style={styles.nameanswer}>
-                                        22 Sept 2022
-                                    </span>
-                                </Typography>
-                                <Typography sx={styles.name}  mt={"10px"}>
-                                    Doctor Name : <span style={styles.nameanswer}>
-                                        Surendra
-                                    </span>
-                                </Typography>
-                            </Grid>
-                        </Grid>
+                        </Box>
                     </CustomCard>
                 </Box>
             </Box>

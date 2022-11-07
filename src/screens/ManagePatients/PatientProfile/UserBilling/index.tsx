@@ -1,179 +1,170 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
-import CustomTable from '../../../../components/Table'
-import CustomCard from '../../../../components/Card'
+import CustomTable from '../../../../components/Tabel'
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { Link as RouterLink } from 'react-router-dom';
-import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import { useNavigate } from "react-router-dom";
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { styles } from './styles';
 const UserBilling = () => {
 
-    const columns: GridColDef[] = [
+    const tableHeadData = [
+        "Bill No",
+        "Date",
+        "Receipt No",
+        "Type",
+        "Payment Mode",
+        "Amount",
+        "Actions",
+      ];
+    
+      const rows = [
         {
-            field: "BillNo",
-            headerName: "Bill No",
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <Box
-                        display={"flex"}
-                        gap={"10px"}
-                        textAlign={'center'}
-                        alignItems={"center"}
-                        flexDirection={"column"}>
-                        <Typography sx={styles.rowDataHeading}>
-                            {params.row.BillNo}
-                        </Typography>
-                    </Box>
-                );
-            },
+          id: 1,
+          BillNo: "R23",
+          Date: "22 Sept 2022",
+          ReceiptNo: "156",
+          Type: "OP",
+          PaymentMode: "Cash",
+          Amount: "7000",
+          Actions: "",
         },
         {
-            field: "Date",
-            headerName: "Date",
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>
-                            {params.row.Date}
-                        </Typography>
-                    </>
-                );
-            },
+          id: 2,
+          BillNo: "R23",
+          Date: "22 Sept 2022",
+          ReceiptNo: "156",
+          Type: "OP",
+          PaymentMode: "Cash",
+          Amount: "7000",
+          Actions: "",
         },
         {
-            field: "ReceiptNo",
-            headerName: "Receipt No",
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.ReceiptNo}</Typography>
-                    </>
-                );
-            },
+          id: 3,
+          BillNo: "R23",
+          Date: "22 Sept 2022",
+          ReceiptNo: "156",
+          Type: "OP",
+          PaymentMode: "Cash",
+          Amount: "7000",
+          Actions: "",
         },
         {
-            field: "Type",
-            headerName: "Type",
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.Type}</Typography>
-                    </>
-                );
-            },
+          id: 4,
+          BillNo: "R23",
+          Date: "22 Sept 2022",
+          ReceiptNo: "156",
+          Type: "OP",
+          PaymentMode: "Cash",
+          Amount: "7000",
+          Actions: "",
         },
         {
-            field: "PaymentMode",
-            headerName: "Payment Mode",
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.PaymentMode}</Typography>
-                    </>
-                );
-            },
+          id: 5,
+          BillNo: "R23",
+          Date: "22 Sept 2022",
+          ReceiptNo: "156",
+          Type: "OP",
+          PaymentMode: "Cash",
+          Amount: "7000",
+          Actions: "",
         },
         {
-            field: "Amount",
-            headerName: "Amount",
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.Amount}</Typography>
-                    </>
-                );
-            },
+          id: 6,
+          BillNo: "R23",
+          Date: "22 Sept 2022",
+          ReceiptNo: "156",
+          Type: "OP",
+          PaymentMode: "Cash",
+          Amount: "7000",
+          Actions: "",
         },
         {
-            field: "Actions",
-            headerName: "Actions",
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <Grid
-                        container
-                        justifyContent={"space-between"}
-                    >
-                        <>
-                            <Grid
-                                flexDirection={"column"}
-                                alignItems={"center"}
-                                gap={"10px"}
-                                textAlign={"center"}>
-                                <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                                <RouterLink to="/PatientProfile"><Typography sx={styles.rowData}> View </Typography></RouterLink>
-                            </Grid>
-                        </>
-                    </Grid>
-                )
-            },
-        },
-    ];
-
-    const rows = [
-        {
-            id: 1,
-            BillNo: '31 Aug 2022',
-            Date: "OP",
-            ReceiptNo: "Completed",
-            Type:"OP",
-            PaymentMode:"Cash",
-            Amount:"1222",
-            Actions: "-",
+          id: 7,
+          BillNo: "R23",
+          Date: "22 Sept 2022",
+          ReceiptNo: "156",
+          Type: "OP",
+          PaymentMode: "Cash",
+          Amount: "7000",
+          Actions: "",
         },
         {
-            id: 1,
-            BillNo: '31 Aug 2022',
-            Date: "OP",
-            ReceiptNo: "Completed",
-            Type:"OP",
-            PaymentMode:"Cash",
-            Amount:"1222",
-            Actions: "-",
+          id: 8,
+          BillNo: "R23",
+          Date: "22 Sept 2022",
+          ReceiptNo: "156",
+          Type: "OP",
+          PaymentMode: "Cash",
+          Amount: "7000",
+          Actions: "",
         },
-        {
-            id: 1,
-            BillNo: '31 Aug 2022',
-            Date: "OP",
-            ReceiptNo: "Completed",
-            Type:"OP",
-            PaymentMode:"Cash",
-            Amount:"1222",
-            Actions: "-",
-        },
-        {
-            id: 1,
-            BillNo: '31 Aug 2022',
-            Date: "OP",
-            ReceiptNo: "Completed",
-            Type:"OP",
-            PaymentMode:"Cash",
-            Amount:"1222",
-            Actions: "-",
-        },
-        {
-            id: 1,
-            BillNo: '31 Aug 2022',
-            Date: "OP",
-            ReceiptNo: "Completed",
-            Type:"OP",
-            PaymentMode:"Cash",
-            Amount:"1222",
-            Actions: "-",
-        },
-    ];
+      ];
     return (
-        <Box>
-            <CustomTable coloumns={columns} rows={rows} itemsPerPage={4} rowsPerPage={4}
-            onCellClick={""} />
-        </Box>
+        <Box sx={styles.tableContainer}>
+        <CustomTable header={tableHeadData}>
+          {rows.map((row) => (
+            <TableRow key={row.id}>
+              <TableCell>
+                <Typography sx={styles.tableCell}>
+                  {row.BillNo}
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography sx={styles.tableCell}>
+                  {row.Date}
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography sx={styles.tableCell}>
+                  {row.ReceiptNo}
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography sx={styles.tableCell}>
+                  {row.Type}
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography sx={styles.tableCell}>
+                  {row.PaymentMode}
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography sx={styles.tableCell}>
+                  {row.Amount}
+                </Typography>
+              </TableCell>
+             
+              <TableCell>
+                <Grid
+                  container
+                  flexDirection="row"
+                  spacing={2}
+                  justifyContent={'center'}
+                  alignItems={'center'}
+                >
+                  <Grid item>
+                    <Grid container flexDirection="row">
+                      <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
+                      <RouterLink
+                        to="/"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Typography sx={styles.tableCell}>
+                          {" "}
+                          View{" "}
+                        </Typography>
+                      </RouterLink>
+                    </Grid>
+                  </Grid>
+               </Grid>
+              </TableCell>
+            </TableRow>
+          ))}
+        </CustomTable>
+      </Box>
     )
 }
 

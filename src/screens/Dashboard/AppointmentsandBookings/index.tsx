@@ -108,109 +108,111 @@ const AppointmentandBookings = () => {
     return (
         <>
             <CustomCard>
-                <TabContext value={value}>
-                    <Box sx={{ width: '100%', typography: 'body1' }}>
-                        <Box >
-                            <TabList aria-label="lab API tabs example" onChange={handleChange}>
-                                <Tab label="Appointments" value="1" 
-                                sx={Styles.TabColor}
-                                />
-                                <Tab label="Bookings" value="2"  sx={Styles.TabColor}/>
-                            </TabList>
+                <Box sx={Styles.Container}>
+                    <TabContext value={value}>
+                        <Box sx={{ width: '100%', typography: 'body1' }}>
+                            <Box >
+                                <TabList aria-label="lab API tabs example" onChange={handleChange}>
+                                    <Tab label="Appointments" value="1"
+                                        sx={Styles.TabColor}
+                                    />
+                                    <Tab label="Bookings" value="2" sx={Styles.TabColor} />
+                                </TabList>
+                            </Box>
+                            <TabPanel value="1" sx={Styles.Tabpanel}>
+                                <Box >
+                                    <Box display={"flex"}
+                                        gap={"10px"}
+                                        alignItems={"center"}
+                                        mt={2}
+                                        mb={1}>
+                                        <Box flexGrow={1}>
+                                            <CustomInput placeholder={"Search Patient"}
+                                                InputProps={""}
+                                                size={"Normal"} />
+                                        </Box>
+                                        <Box >
+                                            <CustomSelectPicker
+                                                selectValue={1}
+                                                size={"small"}
+                                                fullWidth={true}
+                                                handleSelectValue={(val: any) => console.log("hii")}
+                                                width={0}
+                                                selectData={selectData}
+                                            />
+                                        </Box>
+                                        <Box>
+                                            <CustomDatePicker fullWidth={"fullWidth"} />
+                                        </Box>
+                                    </Box>
+                                </Box>
+                                <Box sx={Styles.overflow}>
+                                    <Box padding={"5px"}>
+                                        {
+                                            AppointmentsData.map((item) => {
+                                                return (
+                                                    <>
+                                                        <CustomDashboardTabAppointmentsandBookings
+                                                            item={item}
+                                                            checkbox="Checkbox"
+                                                            ml={""} />
+                                                    </>
+                                                )
+                                            })
+                                        }
+                                    </Box>
+                                </Box>
+                            </TabPanel>
+                            <TabPanel value="2" sx={Styles.Tabpanel}>
+                                <Box >
+                                    <Typography sx={Styles.ViewALL}>
+                                        View All
+                                    </Typography>
+                                    <Box display={"flex"}
+                                        gap={"10px"}
+                                        alignItems={"center"}
+                                        mt={2}
+                                        mb={1}>
+                                        <Box>
+                                            <CustomInput placeholder={"Search Patient"}
+                                                InputProps={""}
+                                                size={"Normal"} />
+                                        </Box>
+                                        <Box >
+                                            <CustomSelectPicker
+                                                selectValue={1}
+                                                size={"small"}
+                                                fullWidth={true}
+                                                handleSelectValue={(val: any) => console.log("hii")}
+                                                width={0}
+                                                selectData={selectData}
+                                            />
+                                        </Box>
+                                        <Box>
+                                            <CustomDatePicker fullWidth={"fullWidth"} />
+                                        </Box>
+                                    </Box>
+                                </Box>
+                                <Box sx={Styles.overflow}>
+                                    <Box padding={"5px"}>
+                                        {
+                                            BookingsData.map((item) => {
+                                                return (
+                                                    <>
+                                                        <CustomDashboardTabAppointmentsandBookings
+                                                            item={item}
+                                                            checkbox=""
+                                                            ml={"10px"} />
+                                                    </>
+                                                )
+                                            })
+                                        }
+                                    </Box>
+                                </Box>
+                            </TabPanel>
                         </Box>
-                        <TabPanel value="1" sx={Styles.Tabpanel}>
-                            <Box >
-                                <Box display={"flex"}
-                                    gap={"10px"}
-                                    alignItems={"center"}
-                                    mt={2}
-                                    mb={1}>
-                                    <Box flexGrow={1}>
-                                        <CustomInput placeholder={"Search Patient"}
-                                            InputProps={""}
-                                            size={"Normal"} />
-                                    </Box>
-                                    <Box >
-                                        <CustomSelectPicker
-                                            selectValue={1}
-                                            size={"small"}
-                                            fullWidth={true}
-                                            handleSelectValue={(val: any) => console.log("hii")}
-                                            width={0}
-                                            selectData={selectData}
-                                        />
-                                    </Box>
-                                    <Box>
-                                        <CustomDatePicker fullWidth={"fullWidth"} />
-                                    </Box>
-                                </Box>
-                            </Box>
-                            <Box sx={Styles.overflow}>
-                                <Box padding={"5px"}>
-                                    {
-                                        AppointmentsData.map((item) => {
-                                            return (
-                                                <>
-                                                    <CustomDashboardTabAppointmentsandBookings
-                                                        item={item}
-                                                        checkbox="Checkbox"
-                                                        ml={""} />
-                                                </>
-                                            )
-                                        })
-                                    }
-                                </Box>
-                            </Box>
-                        </TabPanel>
-                        <TabPanel value="2" sx={Styles.Tabpanel}>
-                            <Box >
-                                <Typography sx={Styles.ViewALL}>
-                                    View All
-                                </Typography>
-                                <Box display={"flex"}
-                                    gap={"10px"}
-                                    alignItems={"center"}
-                                    mt={2}
-                                    mb={1}>
-                                    <Box>
-                                        <CustomInput placeholder={"Search Patient"}
-                                            InputProps={""}
-                                            size={"Normal"} />
-                                    </Box>
-                                    <Box >
-                                        <CustomSelectPicker
-                                            selectValue={1}
-                                            size={"small"}
-                                            fullWidth={true}
-                                            handleSelectValue={(val: any) => console.log("hii")}
-                                            width={0}
-                                            selectData={selectData}
-                                        />
-                                    </Box>
-                                    <Box>
-                                        <CustomDatePicker fullWidth={"fullWidth"} />
-                                    </Box>
-                                </Box>
-                            </Box>
-                            <Box sx={Styles.overflow}>
-                                <Box padding={"5px"}>
-                                    {
-                                        BookingsData.map((item) => {
-                                            return (
-                                                <>
-                                                    <CustomDashboardTabAppointmentsandBookings
-                                                        item={item}
-                                                        checkbox=""
-                                                        ml={"10px"} />
-                                                </>
-                                            )
-                                        })
-                                    }
-                                </Box>
-                            </Box>
-                        </TabPanel>
-                    </Box>
-                </TabContext>
+                    </TabContext>
+                </Box>
             </CustomCard>
         </>
     )

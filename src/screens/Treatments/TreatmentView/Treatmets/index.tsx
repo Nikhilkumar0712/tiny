@@ -1,120 +1,122 @@
 import React from 'react'
 import { Box, Grid, Typography } from '@mui/material';
 import { styles } from './styles';
-import CustomTable from '../../../../components/Table';
+import CustomTable from '../../../../components/Tabel';
 import { Link as RouterLink } from 'react-router-dom';
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
 import Image from '../../../../assets/Notes.svg'
+import EditPencil from '../../../../assets/edit pencil.svg'
 const Treatments = () => {
 
-    const columns: GridColDef[] = [
-        {
-            field: "Treatment",
-            headerName: "treatment",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <Typography sx={styles.rowData}>
-                        {params.row.Treatment}
-                    </Typography>
-                );
-            },
-        },
-        {
-            field: "Tooth #",
-            headerName: "Tooth#",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>
-                            {params.row.Tooth}
-                        </Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Visit",
-            headerName: "Visit",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.Visit}</Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "ENotes",
-            headerName: "E.Notes",
-            width: 160,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Box
-                            display={'flex'}
-                            gap={"10px"}
-                            alignItems={"center"}>
-                            <img src={Image} alt="" style={styles.notes}/>
-                            <Typography sx={styles.rowData}>{params.row.ENotes}</Typography>
-                        </Box>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Status",
-            headerName: "Status",
-            width: 130,
-            renderCell: (params) => {
 
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.Status}</Typography>
-                    </>
-                );
-
-            },
-        },
-        {
-            field: "Actions",
-            headerName: "Actions",
-            width: 230,
-            renderCell: (params) => {
-                return (
-                    <Grid
-                        container
-                        flexDirection="row"
-                        gap={"10px"}
-                    >
-                        <>
-                            <EditOutlinedIcon sx={styles.actionIcon} />
-                            <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Edit </Typography></RouterLink>
-                        </>
-                    </Grid>
-                )
-            },
-        },
+    const tableHeadData = [
+        "Treatment",
+        "Tooth #",
+        "Visit #",
+        "E. Notes",
+        "Status",
+        "Actions"
     ];
 
     const rows = [
         {
             id: 1,
-            Treatment: 'Root Canal',
-            Tooth: "15",
-            Visit: "2",
-            ENotes: "Notes",
-            Status: "Planned",
-            Actions: "-",
+            Treatment: "31 Aug 2022",
+            Tooth: "Teeth Whitening",
+            Visits: "Completed",
+            ENotes: "Completed",
+            Status: "Completed",
+            Actions: "",
         },
     ];
+
     return (
         <>
-            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} 
-            onCellClick={""}/>
+            <Box sx={styles.screenContainer}>
+                <Grid container spacing={1}>
+                    <Grid item md={12}>
+                        <Box sx={styles.tableContainer}>
+                            <CustomTable header={tableHeadData}>
+                                {rows.map((row) => (
+                                    <TableRow key={row.id}>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.Treatment}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.Tooth}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.Visits}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Box
+                                                display={"flex"}
+                                                gap={"10px"}
+                                                alignItems={"center"}
+                                                justifyContent={"center"}>
+                                                <Box component={"img"}
+                                                    alt={"pencil"}
+                                                    src={Image}
+                                                    width={"40px"}
+                                                    height={"40px"}
+                                                    fontSize={"18px"}>
+                                                </Box>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.ENotes}
+                                                </Typography>
+                                            </Box>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.Status}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Grid
+                                                container
+                                                flexDirection="row"
+                                                spacing={2}
+                                                justifyContent={'space-around'}
+                                                alignItems={'center'}>
+                                                <Grid item>
+                                                    <Grid container flexDirection="row"
+                                                        gap={"5px"} alignItems={"center"}>
+                                                        <Box component={"img"}
+                                                            alt={"pencil"}
+                                                            src={EditPencil}
+                                                            width={"18px"}
+                                                            height={"18px"}
+                                                            fontSize={"18px"}>
+
+                                                        </Box>
+                                                        <RouterLink
+                                                            to="/"
+                                                            style={{ textDecoration: "none" }}
+                                                        >
+                                                            <Typography sx={styles.tableCell}>
+                                                                {" "}
+                                                                Edit{" "}
+                                                            </Typography>
+                                                        </RouterLink>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </CustomTable>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </Box>
         </>
     )
 }

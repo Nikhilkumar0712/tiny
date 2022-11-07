@@ -20,5 +20,8 @@ export const Styles = {
         fontSize: 18,
         color: "#021025",
         fontWeight:"550"
+    },
+    Container:{
+        padding : 2
     }
 }

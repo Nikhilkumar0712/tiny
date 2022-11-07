@@ -28,8 +28,11 @@ export const Styles = {
         paddingTop: "10px"
     },
     TabColor: {
-        textTransform:"none",
+        textTransform: "none",
         padding: '0px'
 
+    },
+    Container: {
+        padding: 2
     }
 }

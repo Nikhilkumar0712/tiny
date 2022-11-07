@@ -1,149 +1,40 @@
 import React from 'react';
-
-import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import { Box, Link, Typography, Grid, InputAdornment } from "@mui/material";
-import CustomTable from "../../../../components/Table";
-import Image from '../../../../assets/Notes.svg'
+import CustomTable from "../../../../components/Tabel";
+import Image from '../../../../assets/Notes.svg';
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
 import { styles } from './style';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import LocalPrintshopOutlinedIcon from '@mui/icons-material/LocalPrintshopOutlined';
 import { Link as RouterLink } from 'react-router-dom';
-import CloudDownloadOutlinedIcon from '@mui/icons-material/CloudDownloadOutlined';
 import { useNavigate } from "react-router-dom";
 
 const LabWork = () => {
 
-
-    const columns: GridColDef[] = [
-        {
-            field: "Work ID",
-            headerName: "Work ID",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <Typography sx={styles.rowData}>
-                        {params.row.WorkID}
-                    </Typography>
-                );
-            },
-        },
-        {
-            field: "Doctor Name",
-            headerName: "Bill No",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>
-                            {params.row.DoctorName}
-                        </Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Lab Work Title",
-            headerName: "Lab Work Title",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.LabWorkTitle}</Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Lab Work Type",
-            headerName: "Lab Work Type",
-            width: 160,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.LabWorkType}</Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Lab Name",
-            headerName: "Lab Name",
-            width: 130,
-            renderCell: (params) => {
-
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.LabName}</Typography>
-                    </>
-                );
-
-            },
-        },
-        {
-            field: "Lab Instructions",
-            headerName: "Lab Instructions",
-            width: 180,
-            renderCell: (params) => {
-
-                return (
-                    <>
-                        <Box
-                            display={'flex'}
-                            gap={"10px"}
-                            alignItems={"center"}>
-                            <img src={Image} alt="" style={styles.notes} />
-                            <Typography sx={styles.rowData}>{params.row.LabInstructions}</Typography>
-                        </Box>
-                    </>
-                );
-
-            },
-        },
-        {
-            field: "Expected Delivery Date",
-            headerName: "Expected Delivery Date",
-            width: 180,
-            renderCell: (params) => {
-
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.ExpectedDeliveryDate}</Typography>
-                    </>
-                );
-
-            },
-        },
-        {
-            field: "Actions",
-            headerName: "Actions",
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <Grid
-                        container
-                        flexDirection="row"
-                        gap={"10px"}>
-                        <>
-                            <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                            <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> View </Typography></RouterLink>
-                        </>
-                    </Grid>
-                )
-            },
-        },
+    const tableHeadData = [
+        "Work ID",
+        "Doctor Name",
+        "Lab Work Title",
+        "Lab Work Type",
+        "Lab Name",
+        "Lab Instructions",
+        "Expected Delivery Date",
+        "Status",
+        "Actions"
     ];
 
     const rows = [
         {
             id: 1,
-            WorkID: '23',
-            DoctorName: "Dr. Surendra",
-            LabWorkTitle: "Dental Caps",
-            LabWorkType: "Dental Caps",
-            LabName: "Olivia Labs",
-            LabInstructions: "Notes",
-            ExpectedDeliveryDate: "6 Sep 2022",
-            Actions: "-",
+            WorkID: "31 Aug 2022",
+            DoctorName: "Teeth Whitening",
+            LabWorkTitle: "Completed",
+            LabWorkType: "Completed",
+            LabWorkName: "Completed",
+            LabWorkInstructions: "Completed",
+            ExpectedDeliveryDate: "Completed",
+            Status: "Completed",
+            Actions: "",
         },
     ];
 
@@ -155,8 +46,91 @@ const LabWork = () => {
 
     return (
         <>
-            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} 
-            onCellClick={""}/>
+            <Box sx={styles.screenContainer}>
+                <Grid container spacing={1}>
+                    <Grid item md={12}>
+                        <Box sx={styles.tableContainer}>
+                            <CustomTable header={tableHeadData}>
+                                {rows.map((row) => (
+                                    <TableRow key={row.id}>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.WorkID}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.DoctorName}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.LabWorkTitle}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.LabWorkType}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.LabWorkName}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Box
+                                                display={"flex"}
+                                                gap={"10px"}
+                                                alignItems={"center"}
+                                                justifyContent={"center"}>
+                                                <Box component={"img"}
+                                                    alt={"pencil"}
+                                                    src={Image}
+                                                    width={"40px"}
+                                                    height={"40px"}
+                                                    fontSize={"18px"}>
+                                                </Box>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.LabWorkInstructions}
+                                                </Typography>
+                                            </Box>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.ExpectedDeliveryDate}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.Status}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Grid item>
+                                                <Grid container flexDirection="row"
+                                                    alignItems={"center"}
+                                                    gap={"10px"}>
+                                                    <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
+                                                    <RouterLink
+                                                        to="/"
+                                                        style={{ textDecoration: "none" }}
+                                                    >
+                                                        <Typography sx={styles.tableCell}>
+                                                            {" "}
+                                                            View{" "}
+                                                        </Typography>
+                                                    </RouterLink>
+                                                </Grid>
+                                            </Grid>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </CustomTable>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </Box>
         </>
 
     )

@@ -16,10 +16,10 @@ export default function BasicTable(props: CustomTableProps) {
   const { header } = props;
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={styles.tableContainer}  aria-label="simple table">
+    <TableContainer component={Paper} sx={styles.paper}>
+      <Table sx={styles.tableContainer} aria-label="simple table">
         <TableHead sx={styles.tableHeadContainer}>
-          <TableRow>
+          <TableRow sx={styles.tablerow}>
             {header.map((item: any, index: any) => {
               return <TableCell sx={styles.tableItem}>{item}</TableCell>;
             })}
@@ -32,16 +32,25 @@ export default function BasicTable(props: CustomTableProps) {
 }
 
 const styles = {
-    tableContainer : {
-        backgroundColor:'#fffff'
-    },
-    tableHeadContainer : {
-        backgroundColor:'#F8F8F8'
-    },
-    tableItem : {
-        padding : 0.7,
-        color : '#104076',
-        fontSize : 13,
-        textAlign : 'center'
-    }
+  tableContainer: {
+    backgroundColor: '#fffff'
+  },
+  tableHeadContainer: {
+    backgroundColor: '#F8F8F8'
+  },
+  tableItem: {
+    padding: 0.7,
+    color: '#104076',
+    fontSize: 13,
+    textAlign: 'center',
+    borderBottom: 'none'
+  },
+  tablerow: {
+    border: "none"
+  },
+  paper: {
+    boxShadow: "none",
+    backgroundColor: "none",
+    padding: "20px"
+  }
 }

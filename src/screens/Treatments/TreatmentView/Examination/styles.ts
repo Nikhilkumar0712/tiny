@@ -2,23 +2,20 @@ export const styles = {
     breadcrumbSubtext : {
         fontFamily : 'Poppins',
         fontSize : 14,
-        color : 'primary.main'
+        color : 'primary.main',
+        textDecoration : 'none'
     },
     screenContainer : {
         marginTop  : 2,
-        marginRight :2,
+        height : '100vh',
+        marginRight : 1,
         marginBottom : 2
+
     },
-    heading : {
-        fontFamily : 'Poppins',
-        fontSize : 13,
-        fontWeight : 500,
-        color : '#000'
-    },
-    rowDataHeading:{
-        fontFamily : 'Poppins',
-        fontSize : 12,
-        color : 'primary.main',
+    cardHeaderContainer : {
+        display : 'flex',
+        justifyContent : 'space-between',
+        alignItems : 'center'
     },
     rowData : {
         fontFamily : 'Poppins',
@@ -26,9 +23,17 @@ export const styles = {
         color : 'primary.main',
         
     },
-    actionIcon : {
-        color : '#204289',
-        fontSize : 18,
+    patientName : {
+        fontFamily : 'Poppins',
+        fontSize : 12,
+        fontWeight : 400,
+        color : 'black',
+        marginLeft : 1
+    },
+    avatarImage : {
+        width : 40,
+        height : 40,
+        borderRadius : 20
     },
     chairColor : {
         color : '#E5050B',
@@ -43,15 +48,15 @@ export const styles = {
         color : '#204289',
         fontSize : 25
     },
-    // actionIcon : {
-    //     color : '#204289',
-    //     fontSize : 17,
-    // },
+    actionIcon : {
+        color : '#204289',
+        fontSize : 17,
+    },
     filterContainer : {
         padding : 1
     },
     tableContainer : {
-         marginTop : 2
+       // marginTop : 1
     },
     tableCell : {
         fontFamily : 'Poppins',
@@ -59,7 +64,8 @@ export const styles = {
         color : '#204289',
         textAlign : 'center',
         textDecoration: 'none',
-        marginLeft : 1
+        marginLeft : 1,
+        marginTop : 0.5
     },
     appointmentDate : {
         fontFamily : 'Poppins',
@@ -77,35 +83,38 @@ export const styles = {
         fontSize : 11,
         color : 'red'
     },
-    // heading : {
-    //     fontFamily : 'Poppins',
-    //     fontSize : 15,
-    //     color : '#021025',
-    //     fontWeight : '600',
-    //     marginTop : 6,
-    //     marginLeft : 1
-    // },
+    heading : {
+        fontFamily : 'Poppins',
+        fontSize : 15,
+        color : '#021025',
+        fontWeight : '600',
+        marginTop : 6,
+        marginLeft : 1
+    },
     verticalLine : {
       position : 'absolute',
       //top : 40,
       zIndex : 99999
     },
-    secondformContainer : {
-
-    },
-    formContainer : {
-        marginTop : 2.5,
-        marginLeft : 10,
-        marginRight : 10,
+    screenContainer1 : {
+        marginTop  : 2,
+        marginLeft :4,
+        marginRight : 4,
         marginBottom : 3
     },
-    cardHeader : {
-        marginTop : 2.5,
-        marginLeft : 2.5,
-        marginBottom : 2,
+    doctorName : {
         fontFamily : 'Poppins',
         fontSize : 13,
+        color : 'primary.main',
         fontWeight : '500',
-        color : '#204289'
+        textAlign : 'left'
+    },
+    investigation : {
+        fontFamily : 'Poppins',
+        fontSize : 13,
+        color : 'primary.main',
+        fontWeight : '500',
+        textAlign : 'right'
     }
+     
 }
