@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Link, Typography, Grid, InputAdornment } from "@mui/material";
+import { Box, Link, Typography, Grid } from "@mui/material";
 import CustomTable from "../../../components/Tabel";
 import { styles } from './styles';
 import TableCell from "@mui/material/TableCell";
@@ -11,6 +11,7 @@ import CloudDownloadOutlinedIcon from '@mui/icons-material/CloudDownloadOutlined
 import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "../../../components/Breadcrum";
 import CustomCard from "../../../components/Card";
+import AccountsHeader from '../../Billing/AccountsHeader';
 import Image from '../../../assets/print.svg'
 import CustomButton from '../../../components/Button';
 import HocLayout from '../../../components/HocLayout';
@@ -85,7 +86,10 @@ const ConsentForm = () => {
 
   return (
     <>
-      <Breadcrumbs title={"Consent Form"} breadcrumbsArr={breadcrumbs} />
+      <Grid container flexDirection={"row"} justifyContent={"space-between"}>
+        <Breadcrumbs title={"Visiting Plan"} breadcrumbsArr={breadcrumbs} />
+        <AccountsHeader />
+      </Grid>
       <Box sx={styles.screenContainer}>
         <Grid container spacing={1}>
           <Grid item md={12}>

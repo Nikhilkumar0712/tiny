@@ -6,7 +6,7 @@ export const styles = {
     },
     screenContainer: {
         marginTop: 2,
-        marginRight: 2,
+        marginRight: 1,
         marginBottom: 2
     },
     heading: {
@@ -93,7 +93,7 @@ export const styles = {
         color : '#204289',
         textAlign : 'center',
         textDecoration: 'none',
-        marginLeft : 1
+        
     },
     appointmentDate : {
         fontFamily : 'Poppins',

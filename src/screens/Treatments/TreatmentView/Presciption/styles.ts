@@ -48,7 +48,7 @@ export const styles = {
         fontSize : 25
     },
     actionIcon : {
-        color : 'red',
+        color : '#204289',
         fontSize : 19,
     },
     filterContainer : {
@@ -63,8 +63,6 @@ export const styles = {
         color : '#204289',
         textAlign : 'center',
         textDecoration: 'none',
-        marginLeft : 1,
-        marginTop : 0.5
     },
     actionText : {
         fontFamily : 'Poppins',
@@ -105,7 +103,6 @@ export const styles = {
       zIndex : 99999
     },
     screenContainer1 : {
-        marginTop  : 2,
         marginLeft :4,
         marginRight : 4,
         marginBottom : 3

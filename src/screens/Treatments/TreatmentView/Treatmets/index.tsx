@@ -26,7 +26,7 @@ const Treatments = () => {
             Treatment: "31 Aug 2022",
             Tooth: "Teeth Whitening",
             Visits: "Completed",
-            ENotes: "Completed",
+            ENotes: "Notes",
             Status: "Completed",
             Actions: "",
         },
@@ -59,15 +59,15 @@ const Treatments = () => {
                                         <TableCell>
                                             <Box
                                                 display={"flex"}
-                                                gap={"10px"}
+                                                gap={"6px"}
                                                 alignItems={"center"}
                                                 justifyContent={"center"}>
                                                 <Box component={"img"}
                                                     alt={"pencil"}
                                                     src={Image}
-                                                    width={"40px"}
-                                                    height={"40px"}
-                                                    fontSize={"18px"}>
+                                                    width={"30px"}
+                                                    height={"30px"}
+                                                   >
                                                 </Box>
                                                 <Typography sx={styles.tableCell}>
                                                     {row.ENotes}

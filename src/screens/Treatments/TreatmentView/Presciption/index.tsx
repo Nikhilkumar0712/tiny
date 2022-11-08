@@ -1,312 +1,139 @@
 import React from 'react'
 import { Box, Link, Typography, Grid, InputAdornment } from "@mui/material";
 import { styles } from "./styles";
+import DeleteImage from '../../../../assets/delete.svg'
 import { useNavigate } from "react-router-dom";
-import CustomCard from "../../../../components/Card";
 import CustomTable from "../../../../components/Tabel";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import { Link as RouterLink } from "react-router-dom";
-import Header from '../../../Diagnosis/Header';
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import CustomButton from "../../../../components/Button";
-import CustomDatePicker from "../../../../components/DatePicker";
-import CustomSelectPicker from "../../../../components/SelectPicker";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import CustomInput from "../../../../components/Input"
 const TreatmentPrescription = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const tableHeadData = [
+    "S.No",
+    "Type",
+    "Drug/Trade Name",
+    "Dosage",
+    "Frequency",
+    "Duration",
+    "Quantity",
+    "Instructions",
+    "Actions"
 
-    const selectData = [
-        {
-            value: 1,
-            name: "By Doctor",
-        },
-        {
-            value: 2,
-            name: "By Patient",
-        },
-    ];
+  ];
 
-    const tableHeadData = [
-        "S.No",
-        "Type",
-        "Drug/Trade Name",
-        "Dosage",
-        "Frequency",
-        "Duration",
-        "Quantity",
-        "Instructions",
-        "Actions",
-    ];
-
-    const rows = [
-        {
-            id: 1,
-            Sno: 1,
-            Type: "",
-            TradeName: "",
-            Dosage: "",
-            Frequency: "",
-            Duration: "",
-            Quantity: "",
-            Instructions: "",
-            Actions: "",
-        },
-        {
-            id: 2,
-            Sno: 2,
-            Type: "",
-            TradeName: "",
-            Dosage: "",
-            Frequency: "",
-            Duration: "",
-            Quantity: "",
-            Instructions: "",
-            Actions: "",
-        },
-        {
-            id: 3,
-            Sno: 3,
-            Type: "",
-            TradeName: "",
-            Dosage: "",
-            Frequency: "",
-            Duration: "",
-            Quantity: "",
-            Instructions: "",
-            Actions: "",
-        },
-        {
-            id: 4,
-            Sno: 4,
-            Type: "",
-            TradeName: "",
-            Dosage: "",
-            Frequency: "",
-            Duration: "",
-            Quantity: "",
-            Instructions: "",
-            Actions: "",
-        },
-        {
-            id: 5,
-            Sno: 5,
-            Type: "",
-            TradeName: "",
-            Dosage: "",
-            Frequency: "",
-            Duration: "",
-            Quantity: "",
-            Instructions: "",
-            Actions: "",
-        },
-    ];
-
-    const buttonClicked = () => { };
-    return (
-        <>
-            <Box sx={styles.screenContainer}>
-                <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"space-between"}
-                    spacing={16}
-                    sx={{ padding: 2 }}
-                >
-                    <Grid item md={6}>
-                        <Header path={location.pathname} />
-                    </Grid>
-                    <Grid item md={6}>
-                        <Box style={{ width: "50%", marginLeft: "50%" }}>
-                            <CustomDatePicker fullWidth={true} />
-                        </Box>
-                    </Grid>
-                </Grid>
-                <Box sx={styles.screenContainer1}>
-                    <Grid
-                        container
-                        flexDirection={"row"}
-                        justifyContent={"space-between"}
-                    >
-                        <Grid item md={6}>
-                            <Typography sx={styles.doctorName}>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr.Surendra &nbsp;&nbsp;&nbsp; |
-                                &nbsp;&nbsp;&nbsp; Sever Tooth Ache at 18 and 22
-                            </Typography>
-                        </Grid>
-                        <Grid item md={6}>
-                            <Typography sx={styles.investigation}>
-                                Select Major Investigation &nbsp;&nbsp; : &nbsp;&nbsp;
-                                Investigation Name
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                </Box>
-                <Grid container spacing={1}>
-                    <Grid item md={12}>
-                        <Box sx={styles.tableContainer}>
-                            <CustomTable header={tableHeadData}>
-                                {rows.map((row) => (
-                                    <TableRow key={row.id}>
-                                        <TableCell>
-                                            <Typography sx={styles.tableCell}>{row.Sno}</Typography>
-                                        </TableCell>
-                                        <TableCell></TableCell>
-                                        <TableCell>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={[]}
-                                                placeholderText={"Search Enter Drug"}
-                                            />
-                                        </TableCell>
-                                        <TableCell>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={[]}
-                                                placeholderText={"Select Dosage"}
-                                            />
-                                        </TableCell>
-                                        <TableCell>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={[]}
-                                                placeholderText={"Select Frequecy"}
-                                            />
-                                        </TableCell>
-                                        <TableCell>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={[]}
-                                                placeholderText={"Select Duration"}
-                                            />
-                                        </TableCell>
-                                        <TableCell>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={[]}
-                                                placeholderText={"00"}
-                                            />
-                                        </TableCell>
-                                        <TableCell>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={[]}
-                                                placeholderText={"Select Instructions"}
-                                            />
-                                        </TableCell>
-
-                                        <TableCell>
-                                            <Grid container>
-                                                <Grid item>
-                                                    <Grid
-                                                        container
-                                                        flexDirection="column"
-                                                        justifyContent={"center"}
-                                                        alignItems={"center"}
-                                                    >
-                                                        <DeleteOutlineOutlinedIcon
-                                                            sx={styles.actionIcon}
-                                                        />
-                                                        <RouterLink
-                                                            to="/"
-                                                            style={{ textDecoration: "none" }}
-                                                        >
-                                                            <Typography sx={styles.actionText}>
-                                                                Delete
-                                                            </Typography>
-                                                        </RouterLink>
-                                                    </Grid>
-                                                </Grid>
-                                            </Grid>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
-                            </CustomTable>
-                        </Box>
-                    </Grid>
-                </Grid>
-                <Box sx={styles.screenContainer}>
-
-                    <Box sx={{ padding: 2 }}>
-                        <Grid
+  const rows = [
+    {
+      id: 1,
+      SNo: '1',
+      Type: "",
+      Drug: "Search Enter Drug",
+      Dosage: "Select Dosage",
+      Frequency: "Select Dosage",
+      Duration: "Select Duration",
+      Quantity: "00",
+      Instructions: "Select Instructions",
+      Actions: "-"
+    }
+  ];
+  const buttonClicked = () => { };
+  return (
+    <>
+    
+      <Grid container spacing={1}>
+        <Grid item md={12}>
+          <Box sx={styles.tableContainer}>
+            <CustomTable header={tableHeadData}>
+              {rows.map((row) => (
+                <TableRow key={row.id}>
+                  <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.SNo}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.Type}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.Drug}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.Dosage}
+                    </Typography>
+                  </TableCell >
+                  <TableCell sx={styles.tableCell}>
+                    {row.Frequency}
+                  </TableCell>
+                  <TableCell sx={styles.tableCell}>
+                    {row.Duration}
+                  </TableCell>
+                  <TableCell sx={styles.tableCell}>
+                    {row.Quantity}
+                  </TableCell>
+                  <TableCell sx={styles.tableCell}>
+                    {row.Instructions}
+                  </TableCell>
+                  <TableCell>
+                    <Box
+                      display={"flex"}
+                      gap={"10px"}
+                      justifyContent={"center"}
+                      alignItems={"center"}>
+                      <Grid container>
+                        <Grid item>
+                          <Grid
                             container
-                            flexDirection={"row"}
-                            justifyContent={"space-between"}
-                        >
-                            <Grid item md={6}>
-                                <Typography sx={styles.label}>General Instructions</Typography>
-                            </Grid>
+                            flexDirection="column"
+                            justifyContent={"center"}
+                            alignItems={"center"}
+                          >
+                            <CreateOutlinedIcon sx={styles.actionIcon} />
+                            <RouterLink
+                              to="/"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Typography sx={styles.tableCell}>
+                                Edit
+                              </Typography>
+                            </RouterLink>
+                          </Grid>
                         </Grid>
-                        <CustomInput
-                            placeholder={"General Instructions"}
-                            InputProps={""}
-                            size={"small"}
-                            multiline={true}
-                        />
-                    </Box>
-
-
-                </Box>
-                <Box sx={styles.screenContainer1}>
-                    <Grid
-                        container
-                        flexDirection={"row"}
-                        justifyContent={"flex-end"}
+                      </Grid>
+                      <Box
+                        display={"flex"}
+                        justifyContent={"center"}
                         alignItems={"center"}
-                    >
-                        <CustomButton
-                            title={"Cancel"}
-                            handleButtonClick={buttonClicked}
-                            backgroundcolor={"#FFFFFF"}
-                            bordercolor={"#9DA2AB"}
-                            padding={"4px 50px"}
-                            border={"1px solid"}
-                            fontsize={"14px"}
-                            color={"primary"}
-                        />
-                        <Box sx={{ marginLeft: 1 }}>
-                            <CustomButton
-                                title={"Submit"}
-                                handleButtonClick={buttonClicked}
-                                backgroundcolor={"#204289"}
-                                bordercolor={"#204289"}
-                                border={"1px solid"}
-                                fontsize={"14px"}
-                                color={"info"}
-                                padding={"4px 50px"}
-                            />
+                        flexDirection={"column"}
+                      >
+                        <Box
+                          component={"img"}
+                          alt=" Appointment"
+                          src={DeleteImage}
+                          width={"18px"}
+                          height={"18px"}
+                          fontSize={"18px"}>
                         </Box>
-                    </Grid>
-                </Box>
-            </Box>
-        </>
-    )
+                        <Typography sx={styles.tableCell} style={{ "color": "#CE0505" }}>
+                          delete
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </CustomTable>
+          </Box>
+        </Grid>
+      </Grid>
+    </>
+  )
 }
 
 export default TreatmentPrescription

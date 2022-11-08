@@ -17,7 +17,7 @@ export const styles = {
     },
     screenContainer: {
         marginTop: 2,
-        marginRight: 2,
+        marginRight: 1,
         marginBottom: 2
     },
     DownloadImage: {

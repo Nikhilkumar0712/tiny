@@ -16,7 +16,6 @@ export const styles = {
         color : 'primary.main'
     },
     screenContainer : {
-        marginTop  : 2,
         marginRight :2,
         marginBottom : 2
     },

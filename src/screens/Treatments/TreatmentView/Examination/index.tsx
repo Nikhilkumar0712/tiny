@@ -1,15 +1,15 @@
 import React from 'react'
-import { Box, Link, Typography, Grid, InputAdornment } from "@mui/material";
+import { Box, Link, Typography, Grid, InputAdornment, Table } from "@mui/material";
 import { styles } from "./styles";
 import { useNavigate } from "react-router-dom";
 import CustomTable from "../../../../components/Tabel";
+import Image from '../../../../assets/Notes.svg'
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import { Link as RouterLink } from "react-router-dom";
 import Header from "../../../Diagnosis/Header";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import CustomButton from "../../../../components/Button";
-import CustomDatePicker from "../../../../components/DatePicker";
+import DeleteImage from '../../../../assets/delete.svg'
 const TreatmentExamination = () => {
     const navigate = useNavigate();
 
@@ -26,11 +26,10 @@ const TreatmentExamination = () => {
 
     const tableHeadData = [
         "Tooth No",
-        "Provisional Diagnosis",
+        "Examination Notes",
         "Investigation",
         "Interpretation",
         "Final Diagnosis",
-        "Exam Notes",
         "Treatment Planned",
         "Actions",
     ];
@@ -39,89 +38,11 @@ const TreatmentExamination = () => {
         {
             id: 1,
             ToothNo: "18",
-            ProvisionalDiagnosis: "Investigation Implant",
+            ExaminationNotes: "Note",
             Investigation: "Investigation Name 1",
-            Interpretation: "",
-            FinalDiagnosis: "Investigation Implant",
-            ExamNotes: "",
-            TreatmentPlanned: "",
-            Actions: "",
-        },
-        {
-            id: 2,
-            ToothNo: "18",
-            ProvisionalDiagnosis: "Investigation Implant",
-            Investigation: "Investigation Name 1",
-            Interpretation: "",
-            FinalDiagnosis: "Investigation Implant",
-            ExamNotes: "",
-            TreatmentPlanned: "",
-            Actions: "",
-        },
-        {
-            id: 3,
-            ToothNo: "18",
-            ProvisionalDiagnosis: "Investigation Implant",
-            Investigation: "Investigation Name 1",
-            Interpretation: "",
-            FinalDiagnosis: "Investigation Implant",
-            ExamNotes: "",
-            TreatmentPlanned: "",
-            Actions: "",
-        },
-        {
-            id: 4,
-            ToothNo: "18",
-            ProvisionalDiagnosis: "Investigation Implant",
-            Investigation: "Investigation Name 1",
-            Interpretation: "",
-            FinalDiagnosis: "Investigation Implant",
-            ExamNotes: "",
-            TreatmentPlanned: "",
-            Actions: "",
-        },
-        {
-            id: 5,
-            ToothNo: "18",
-            ProvisionalDiagnosis: "Investigation Implant",
-            Investigation: "Investigation Name 1",
-            Interpretation: "",
-            FinalDiagnosis: "Investigation Implant",
-            ExamNotes: "",
-            TreatmentPlanned: "",
-            Actions: "",
-        },
-        {
-            id: 6,
-            ToothNo: "18",
-            ProvisionalDiagnosis: "Investigation Implant",
-            Investigation: "Investigation Name 1",
-            Interpretation: "",
-            FinalDiagnosis: "Investigation Implant",
-            ExamNotes: "",
-            TreatmentPlanned: "",
-            Actions: "",
-        },
-        {
-            id: 7,
-            ToothNo: "18",
-            ProvisionalDiagnosis: "Investigation Implant",
-            Investigation: "Investigation Name 1",
-            Interpretation: "",
-            FinalDiagnosis: "Investigation Implant",
-            ExamNotes: "",
-            TreatmentPlanned: "",
-            Actions: "",
-        },
-        {
-            id: 8,
-            ToothNo: "18",
-            ProvisionalDiagnosis: "Investigation Implant",
-            Investigation: "Investigation Name 1",
-            Interpretation: "",
-            FinalDiagnosis: "Investigation Implant",
-            ExamNotes: "",
-            TreatmentPlanned: "",
+            Interpretation: "Note",
+            FinalDiagnosis: "Select Tooth Investigation Implant",
+            TreatmentPlanned: "Access opening and BMP done",
             Actions: "",
         },
     ];
@@ -131,150 +52,89 @@ const TreatmentExamination = () => {
 
     return (
         <>
-            <Box sx={styles.screenContainer}>
 
-                <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"space-between"}
-                    spacing={16}
-                    sx={{ padding: 2 }}
-                >
-                    <Grid item md={6}>
-                        <Header path={location.pathname} />
-                    </Grid>
-                    <Grid item md={6} >
-                        <Box style={{ width: '50%', marginLeft: '50%' }}>
-                            <CustomDatePicker fullWidth={true} />
-                        </Box>
+            <Grid container spacing={1}>
+                <Grid item md={12}>
+                    <Box sx={styles.tableContainer}>
+                        <CustomTable header={tableHeadData}>
+                            {rows.map((row) => (
+                                <TableRow key={row.id}>
+                                    <TableCell>
+                                        <Typography sx={styles.tableCell}>
+                                            {row.ToothNo}
+                                        </Typography>
 
-                    </Grid>
-                </Grid>
-                <Box sx={styles.screenContainer1}>
-                    <Grid
-                        container
-                        flexDirection={"row"}
-                        justifyContent={"space-between"}
-                    >
-                        <Grid item md={6}>
-                            <Typography sx={styles.doctorName}>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr.Surendra &nbsp;&nbsp;&nbsp; |
-                                &nbsp;&nbsp;&nbsp; Sever Tooth Ache at 18 and 22
-                            </Typography>
-                        </Grid>
-                        <Grid item md={6}>
-                            <Typography sx={styles.investigation}>
-                                Select Major Investigation &nbsp;&nbsp; : &nbsp;&nbsp;
-                                Investigation Name
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                </Box>
-                <Grid container spacing={1}>
-                    <Grid item md={12}>
-                        <Box sx={styles.tableContainer}>
-                            <CustomTable header={tableHeadData}>
-                                {rows.map((row) => (
-                                    <TableRow key={row.id}>
-                                        <TableCell>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Box
+                                            display={"flex"}
+                                            flexDirection={"column"}
+                                            justifyContent={"center"}
+                                            gap={"8px"}
+                                            alignItems={"center"}>
+                                            <Box component={"img"}
+                                                alt={"pencil"}
+                                                src={Image}
+                                                width={"30px"}
+                                                height={"30px"}
+                                            >
+                                            </Box>
                                             <Typography sx={styles.tableCell}>
-                                                {row.ToothNo}
+                                                {row.ExaminationNotes}
                                             </Typography>
-                                        </TableCell>
-
-                                        <TableCell>
-                                            <Typography sx={styles.tableCell}>
-                                                {row.ProvisionalDiagnosis}
-                                            </Typography>
-                                        </TableCell>
-
-                                        <TableCell>
+                                        </Box>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Box
+                                            display={"flex"}
+                                            flexDirection={"column"}
+                                            justifyContent={"center"}
+                                            gap={"10px"}
+                                            alignItems={"center"}>
                                             <Typography sx={styles.tableCell}>
                                                 {row.Investigation}
                                             </Typography>
-                                        </TableCell>
-                                        <TableCell>
-                                            <CustomButton
-                                                title={"+ Add"}
-                                                handleButtonClick={buttonClicked}
-                                                backgroundcolor={"#204289"}
-                                                bordercolor={"#204289"}
-                                                border={"1px solid"}
-                                                fontsize={"12px"}
-                                                color={"info"}
-                                                padding={"2px 2px"}
-                                            />
-                                        </TableCell>
-                                        <TableCell>
                                             <Typography sx={styles.tableCell}>
-                                                {row.FinalDiagnosis}
+                                                {row.Investigation}
                                             </Typography>
-                                        </TableCell>
-                                        <TableCell>
-                                            <Grid
-                                                container
-                                                justifyContent={"center"}
-                                                alignItems={"center"}
-                                                flexDirection={"column"}
+                                        </Box>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Box
+                                            display={"flex"}
+                                            flexDirection={"column"}
+                                            justifyContent={"center"}
+                                            gap={"4px"}
+                                            alignItems={"center"}>
+                                            <Box component={"img"}
+                                                alt={"pencil"}
+                                                src={Image}
+                                                width={"30px"}
+                                                height={"30px"}
                                             >
-                                                <Box
-                                                    component="img"
-                                                    sx={{
-                                                        height: 25,
-                                                        width: 25,
-                                                        borderRadius: 22,
-                                                    }}
-                                                    alt={row.id + "alt"}
-                                                    src={require("../../../../assets/activeaccounts.svg")}
-                                                />{" "}
-                                                <Typography sx={styles.tableCell}>Note</Typography>
-                                            </Grid>
-                                        </TableCell>
-                                        <TableCell>
-                                            <Grid
-                                                container
-                                                flexDirection={"column"}
-                                                columnSpacing={2}
-                                                justifyContent={"center"}
-                                                alignItems={"center"}
-                                            >
-                                                <CustomButton
-                                                    title={"Access opening and BMP done"}
-                                                    handleButtonClick={buttonClicked}
-                                                    backgroundcolor={"#FFFFFF"}
-                                                    bordercolor={"#9DA2AB"}
-                                                    padding={"4px 40px"}
-                                                    border={"1px solid"}
-                                                    fontsize={"13px"}
-                                                    color={"primary"}
-                                                />
-                                                <Box sx={{ marginTop: 1 }}>
-                                                    <CustomButton
-                                                        title={"Access opening"}
-                                                        handleButtonClick={buttonClicked}
-                                                        backgroundcolor={"#FFFFFF"}
-                                                        bordercolor={"#9DA2AB"}
-                                                        padding={"4px 50px"}
-                                                        border={"1px solid"}
-                                                        fontsize={"13px"}
-                                                        color={"primary"}
-                                                    />
-                                                </Box>
-                                                <Box sx={{ marginTop: 1 }}>
-                                                    <CustomButton
-                                                        title={"+ Add Treatment"}
-                                                        handleButtonClick={buttonClicked}
-                                                        backgroundcolor={"#FFFFFF"}
-                                                        bordercolor={"#9DA2AB"}
-                                                        padding={"4px 50px"}
-                                                        border={"1px solid"}
-                                                        fontsize={"13px"}
-                                                        color={"primary"}
-                                                    />
-                                                </Box>
-                                            </Grid>
-                                        </TableCell>
-                                        <TableCell>
+                                            </Box>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.Interpretation}
+                                            </Typography>
+                                        </Box>
+                                    </TableCell>
+
+                                    <TableCell>
+                                        <Typography sx={styles.tableCell}>
+                                            {row.FinalDiagnosis}
+                                        </Typography>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Typography sx={styles.tableCell}>
+                                            {row.TreatmentPlanned}
+                                        </Typography>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Box
+                                            display={"flex"}
+                                            gap={"10px"}
+                                            justifyContent={"center"}
+                                            alignItems={"center"}>
                                             <Grid container>
                                                 <Grid item>
                                                     <Grid
@@ -295,14 +155,33 @@ const TreatmentExamination = () => {
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
-                            </CustomTable>
-                        </Box>
-                    </Grid>
+                                            <Box
+                                                display={"flex"}
+                                                justifyContent={"center"}
+                                                alignItems={"center"}
+                                                flexDirection={"column"}
+                                            >
+                                                <Box
+                                                    component={"img"}
+                                                    alt=" Appointment"
+                                                    src={DeleteImage}
+                                                    width={"18px"}
+                                                    height={"18px"}
+                                                    fontSize={"18px"}>
+                                                </Box>
+                                                <Typography sx={styles.tableCell} style={{ "color": "#CE0505" }}>
+                                                    delete
+                                                </Typography>
+                                            </Box>
+                                        </Box>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </CustomTable>
+                    </Box>
                 </Grid>
-            </Box>
+            </Grid>
+
         </>
     )
 }

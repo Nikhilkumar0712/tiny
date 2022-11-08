@@ -179,7 +179,8 @@ const VisitingPlanning = () => {
                                                             to="/"
                                                             style={{ textDecoration: "none" }}
                                                         >
-                                                            <Typography sx={styles.tableCell}>
+                                                            <Typography sx={styles.tableCell} 
+                                                            style={{"color":"#CE0505"}}>
                                                                 {" "}
                                                                 Delete{" "}
                                                             </Typography>

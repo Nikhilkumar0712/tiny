@@ -168,203 +168,187 @@ const TreatmentCaseHistory = () => {
     return (
         <>
             <Box sx={styles.screenContainer}>
-                <Grid
-                    container
-                    flexDirection={"row"}
-                    justifyContent={"space-between"}
-                    spacing={16}
-                    sx={{ padding: 2 }}
-                >
-                    <Grid item md={6}>
-                        <Header path={location.pathname} />
+                <Grid container>
+                    <Grid item md={12}>
+                        <Typography sx={styles.label1}>Chief Complaint</Typography>
+                        <Box sx={{ marginLeft: 4 }}>
+                            <CustomSelectPicker
+                                selectValue={""}
+                                size={"small"}
+                                fullWidth={true}
+                                handleSelectValue={(val: any) => console.log(val)}
+                                width={"100%"}
+                                selectData={complaintData}
+                                placeholderText={"Type patients chief complaints here"}
+                            />
+                        </Box>
                     </Grid>
-                    <Grid item md={6}></Grid>
                 </Grid>
-                <Box sx={styles.formContainer}>
-                    <Box sx={styles.feildContainer}>
-                        <Grid container>
+                <Box sx={styles.feildContainer}>
+                    <Grid
+                        container
+                        flexDirection={"row"}
+                        justifyContent={"space-between"}
+                        alignItems={"center"}
+                        spacing={4}
+                    >
+                        <Grid item md={6}>
                             <Grid item md={12}>
-                                <Typography sx={styles.label1}>Chief Complaint</Typography>
-                                <Box sx={{ marginLeft: 4 }}>
-                                    <CustomSelectPicker
-                                        selectValue={""}
-                                        size={"small"}
-                                        fullWidth={true}
-                                        handleSelectValue={(val: any) => console.log(val)}
-                                        width={"100%"}
-                                        selectData={complaintData}
-                                        placeholderText={"Type patients chief complaints here"}
-                                    />
-                                </Box>
+                                <Typography sx={styles.label1}>History</Typography>
                             </Grid>
-                        </Grid>
-                    </Box>
-                    <Box sx={styles.feildContainer}>
-                        <Grid
-                            container
-                            flexDirection={"row"}
-                            justifyContent={"space-between"}
-                            alignItems={"center"}
-                            spacing={4}
-                        >
-                            <Grid item md={6}>
-                                <Grid item md={12}>
-                                    <Typography sx={styles.label1}>History</Typography>
-                                </Grid>
-                                <Box sx={{ marginLeft: 5 }}>
-                                    <Grid
-                                        container
-                                        justifyContent={"space-evenly"}
-                                        alignItems={"center"}
-                                        rowSpacing={2}
-                                        spacing={4}
-                                    >
-                                        <Grid item md={6}>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={presentIllness}
-                                                placeholderText={"Present illness"}
-                                            />
-                                        </Grid>
-                                        <Grid item md={6}>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={pastIllness}
-                                                placeholderText={"Past illness"}
-                                            />
-                                        </Grid>
-                                        <Grid item md={12}>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={familyIllness}
-                                                placeholderText={"Family History Illness"}
-                                            />
-                                        </Grid>
-                                        <Grid item md={12}>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={drugHistory}
-                                                placeholderText={"Drug History"}
-                                            />
-                                        </Grid>
-                                        <Grid item md={12}>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={underMedication}
-                                                placeholderText={"Using any Medication"}
-                                            />
-                                        </Grid>
-                                    </Grid>
-                                </Box>
-                            </Grid>
-                            <Grid item md={6} sx={{ marginTop: 6 }}>
+                            <Box sx={{ marginLeft: 5 }}>
                                 <Grid
                                     container
                                     justifyContent={"space-evenly"}
                                     alignItems={"center"}
-                                    rowSpacing={3}
+                                    rowSpacing={2}
+                                    spacing={4}
                                 >
-                                    <Grid item md={12}>
-                                        <Typography sx={styles.label}>Allergies</Typography>
-                                        <Box sx={styles.feildContainer1}>
-                                            <CustomSelectPicker
-                                                selectValue={["allergy1", "allergy2"]}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => handleChange(val)}
-                                                width={"100%"}
-                                                selectData={allergyData}
-                                                multiple={true}
-                                            />
-                                        </Box>
+                                    <Grid item md={6}>
+                                        <CustomSelectPicker
+                                            selectValue={""}
+                                            size={"small"}
+                                            fullWidth={true}
+                                            handleSelectValue={(val: any) => console.log(val)}
+                                            width={"100%"}
+                                            selectData={presentIllness}
+                                            placeholderText={"Present illness"}
+                                        />
                                     </Grid>
-
-                                    <Grid item md={12}>
-                                        <Typography sx={styles.label}>
-                                            Medical Information
-                                        </Typography>
-                                        <Box sx={styles.feildContainer1}>
-                                            <CustomSelectPicker
-                                                selectValue={""}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => console.log(val)}
-                                                width={"100%"}
-                                                selectData={medicalInfo}
-                                                placeholderText={"Enter medical information"}
-                                            />
-                                        </Box>
+                                    <Grid item md={6}>
+                                        <CustomSelectPicker
+                                            selectValue={""}
+                                            size={"small"}
+                                            fullWidth={true}
+                                            handleSelectValue={(val: any) => console.log(val)}
+                                            width={"100%"}
+                                            selectData={pastIllness}
+                                            placeholderText={"Past illness"}
+                                        />
                                     </Grid>
-
                                     <Grid item md={12}>
-                                        <Typography sx={styles.label}>Habits</Typography>
-                                        <Box sx={styles.feildContainer1}>
-                                            <CustomSelectPicker
-                                                selectValue={["habit1", "habit2"]}
-                                                size={"small"}
-                                                fullWidth={true}
-                                                handleSelectValue={(val: any) => handleChange(val)}
-                                                width={"100%"}
-                                                selectData={habitData}
-                                                multiple={true}
-                                            />
-                                        </Box>
+                                        <CustomSelectPicker
+                                            selectValue={""}
+                                            size={"small"}
+                                            fullWidth={true}
+                                            handleSelectValue={(val: any) => console.log(val)}
+                                            width={"100%"}
+                                            selectData={familyIllness}
+                                            placeholderText={"Family History Illness"}
+                                        />
+                                    </Grid>
+                                    <Grid item md={12}>
+                                        <CustomSelectPicker
+                                            selectValue={""}
+                                            size={"small"}
+                                            fullWidth={true}
+                                            handleSelectValue={(val: any) => console.log(val)}
+                                            width={"100%"}
+                                            selectData={drugHistory}
+                                            placeholderText={"Drug History"}
+                                        />
+                                    </Grid>
+                                    <Grid item md={12}>
+                                        <CustomSelectPicker
+                                            selectValue={""}
+                                            size={"small"}
+                                            fullWidth={true}
+                                            handleSelectValue={(val: any) => console.log(val)}
+                                            width={"100%"}
+                                            selectData={underMedication}
+                                            placeholderText={"Using any Medication"}
+                                        />
                                     </Grid>
                                 </Grid>
-                            </Grid>
+                            </Box>
                         </Grid>
-                    </Box>
-                    <Box sx={styles.feildContainer}>
-                        <Grid container flexDirection={"row"} spacing={1}>
-                            <Grid item md={12}>
-                                <Typography sx={styles.label1}>
-                                    Previous Dental Treatments
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                        <Box sx={{ marginLeft: 5 }}>
-                            <Grid container flexDirection={"row"} spacing={1}>
-                                <Grid item md={3}>
-                                    <CustomInput
-                                        placeholder={"Treatment Name"}
-                                        InputProps={""}
-                                        size={"small"}
-                                    />
+                        <Grid item md={6} sx={{ marginTop: 6 }}>
+                            <Grid
+                                container
+                                justifyContent={"space-evenly"}
+                                alignItems={"center"}
+                                rowSpacing={3}
+                            >
+                                <Grid item md={12}>
+                                    <Typography sx={styles.label}>Allergies</Typography>
+                                    <Box sx={styles.feildContainer1}>
+                                        <CustomSelectPicker
+                                            selectValue={["allergy1", "allergy2"]}
+                                            size={"small"}
+                                            fullWidth={true}
+                                            handleSelectValue={(val: any) => handleChange(val)}
+                                            width={"100%"}
+                                            selectData={allergyData}
+                                            multiple={true}
+                                        />
+                                    </Box>
                                 </Grid>
-                                <Grid item md={3}>
-                                    <CustomInput
-                                        placeholder={"Treatment Month & Year"}
-                                        InputProps={""}
-                                        size={"small"}
-                                    />
+
+                                <Grid item md={12}>
+                                    <Typography sx={styles.label}>
+                                        Medical Information
+                                    </Typography>
+                                    <Box sx={styles.feildContainer1}>
+                                        <CustomSelectPicker
+                                            selectValue={""}
+                                            size={"small"}
+                                            fullWidth={true}
+                                            handleSelectValue={(val: any) => console.log(val)}
+                                            width={"100%"}
+                                            selectData={medicalInfo}
+                                            placeholderText={"Enter medical information"}
+                                        />
+                                    </Box>
                                 </Grid>
-                                <Grid item md={3}>
-                                    <Box sx={styles.iconContainer}>
-                                        <AddOutlinedIcon sx={styles.addIcon} />
+
+                                <Grid item md={12}>
+                                    <Typography sx={styles.label}>Habits</Typography>
+                                    <Box sx={styles.feildContainer1}>
+                                        <CustomSelectPicker
+                                            selectValue={["habit1", "habit2"]}
+                                            size={"small"}
+                                            fullWidth={true}
+                                            handleSelectValue={(val: any) => handleChange(val)}
+                                            width={"100%"}
+                                            selectData={habitData}
+                                            multiple={true}
+                                        />
                                     </Box>
                                 </Grid>
                             </Grid>
-                        </Box>
+                        </Grid>
+                    </Grid>
+                </Box>
+                <Box sx={styles.feildContainer}>
+                    <Grid container flexDirection={"row"} spacing={1}>
+                        <Grid item md={12}>
+                            <Typography sx={styles.label1}>
+                                Previous Dental Treatments
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                    <Box sx={{ marginLeft: 5 }}>
+                        <Grid container flexDirection={"row"} spacing={1}>
+                            <Grid item md={3}>
+                                <CustomInput
+                                    placeholder={"Treatment Name"}
+                                    InputProps={""}
+                                    size={"small"}
+                                />
+                            </Grid>
+                            <Grid item md={3}>
+                                <CustomInput
+                                    placeholder={"Treatment Month & Year"}
+                                    InputProps={""}
+                                    size={"small"}
+                                />
+                            </Grid>
+                            <Grid item md={3}>
+                                <Box sx={styles.iconContainer}>
+                                    <AddOutlinedIcon sx={styles.addIcon} />
+                                </Box>
+                            </Grid>
+                        </Grid>
                     </Box>
                 </Box>
 

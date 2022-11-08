@@ -5,7 +5,6 @@ export const styles = {
         color : 'primary.main'
     },
     screenContainer : {
-        marginTop  : 2,
         marginRight :2,
         marginBottom : 2
     },
@@ -51,7 +50,6 @@ export const styles = {
         padding : 1
     },
     tableContainer : {
-         marginTop : 2
     },
     tableCell : {
         fontFamily : 'Poppins',
@@ -94,7 +92,6 @@ export const styles = {
 
     },
     formContainer : {
-        marginTop : 2.5,
         marginLeft : 10,
         marginRight : 10,
         marginBottom : 3

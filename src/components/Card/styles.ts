@@ -1,6 +1,5 @@
 export const styles = {
    card: {
-      
       padding : 0,
       "&:last-child": {
          paddingBottom: 0

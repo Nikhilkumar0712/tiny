@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Link, Typography, Grid, InputAdornment, Button } from "@mui/material";
+import { Box, Link, Typography, Grid } from "@mui/material";
 import CustomTable from "../../components/Tabel";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
@@ -14,6 +14,7 @@ import CustomCard from "../../components/Card";
 import Image from '../../assets/meetballicon.svg'
 import PopOverMenu from './PopOverMenu';
 import EditPencil from '../../assets/edit pencil.svg'
+import AccountsHeader from '../Billing/AccountsHeader';
 import CustomPopOver from '../../components/PopOver';
 // import CustomPopOver from '../../components/PopOver';
 const Treatments = () => {
@@ -89,9 +90,10 @@ const Treatments = () => {
 
   return (
     <>
-
-      <Breadcrumbs title={"Treatments"} breadcrumbsArr={breadcrumbs} />
-
+      <Grid container flexDirection={"row"} justifyContent={"space-between"}>
+        <Breadcrumbs title={"Treatments"} breadcrumbsArr={breadcrumbs} />
+        <AccountsHeader />
+      </Grid>
       <Box sx={styles.screenContainer}>
         <Grid container spacing={1}>
           <Grid item md={12}>
@@ -125,7 +127,6 @@ const Treatments = () => {
                           {row.TreatmentCourseCost}
                         </Typography>
                       </TableCell>
-
                       <TableCell>
                         <Grid
                           container
@@ -139,10 +140,8 @@ const Treatments = () => {
                               <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
                               <RouterLink
                                 to="/TreatmentView"
-                                style={{ textDecoration: "none" }}
-                              >
+                                style={{ textDecoration: "none" }}>
                                 <Typography sx={styles.tableCell}>
-                                
                                   View
                                 </Typography>
                               </RouterLink>

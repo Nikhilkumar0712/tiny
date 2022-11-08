@@ -9,5 +9,9 @@ export const styles = {
         fontFamily: 'Poppins',
         fontSize: 11,
         color: '#204289',
-    }
+    },
+    cardContainer : {
+        marginRight : 1,
+        marginTop : 2
+      },
 }

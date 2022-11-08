@@ -4,6 +4,7 @@ import CustomCard from '../../../components/Card'
 import HocLayout from '../../../components/HocLayout'
 import CustomButton from '../../../components/Button'
 import Breadcrum from '../../../components/Breadcrum'
+import makeStyles from "@material-ui/styles/makeStyles";
 import { styles } from './patientprofilestyles';
 import TabContext from '@mui/lab/TabContext';
 import Tab from '@mui/material/Tab';
@@ -15,15 +16,23 @@ import UserPrescription from './UserPrescriptions'
 import UserBilling from './UserBilling'
 import PatientRecord from './PatientRecord'
 import OtherDetails from './UserOtherDetails'
+import { Styles } from '../PatientRegistration/SchemeDetails/styles'
 
+
+const useStyles = makeStyles({
+    tab: {
+        color: "#021025 !important",
+        '&.Mui-selected': {
+            color: "#204289 !important"
+        }
+    },
+});
 
 const PatientProfile = () => {
 
     const buttonClicked = () => { }
 
-
     const handleOnClickBreadcrumItem = () => { }
-
 
     const breadcrumbs = [
         <Link
@@ -46,13 +55,16 @@ const PatientProfile = () => {
         setValue(newValue);
     };
 
+    const classes = useStyles();
+    const tabClasses = { root: classes.tab };
+
     return (
         <>
             <Box
                 display={"flex"}
                 justifyContent={"space-between"}
                 alignItems={"center"}
-                mr={2}>
+                mr={1}>
                 <Breadcrum title={"Patients Profile"} breadcrumbsArr={breadcrumbs} />
                 <CustomButton title={"Edit Profile"}
                     handleButtonClick={buttonClicked}
@@ -130,14 +142,28 @@ const PatientProfile = () => {
                     <CustomCard>
                         <Box p={2}>
                             <TabContext value={value} >
-                                <Box >
-                                    <TabList aria-label="lab API tabs example" onChange={handleChange} >
-                                        <Tab label="Appointments" value="1" />
-                                        <Tab label="Treatments" value="2" />
-                                        <Tab label="Prescriptions" value="3" />
-                                        <Tab label="Billing" value="4" />
-                                        <Tab label="Patient Record" value="5" />
-                                        <Tab label="Other Details" value="6" />
+                                <Box>
+                                    <TabList aria-label="lab API tabs example"
+                                        onChange={handleChange}
+                                        sx={styles.Tablist}>
+                                        <Tab label="Appointments" value="1"
+                                            sx={styles.TabColor}
+                                            classes={tabClasses} />
+                                        <Tab label="Treatments" value="2"
+                                            sx={styles.TabColor}
+                                            classes={tabClasses} />
+                                        <Tab label="Prescriptions" value="3"
+                                            sx={styles.TabColor}
+                                            classes={tabClasses} />
+                                        <Tab label="Billing" value="4"
+                                            sx={styles.TabColor}
+                                            classes={tabClasses} />
+                                        <Tab label="Patient Record" value="5"
+                                            sx={styles.TabColor}
+                                            classes={tabClasses} />
+                                        <Tab label="Other Details" value="6"
+                                            sx={styles.TabColor}
+                                            classes={tabClasses} />
                                     </TabList>
                                 </Box>
                                 <TabPanel value='1' sx={styles.TabPanel}>

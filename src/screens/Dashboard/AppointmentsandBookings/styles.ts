@@ -29,10 +29,30 @@ export const Styles = {
     },
     TabColor: {
         textTransform: "none",
-        padding: '0px'
+        padding: '0px',
+        '.css-1t4y33s-MuiButtonBase-root-MuiTab-root':{
+            minHeight:"0px !important"
+        }
 
     },
     Container: {
-        padding: 2
-    }
+        padding: 1
+    },
+    Tablist: {
+        '.css-heg063-MuiTabs-flexContainer': {
+            display:"flex !important",
+            gap: "15px !important"
+        }
+    },
+    MainHeading: {
+        fontFamily: 'Poppins',
+        fontSize: 12,
+        color: '#021025',
+        fontWeight: "550"
+    },
+    SideHeading: {
+        fontFamily: 'Poppins',
+        fontSize: 12,
+        color: 'primary.main'
+    },
 }

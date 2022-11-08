@@ -160,6 +160,16 @@ const PatientDetails = () => {
                         </Box>
                     </Box>
                     <Box mt={"15px"}>
+                        <CustomSelectPicker
+                            selectValue={1}
+                            size={"small"}
+                            fullWidth={true}
+                            handleSelectValue={(val: any) => console.log("hii")}
+                            width={"100%"}
+                            selectData={Nationality}
+                        />
+                    </Box>
+                    <Box mt={"15px"}>
                         <CustomDatePicker fullWidth={"fullWidth"} />
                     </Box>
                     <Box mt={"15px"}>
@@ -184,16 +194,6 @@ const PatientDetails = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={4} mt={"65px"}>
-                    <Box mt={"15px"}>
-                        <CustomSelectPicker
-                            selectValue={1}
-                            size={"small"}
-                            fullWidth={true}
-                            handleSelectValue={(val: any) => console.log("hii")}
-                            width={"100%"}
-                            selectData={Nationality}
-                        />
-                    </Box>
                     <Box mt={"15px"}>
                         <CustomSelectPicker
                             selectValue={1}

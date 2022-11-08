@@ -115,7 +115,7 @@ const ManagePatients = () => {
         display={"flex"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        mr={2}>
+        mr={1}>
         <Breadcrum title={"Patients"} breadcrumbsArr={breadcrumbs} />
         <CustomButton title={"New Patient Registration"}
           handleButtonClick={buttonClicked}

@@ -17,8 +17,8 @@ export const styles = {
     },
     screenContainer: {
         marginTop: 2,
-        marginRight: 2,
-        marginBottom: 2
+        marginRight: 1,
+        marginBottom: 2,
     },
     DownloadImage: {
         width: "1em",
@@ -28,8 +28,8 @@ export const styles = {
     },
     Imagemeetball: {
         transform: "rotate(90deg)",
-        width: "1em",
-        height: "1em",
+        width: "16px",
+        height: "16px",
         color: '#204289',
         fontSize: 18,
     },

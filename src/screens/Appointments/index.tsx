@@ -145,10 +145,8 @@ const Appointments = () => {
           />
         </Grid>
         <Grid item md={4}>
-          <Typography sx={styles.heading}>New Booking</Typography>
         </Grid>
       </Grid>
-
       <Box sx={styles.screenContainer}>
         <Grid container spacing={1}>
           <Grid item md={8}>

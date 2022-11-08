@@ -1,6 +1,6 @@
 import React from 'react'
 import HocLayout from '../../../components/HocLayout'
-import { Box, Link, Typography, Grid, InputAdornment } from "@mui/material";
+import { Box, Link, Typography, Grid } from "@mui/material";
 import CustomTable from "../../../components/Tabel";
 import { styles } from './styles';
 import TableCell from "@mui/material/TableCell";
@@ -14,7 +14,10 @@ import Checkbox from '@mui/material/Checkbox';
 import CustomButton from '../../../components/Button';
 import CustomDatePicker from '../../../components/DatePicker';
 import TimePicker from '../../../components/TimePicker';
+import AccountsHeader from '../../Billing/AccountsHeader';
 import DeleteImage from '../../../assets/delete.svg'
+
+
 const VisitingPlan = () => {
 
   const buttonClicked = () => { }
@@ -93,12 +96,16 @@ const VisitingPlan = () => {
       Actions: ""
     },
 
+
   ];
 
 
   return (
     <>
-      <Breadcrumbs title={"Visiting Plan"} breadcrumbsArr={breadcrumbs} />
+      <Grid container flexDirection={"row"} justifyContent={"space-between"}>
+        <Breadcrumbs title={"Visiting Plan"} breadcrumbsArr={breadcrumbs} />
+        <AccountsHeader />
+      </Grid>
       <Box sx={styles.screenContainer}>
         <Grid container spacing={1}>
           <Grid item md={12}>
@@ -118,10 +125,7 @@ const VisitingPlan = () => {
                         </Typography>
                       </TableCell>
                       <TableCell>
-                        <Box
-                          display={"flex"}
-                          flexDirection={"column"}
-                          gap={"10px"}>
+                        <Box>
                           <Box width={"70%"}>
                             <CustomSelectPicker
                               selectValue={1}
@@ -133,7 +137,7 @@ const VisitingPlan = () => {
                           </Box>
                           <Box
                             display={"flex"}
-                            gap={"10px"}>
+                            gap={"10px"} mt={"8px"}>
                             <Box width={"70%"}>
                               <CustomSelectPicker
                                 selectValue={1}
@@ -143,7 +147,7 @@ const VisitingPlan = () => {
                                 selectData={AttendepesonTitle}
                               />
                             </Box>
-                            <Box>
+                            <Box width={"20%"}>
                               <CustomButton title={"+"}
                                 handleButtonClick={buttonClicked}
                                 backgroundcolor={"#fff"}
@@ -156,57 +160,78 @@ const VisitingPlan = () => {
                             </Box>
                           </Box>
                         </Box>
+
                       </TableCell>
                       <TableCell>
-                        <Box
-                          display={"flex"}
-                          flexDirection={"column"}
-                          gap={"10px"}
-                          alignItems={"center"}>
-                          <Box
-                            display={"flex"}
-                            flexDirection={"row"}
-                            alignItems={"baseline"}
-                            gap={"10px"}>
-                            <Box width={"102px"}>
+                        <Grid container spacing={2}>
+                          <Grid item xs={6}>
+                            <CustomDatePicker fullWidth={''} />
+                          </Grid>
+                          <Grid item xs={6}>
+                            <TimePicker />
+                          </Grid>
+                        </Grid>
+                        <Box mt={"8px"}>
+                          <Grid container spacing={2}>
+                            <Grid item xs={6}>
                               <CustomDatePicker fullWidth={''} />
-                            </Box>
-                            <Box width={"102px"}>
+                            </Grid>
+                            <Grid item xs={6}>
                               <TimePicker />
-                            </Box>
-                          </Box>
-                          <Box
-                            display={"flex"}
-                            flexDirection={"row"}
-                            alignItems={"baseline"}
-                            gap={"10px"}>
-                            <Box width={"102px"}>
-                              <CustomDatePicker fullWidth={''} />
-                            </Box>
-                            <Box width={"102px"}>
-                              <TimePicker />
-                            </Box>
-                          </Box>
+                            </Grid>
+                          </Grid>
                         </Box>
                       </TableCell>
                       <TableCell >
-                        <Typography sx={styles.tableCell}>
-                          {row.Cost}
-                        </Typography>
+                        <Box
+                          display={"flex"}
+                          justifyContent={"center"}
+                          alignItems={"center"}
+                          flexDirection={"column"}
+                          gap={"30px"}>
+                          <Typography sx={styles.tableCell}>
+                            {row.Cost}
+                          </Typography>
+                          <Typography sx={styles.tableCell}>
+                            {row.Cost}
+                          </Typography>
+                        </Box>
                       </TableCell>
                       <TableCell >
-                        <Typography sx={styles.tableCell}>
-                          {row.TreatmentStatus}
-                        </Typography>
+                        <Box
+                          display={"flex"}
+                          justifyContent={"center"}
+                          alignItems={"center"}
+                          flexDirection={"column"}
+                          gap={"30px"}>
+                          <Typography sx={styles.tableCell}>
+                            {row.TreatmentStatus}
+                          </Typography>
+                          <Typography sx={styles.tableCell}>
+                            {row.TreatmentStatus}
+                          </Typography>
+                        </Box>
                       </TableCell>
                       <TableCell >
-                        <Typography sx={styles.tableCell}>
-                          {row.PaymentStatus}
-                        </Typography>
+                        <Box
+                          display={"flex"}
+                          justifyContent={"center"}
+                          alignItems={"center"}
+                          flexDirection={"column"}
+                          gap={"30px"}>
+                          <Typography sx={styles.tableCell}>
+                            {row.PaymentStatus}
+                          </Typography>
+                          <Typography sx={styles.tableCell}>
+                            {row.PaymentStatus}
+                          </Typography>
+                        </Box>
                       </TableCell>
                       <TableCell>
                         <Box
                           display={"flex"}
+                          justifyContent={"center"}
+                          alignItems={"center"}
                           flexDirection={"row"}
                           gap={"8px"}>
                           <Box
@@ -217,7 +242,7 @@ const VisitingPlan = () => {
                             height={"18px"}
                             fontSize={"18px"}>
                           </Box>
-                          <Typography sx={styles.tableCell}>
+                          <Typography sx={styles.tableCell} style={{ "color": "#CE0505" }}>
                             delete
                           </Typography>
                         </Box>

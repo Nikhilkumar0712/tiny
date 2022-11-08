@@ -16,6 +16,7 @@ import { styles } from './styles'
 import CustomDatePicker from '../../../components/DatePicker';
 import CustomButton from '../../../components/Button';
 import HocLayout from '../../../components/HocLayout'
+import AccountsHeader from '../../Billing/AccountsHeader';
 const TreatmentPlanning = () => {
 
 
@@ -95,15 +96,15 @@ const TreatmentPlanning = () => {
   const buttonClicked = () => { }
   return (
     <>
-      <Grid container spacing={3}>
-        <Grid item xs={4}>
+      <Grid container spacing={2}>
+        <Grid item xs={3}>
           <Breadcrumbs title={"Treatment Planning"} breadcrumbsArr={breadcrumbs} />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={5}>
           <TreatmentDetailsHeader />
         </Grid>
         <Grid item xs={4}>
-
+          <AccountsHeader />
         </Grid>
       </Grid>
       <Box sx={styles.screenContainer}>
@@ -123,18 +124,36 @@ const TreatmentPlanning = () => {
                           <Checkbox size="small" />
                         </Box>
                       </TableCell>
-                      <TableCell>
+                      <TableCell sx={{ width: "7%" }}>
                         <Typography sx={styles.tableCell}>
                           {row.ToothNo}
                         </Typography>
                       </TableCell>
-                      <TableCell>
-                        <Typography sx={styles.tableCell}>
-                          {row.Treatment}
-                        </Typography>
+                      <TableCell sx={{ width: "9%" }}>
+                        <Box
+                          display={"flex"}
+                          flexDirection={"column"}
+                          gap={"30px"}>
+                          <Typography sx={styles.tableCell}>
+                            {row.Treatment}
+                          </Typography>
+                          <Typography sx={styles.tableCell}>
+                            {row.Treatment}
+                          </Typography>
+                          <Typography sx={styles.tableCell}>
+                            {row.Treatment}
+                          </Typography>
+                        </Box>
                       </TableCell>
                       <TableCell>
-                        <CustomDatePicker fullWidth={'fullWidth'} />
+                        <Box
+                          display={"flex"}
+                          flexDirection={"column"}
+                          gap={"10px"}>
+                          <CustomDatePicker fullWidth={'fullWidth'} />
+                          <CustomDatePicker fullWidth={'fullWidth'} />
+                          <CustomDatePicker fullWidth={'fullWidth'} />
+                        </Box>
                       </TableCell>
                       <TableCell>
                         <Box
@@ -236,7 +255,7 @@ const TreatmentPlanning = () => {
                           </Box>
                         </Box>
                       </TableCell>
-                      <TableCell>
+                      <TableCell sx={{ width: "11%" }}>
                         <Box
                           display={"flex"}
                           flexDirection={"column"}
@@ -281,7 +300,7 @@ const TreatmentPlanning = () => {
           <Grid container spacing={2}>
             <Grid item xs={4}>
               <CustomCard>
-                <Box p={2}> 
+                <Box p={2}>
                   <Box>
                     <Typography sx={styles.TotalCost}>
                       Total Treatment Course Cost

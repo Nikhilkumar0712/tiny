@@ -81,14 +81,14 @@ const LabWork = () => {
                                         <TableCell>
                                             <Box
                                                 display={"flex"}
-                                                gap={"10px"}
+                                                gap={"6px"}
                                                 alignItems={"center"}
                                                 justifyContent={"center"}>
                                                 <Box component={"img"}
                                                     alt={"pencil"}
                                                     src={Image}
-                                                    width={"40px"}
-                                                    height={"40px"}
+                                                    width={"30px"}
+                                                    height={"30px"}
                                                     fontSize={"18px"}>
                                                 </Box>
                                                 <Typography sx={styles.tableCell}>
