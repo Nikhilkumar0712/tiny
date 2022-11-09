@@ -1,120 +1,84 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
-import CustomTable from '../../../../components/Table'
-import CustomCard from '../../../../components/Card'
+import CustomTable from '../../../../components/Tabel'
 import { Link as RouterLink } from 'react-router-dom';
-import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
 import { useNavigate } from "react-router-dom";
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { styles } from './styles';
 const PatientRecord = () => {
 
-    const columns: GridColDef[] = [
-        {
-            field: "File Name",
-            headerName: "FileName",
-            width: 250,
-            renderCell: (params) => {
-                return (
-                    <Box
-                        display={"flex"}
-                        gap={"10px"}
-                        textAlign={'center'}
-                        alignItems={"center"}
-                        flexDirection={"column"}>
-                        <Typography sx={styles.rowDataHeading}>
-                            {params.row.FileName}
-                        </Typography>
-                    </Box>
-                );
-            },
-        },
-        {
-            field: "FileType",
-            headerName: "File Type",
-            width: 250,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>
-                            {params.row.FileType}
-                        </Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Date",
-            headerName: "Date",
-            width: 250,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.Date}</Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Actions",
-            headerName: "Actions",
-            width: 250,
-            renderCell: (params) => {
-                return (
-                    <Grid
-                        container
-                        justifyContent={"space-between"}
-                    >
-                        <>
-                            <Grid
-                                flexDirection={"column"}
-                                alignItems={"center"}
-                                gap={"10px"}
-                                textAlign={"center"}>
-                                <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                                <RouterLink to="/PatientProfile"><Typography sx={styles.rowData}> View </Typography></RouterLink>
-                            </Grid>
-                        </>
-                    </Grid>
-                )
-            },
-        },
+    const tableHeadData = [
+        "File Name",
+        "File Type",
+        "Date",
+        "Actions",
     ];
 
     const rows = [
         {
             id: 1,
-            FileName: '17, 18 Scan',
-            FileType: "jpg",
+            FileName: "P1245",
+            FileType: "Teeth Whitening",
             Date: "31 Aug 2022",
-            Actions: "-",
-        },
-        {
-            id: 1,
-            FileName: '17, 18 Scan',
-            FileType: "jpg",
-            Date: "31 Aug 2022",
-            Actions: "-",
-        },
-        {
-            id: 1,
-            FileName: '17, 18 Scan',
-            FileType: "jpg",
-            Date: "31 Aug 2022",
-            Actions: "-",
-        },
-        {
-            id: 1,
-            FileName: '17, 18 Scan',
-            FileType: "jpg",
-            Date: "31 Aug 2022",
-            Actions: "-",
+            Actions: "",
         },
     ];
+
     return (
-        <Box>
-            <CustomTable coloumns={columns} rows={rows} itemsPerPage={4} rowsPerPage={4} 
-            onCellClick={""}/>
+        <Box sx={styles.screenContainer}>
+            <Grid container spacing={1}>
+                <Grid item md={12}>
+                    <Box sx={styles.tableContainer}>
+                        <CustomTable header={tableHeadData}>
+                            {rows.map((row) => (
+                                <TableRow key={row.id}>
+                                    <TableCell>
+                                        <Typography sx={styles.tableCell}>
+                                            {row.FileName}
+                                        </Typography>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Typography sx={styles.tableCell}>
+                                            {row.FileType}
+                                        </Typography>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Typography sx={styles.tableCell}>
+                                            {row.Date}
+                                        </Typography>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Grid
+                                            container
+                                            flexDirection="row"
+                                            spacing={2}
+                                            justifyContent={'space-around'}
+                                            alignItems={'center'}>
+                                            <Grid item>
+                                                <Grid container flexDirection="row"
+                                                    gap={"5px"} alignItems={"center"}>
+                                                    <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
+                                                    <RouterLink
+                                                        to="/"
+                                                        style={{ textDecoration: "none" }}
+                                                    >
+                                                        <Typography sx={styles.tableCell}>
+                                                            {" "}
+                                                            View{" "}
+                                                        </Typography>
+                                                    </RouterLink>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </CustomTable>
+                    </Box>
+                </Grid>
+            </Grid>
         </Box>
     )
 }

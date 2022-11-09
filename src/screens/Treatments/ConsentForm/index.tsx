@@ -1,8 +1,9 @@
 import React from 'react';
-import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import { Box, Link, Typography, Grid, InputAdornment } from "@mui/material";
-import CustomTable from "../../../components/Table";
+import { Box, Link, Typography, Grid } from "@mui/material";
+import CustomTable from "../../../components/Tabel";
 import { styles } from './styles';
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import LocalPrintshopOutlinedIcon from '@mui/icons-material/LocalPrintshopOutlined';
 import { Link as RouterLink } from 'react-router-dom';
@@ -10,219 +11,230 @@ import CloudDownloadOutlinedIcon from '@mui/icons-material/CloudDownloadOutlined
 import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "../../../components/Breadcrum";
 import CustomCard from "../../../components/Card";
+import AccountsHeader from '../../Billing/AccountsHeader';
 import Image from '../../../assets/print.svg'
 import CustomButton from '../../../components/Button';
 import HocLayout from '../../../components/HocLayout';
-
+import EditPencil from '../../../assets/edit pencil.svg'
 
 const ConsentForm = () => {
 
 
-    const columns: GridColDef[] = [
-        {
-            field: "ConsentDate",
-            headerName: "Consent Date",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <Typography sx={styles.rowData}>
-                        {params.row.ConsentDate}
-                    </Typography>
-                );
-            },
-        },
-        {
-            field: "Treatment Course",
-            headerName: "Treatment Course",
-            width: 180,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>
-                            {params.row.TreatmentCourse}
-                        </Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Form Name",
-            headerName: "Form Name",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.FormName}</Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Contact Name",
-            headerName: "Contact Name",
-            width: 160,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.ContactName}</Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Relation",
-            headerName: "Relation",
-            width: 130,
-            renderCell: (params) => {
 
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.Relation}</Typography>
-                    </>
-                );
 
-            },
-        },
-        {
-            field: "Phone Number",
-            headerName: "Phone Number",
-            width: 130,
-            renderCell: (params) => {
+  const navigate = useNavigate();
 
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.PhoneNumber}</Typography>
-                    </>
-                );
+  const handleOnClickBreadcrumItem = () => {
+    navigate("./Dashboard");
+  };
 
-            },
-        },
-        {
-            field: "Actions",
-            headerName: "Actions",
-            width: 290,
-            renderCell: (params) => {
-                return (
-                    <Grid
-                        container
-                        flexDirection="row"
-                        gap={"40px"}>
-                        <>
-                            <Box
-                                display={"flex"}
-                                flexDirection={"column"}
+
+  const breadcrumbs = [
+    <Link
+      underline="hover"
+      key="1"
+      color="inherit"
+      href="/Dashboard"
+      onClick={handleOnClickBreadcrumItem}
+      sx={styles.breadcrumbSubtext}
+    >
+      Dashboard
+    </Link>,
+    <Typography key="2" sx={styles.breadcrumbSubtext}>
+      Treatments
+    </Typography>,
+    <Typography key="2" sx={styles.breadcrumbSubtext}>
+      Consent Form
+    </Typography>,
+  ];
+
+  const buttonClicked = () => { }
+
+  const tableHeadData = [
+    "Consent Date",
+    "Treatment Course",
+    "Form Name",
+    "Contact Name",
+    "Relation",
+    "Phone Number",
+    "Actions",
+  ];
+
+  const rows = [
+    {
+      id: 1,
+      ConsentDate: "22 Sept 2022",
+      TreatmentCourse: "22 Sept 2022",
+      FormName: "156",
+      ContactName: "22 Sept 2022",
+      Relation: "OP",
+      PhoneNumber: "7000",
+      Actions: "",
+    },
+    {
+      id: 2,
+      ConsentDate: "22 Sept 2022",
+      TreatmentCourse: "22 Sept 2022",
+      FormName: "156",
+      ContactName: "22 Sept 2022",
+      Relation: "OP",
+      PhoneNumber: "7000",
+      Actions: "",
+    },
+  ];
+
+
+  return (
+    <>
+      <Grid container flexDirection={"row"} justifyContent={"space-between"}>
+        <Breadcrumbs title={"Visiting Plan"} breadcrumbsArr={breadcrumbs} />
+        <AccountsHeader />
+      </Grid>
+      <Box sx={styles.screenContainer}>
+        <Grid container spacing={1}>
+          <Grid item md={12}>
+            <CustomCard>
+              <Box p={2}>
+                <Box display={"flex"}
+                  justifyContent={"end"}>
+                  <CustomButton title={"Add Consent Form +"}
+                    handleButtonClick={buttonClicked}
+                    backgroundcolor={"#204289"}
+                    bordercolor={"#204289"}
+                    border={"1px solid"}
+                    fontsize={"14px"}
+                    color={"info"}
+                    padding={"4px 30px"}
+                    endIcon={""} />
+                </Box>
+                <Box sx={styles.tableContainer}>
+                  <CustomTable header={tableHeadData}>
+                    {rows.map((row) => (
+                      <TableRow key={row.id}>
+                        <TableCell>
+                          <Typography sx={styles.tableCell}>
+                            {row.ConsentDate}
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography sx={styles.tableCell}>
+                            {row.TreatmentCourse}
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography sx={styles.tableCell}>
+                            {row.FormName}
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography sx={styles.tableCell}>
+                            {row.ContactName}
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography sx={styles.tableCell}>
+                            {row.Relation}
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography sx={styles.tableCell}>
+                            {row.PhoneNumber}
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Grid
+                            container
+                            flexDirection="row"
+                            spacing={2}
+                            justifyContent={'space-between'}
+                            alignItems={'center'}>
+                            <Grid item>
+                              <Grid container flexDirection="column"
                                 alignItems={"center"}
-                                gap={"5px"}>
+                                gap={"10px"}>
                                 <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                                <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> View </Typography></RouterLink>
-                            </Box>
-                        </>
-                        <>
-                            <Box
-                                display={"flex"}
-                                flexDirection={"column"}
+                                <RouterLink
+                                  to="/"
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Typography sx={styles.tableCell}>
+                                    {" "}
+                                    View{" "}
+                                  </Typography>
+                                </RouterLink>
+                              </Grid>
+                            </Grid>
+                            <Grid item>
+                              <Grid container flexDirection="column"
                                 alignItems={"center"}
-                                gap={"5px"}>
-                                <LocalPrintshopOutlinedIcon sx={styles.actionIcon} />
-                                <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Print </Typography></RouterLink>
-                            </Box>
-                        </>
-                        <>
-                            <Box
-                                display={"flex"}
-                                flexDirection={"column"}
+                                gap={"10px"}>
+                                <LocalPrintshopOutlinedIcon
+                                  sx={styles.actionIcon}
+                                />
+                                <RouterLink
+                                  to="/"
+                                  style={{ textDecoration: "none" }}>
+                                  <Typography sx={styles.tableCell}>
+                                    {" "}
+                                    Print{" "}
+                                  </Typography>
+                                </RouterLink>
+                              </Grid>
+                            </Grid>
+                            <Grid item>
+                              <Grid container flexDirection="column"
                                 alignItems={"center"}
-                                gap={"5px"}>
+                                gap={"10px"}>
                                 <CloudDownloadOutlinedIcon sx={styles.actionIcon} />
-                                <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Print </Typography></RouterLink>
-                            </Box>
-                        </>
-                        <>
-                            <Box
-                                display={"flex"}
-                                flexDirection={"column"}
+                                <RouterLink
+                                  to="/"
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Typography sx={styles.tableCell}>
+                                    {" "}
+                                    Download{" "}
+                                  </Typography>
+                                </RouterLink>
+                              </Grid>
+                            </Grid>
+                            <Grid item>
+                              <Grid container flexDirection="column"
                                 alignItems={"center"}
-                                gap={"5px"}>
-                                <img src={Image} alt="" style={styles.DownloadImage} />
-                                <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Download </Typography></RouterLink>
-                            </Box>
-                        </>
-                    </Grid>
-                )
-            },
-        },
-    ];
+                                gap={"10px"}>
+                                <Box
+                                  component={"img"}
+                                  alt=" Appointment"
+                                  src={EditPencil}
+                                  width={"18px"}
+                                  height={"18px"}
+                                  fontSize={"18px"}>
+                                </Box>
+                                <RouterLink
+                                  to="/"
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Typography sx={styles.tableCell}>
+                                    {" "}
+                                    Edit{" "}
+                                  </Typography>
+                                </RouterLink>
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </CustomTable>
+                </Box>
+              </Box>
+            </CustomCard>
+          </Grid>
+        </Grid>
+      </Box>
+    </>
 
-    const rows = [
-        {
-            id: 1,
-            ConsentDate: '4 Aug 2022',
-            TreatmentCourse: "Root Canal",
-            FormName: "Covid-19",
-            ContactName: "Srinivas",
-            Relation: "Father",
-            PhoneNumber: "9891881529",
-            Actions: "-",
-        },
-
-    ];
-
-    const navigate = useNavigate();
-
-    const handleOnClickBreadcrumItem = () => {
-        navigate("./Dashboard");
-    };
-
-
-    const breadcrumbs = [
-        <Link
-            underline="hover"
-            key="1"
-            color="inherit"
-            href="/Dashboard"
-            onClick={handleOnClickBreadcrumItem}
-            sx={styles.breadcrumbSubtext}
-        >
-            Dashboard
-        </Link>,
-        <Typography key="2" sx={styles.breadcrumbSubtext}>
-            Treatments
-        </Typography>,
-        <Typography key="2" sx={styles.breadcrumbSubtext}>
-            Consent Form
-        </Typography>,
-    ];
-
-    const buttonClicked=()=>{}
-
-    return (
-        <>
-            <Breadcrumbs title={"Consent Form"} breadcrumbsArr={breadcrumbs} />
-            <Box sx={styles.screenContainer}>
-                <Grid container>
-                    <Grid item md={12}>
-                        <CustomCard>
-                            <Box textAlign={"right"}>
-                                <CustomButton title={"Add Consent Form +"}
-                                    handleButtonClick={buttonClicked}
-                                    backgroundcolor={"#204289"}
-                                    bordercolor={"#204289"}
-                                    border={"1px solid"}
-                                    fontsize={"14px"}
-                                    color={"info"}
-                                    padding={"4px 30px"}
-                                    endIcon={""} />
-                            </Box>
-                            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} 
-                            onCellClick={""}/>
-                        </CustomCard>
-                    </Grid>
-                </Grid>
-            </Box>
-        </>
-
-    )
+  )
 
 }
-const ConsentFormhoc=HocLayout(ConsentForm)
+const ConsentFormhoc = HocLayout(ConsentForm)
 export default ConsentFormhoc

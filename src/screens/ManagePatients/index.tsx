@@ -1,136 +1,20 @@
 import React from 'react'
+import CustomTable from '../../components/Tabel';
 import HocLayout from '../../components/HocLayout'
-import EditIcon from '@mui/icons-material/Edit';
-import Switch from '@mui/material/Switch';
 import { Box, Link, Typography, Grid, InputAdornment, Avatar } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import Breadcrum from "../../components/Breadcrum";
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import { styles } from "./styles";
-import { Search } from "@mui/icons-material";
 import { Link as RouterLink } from 'react-router-dom';
-import CustomInput from '../../components/Input';
+import EditPencil from '../../assets/edit pencil.svg'
 import CustomButton from '../../components/Button';
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
 import { useNavigate } from "react-router-dom";
 import CustomCard from '../../components/Card';
-import CustomTable from '../../components/Table';
 import CustomSwitch from '../../components/Switch';
 const ManagePatients = () => {
-
-  
-  const columns: GridColDef[] = [
-    {
-      field: "PatientName",
-      headerName: "Patient Name",
-      width: 180,
-      renderCell: (params) => {
-        return (
-          <Box
-            display={"flex"}
-            gap={"10px"}
-            alignItems={"center"}>
-            <Avatar alt="Remy Sharp" src="../../assets/profile.png" />
-            <Typography sx={styles.rowData}>
-              {params.row.PatientName}
-            </Typography>
-          </Box>
-        );
-      },
-    },
-    {
-      field: "PatientId",
-      headerName: "Patient Id",
-      width: 180,
-      renderCell: (params) => {
-        return (
-          <>
-            <Typography sx={styles.rowData}>
-              {params.row.PatientId}
-            </Typography>
-          </>
-        );
-      },
-    },
-    {
-      field: "DateofBirth",
-      headerName: "Date of Birth",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <>
-            <Typography sx={styles.rowData}>{params.row.DateofBirth}</Typography>
-          </>
-        );
-      },
-    },
-    {
-      field: "Gender",
-      headerName: "Gender",
-      width: 180,
-      renderCell: (params) => {
-        return (
-          <>
-            <Typography sx={styles.rowData}>{params.row.Gender}</Typography>
-          </>
-        );
-      },
-    },
-    {
-      field: "ContactInfo",
-      headerName: "Contact Info",
-      width: 180,
-      renderCell: (params) => {
-        return (
-          <>
-            <Typography sx={styles.rowData}>{params.row.ContactInfo}</Typography>
-          </>
-        );
-      },
-    },
-    {
-      field: "Actions",
-      headerName: "Actions",
-      width: 230,
-      renderCell: (params) => {
-        return (
-          <Grid
-            container
-            justifyContent={"space-between"}
-          >
-            <>
-              <Grid
-                flexDirection={"row"}
-                alignItems={"center"}
-                gap={"10px"}
-                textAlign={"center"}>
-                <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                <RouterLink to="/PatientProfile" style={{textDecoration: 'none' }}><Typography sx={styles.rowData}> View </Typography></RouterLink>
-              </Grid>
-            </>
-            <>
-              <Grid
-                flexDirection={"row"}
-                textAlign={"center"}
-                alignItems={"center"}>
-                <EditIcon sx={styles.actionIcon} />
-                <RouterLink to="/BookingsView" style={{textDecoration: 'none' }}><Typography sx={styles.rowData}> Edit </Typography></RouterLink>
-              </Grid>
-            </>
-            <>
-              <Grid
-                flexDirection={"row"}
-                textAlign={"center"}
-                alignItems={"center"}>
-                <CustomSwitch />
-                <RouterLink to="/BookingsView" style={{textDecoration: 'none' }}><Typography sx={styles.rowData}> Active </Typography></RouterLink>
-              </Grid>
-            </>
-          </Grid>
-        )
-      },
-    },
-  ];
 
 
   const navigate = useNavigate();
@@ -156,52 +40,74 @@ const ManagePatients = () => {
       Patients
     </Typography>
   ];
+
+  const tableHeadData = [
+    "Patient Name",
+    "Patient ID",
+    "Date of Birth",
+    "Age",
+    "Gender",
+    "Contact No",
+    "Actions",
+  ];
+
   const rows = [
     {
       id: 1,
-      PatientName: 'Suresh',
-      PatientId: "156",
+      PatientName: "Suresh",
+      image: require("../../assets/profile.png"),
+      PatientID: "1543355",
       DateofBirth: "22 Sept 2022",
+      Age: "27",
       Gender: "Male",
-      ContactInfo: "9640363627",
-      Actions: "-",
+      ContactNo: "1234565432",
+      Actions: "",
     },
     {
-      id: 1,
-      PatientName: 'Suresh',
-      PatientId: "156",
+      id: 2,
+      PatientName: "Suresh",
+      image: require("../../assets/profile.png"),
+      PatientID: "1543355",
       DateofBirth: "22 Sept 2022",
+      Age: "27",
       Gender: "Male",
-      ContactInfo: "9640363627",
-      Actions: "-",
+      ContactNo: "1234565432",
+      Actions: "",
     },
     {
-      id: 1,
-      PatientName: 'Suresh',
-      PatientId: "156",
+      id: 3,
+      PatientName: "Suresh",
+      image: require("../../assets/profile.png"),
+      PatientID: "1543355",
       DateofBirth: "22 Sept 2022",
+      Age: "27",
       Gender: "Male",
-      ContactInfo: "9640363627",
-      Actions: "-",
+      ContactNo: "1234565432",
+      Actions: "",
     },
     {
-      id: 1,
-      PatientName: 'Suresh',
-      PatientId: "156",
+      id: 4,
+      PatientName: "Suresh",
+      image: require("../../assets/profile.png"),
+      PatientID: "1543355",
       DateofBirth: "22 Sept 2022",
+      Age: "27",
       Gender: "Male",
-      ContactInfo: "9640363627",
-      Actions: "-",
+      ContactNo: "1234565432",
+      Actions: "",
     },
     {
-      id: 1,
-      PatientName: 'Suresh',
-      PatientId: "156",
+      id: 5,
+      PatientName: "Suresh",
+      image: require("../../assets/profile.png"),
+      PatientID: "1543355",
       DateofBirth: "22 Sept 2022",
+      Age: "27",
       Gender: "Male",
-      ContactInfo: "9640363627",
-      Actions: "-",
+      ContactNo: "1234565432",
+      Actions: "",
     },
+
   ];
   return (
     <>
@@ -209,9 +115,9 @@ const ManagePatients = () => {
         display={"flex"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        mr={2}>
+        mr={1}>
         <Breadcrum title={"Patients"} breadcrumbsArr={breadcrumbs} />
-        <CustomButton title={"Add New Patients"}
+        <CustomButton title={"New Patient Registration"}
           handleButtonClick={buttonClicked}
           backgroundcolor={"#204289"}
           bordercolor={"#204289"}
@@ -223,25 +129,120 @@ const ManagePatients = () => {
       </Box>
       <Box sx={styles.screenContainer}>
         <CustomCard>
-          <Grid container>
-            <Grid item md={12}>
-              <Box width={"200px"}>
-                <CustomInput size={'small'} placeholder="Search Patients"
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <Search />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              </Box>
-              <Box>
-                <CustomTable coloumns={columns} rows={rows} itemsPerPage={4} rowsPerPage={4} 
-                onCellClick={""}/>
-              </Box>
-            </Grid>
-          </Grid>
+          <Box sx={styles.tableContainer}>
+            <CustomTable header={tableHeadData}>
+              {rows.map((row) => (
+                <TableRow key={row.id}>
+                  <TableCell>
+                    <Box
+                      display={"flex"}
+                      alignItems={"center"}
+                      gap={"10px"}
+                      justifyContent={"center"}>
+                      <Box
+                        component={"img"}
+                        alt=" Appointment"
+                        src={row.image}
+                        width={"40px"}
+                        height={"40px"}
+                        borderRadius={"50%"}>
+                      </Box>
+                      <Typography sx={styles.tableCell}>
+                        {row.PatientName}
+                      </Typography>
+                    </Box>
+                  </TableCell>
+                  <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.PatientID}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.DateofBirth}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.Age}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.Gender}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.ContactNo}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Box
+                      display={"flex"}
+
+                      justifyContent={"space-between"}
+                      alignItems={"center"}>
+                      <Box
+                        display={"flex"}
+                        flexDirection="column"
+                        gap={"3px"} alignItems={"center"}>
+                        <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
+                        <RouterLink
+                          to="/PatientProfile"
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Typography sx={styles.tableCell}>
+                            {" "}
+                            View{" "}
+                          </Typography>
+                        </RouterLink>
+                      </Box>
+                      <Box
+                        display={"flex"}
+                        flexDirection="column"
+                        gap={"3px"} alignItems={"center"}>
+                        <Box
+                          component={"img"}
+                          alt=" Appointment"
+                          src={EditPencil}
+                          width={"18px"}
+                          height={"18px"}
+                          fontSize={"18px"}>
+                        </Box>
+                        <RouterLink
+                          to="/"
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Typography sx={styles.tableCell}>
+                            {" "}
+                            Edit{" "}
+                          </Typography>
+                        </RouterLink>
+                      </Box>
+                      <Box
+                        display={"flex"}
+                        flexDirection="column"
+                        alignItems={"center"}>
+                        <Box>
+                          <CustomSwitch />
+                        </Box>
+                        <RouterLink
+                          to="/"
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Typography sx={styles.tableCell}>
+                            {" "}
+                            Active{" "}
+                          </Typography>
+                        </RouterLink>
+                      </Box>
+                    </Box>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </CustomTable>
+          </Box>
         </CustomCard>
       </Box>
     </>

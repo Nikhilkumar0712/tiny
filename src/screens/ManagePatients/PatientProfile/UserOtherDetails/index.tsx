@@ -4,54 +4,56 @@ import { styles } from './styles'
 const OtherDetails = () => {
     return (
         <>
-            <Box mb={"25px"}>
-                <Box mt={"15px"}>
+            <Box paddingBottom={"50px"}>
+                <Box mt={"20px"} ml={"15px"}>
                     <Typography sx={styles.namehead}>
                         Patient Scheme :
                     </Typography>
                 </Box>
-                <Box mt={"15px"}>
-                    <Grid container spacing={3}>
-                        <Grid item xs={4}>
-                            <Typography sx={styles.namehead}>
-                                Scheme Name :  <span
-                                    style={styles.nametext}>Arogya Bhadratha</span>
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Typography sx={styles.namehead}>
-                                Scheme Name :  <span
-                                    style={styles.nametext}>Arogya Bhadratha</span>
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Typography sx={styles.namehead}>
-                                Scheme Maximum Limit :   <span
-                                    style={styles.nametext}>Rs. 30000</span>
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                    <Box mt={"15px"}>
+                <Box padding={"0px 0px 0px 40px"}>
+                    <Box mt={"20px"}>
                         <Grid container spacing={3}>
                             <Grid item xs={4}>
                                 <Typography sx={styles.namehead}>
-                                    Company Name :  <span
-                                        style={styles.nametext}>Government</span>
+                                    Scheme Name :  <span
+                                        style={styles.nametext}>Arogya Bhadratha</span>
                                 </Typography>
                             </Grid>
                             <Grid item xs={4}>
                                 <Typography sx={styles.namehead}>
-                                    Scheme Maximum Bills :   <span
-                                        style={styles.nametext}>03 </span>
+                                    Scheme Name :  <span
+                                        style={styles.nametext}>Arogya Bhadratha</span>
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <Typography sx={styles.namehead}>
+                                    Scheme Maximum Limit :   <span
+                                        style={styles.nametext}>Rs. 30000</span>
                                 </Typography>
                             </Grid>
                         </Grid>
+                        <Box mt={"20px"}>
+                            <Grid container spacing={3}>
+                                <Grid item xs={4}>
+                                    <Typography sx={styles.namehead}>
+                                        Company Name :  <span
+                                            style={styles.nametext}>Government</span>
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={4}>
+                                    <Typography sx={styles.namehead}>
+                                        Scheme Maximum Bills :   <span
+                                            style={styles.nametext}>03 </span>
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </Box>
                     </Box>
                 </Box>
-                <Box mt={"15px"}>
+                <Box mt={"25px"} >
                     <Grid container spacing={3}>
                         <Grid item xs={6}>
-                            <Box>
+                            <Box >
                                 <Box>
                                     <Typography sx={styles.namehead}>
                                         Attendee Details :
@@ -59,7 +61,7 @@ const OtherDetails = () => {
                                 </Box>
                                 <Grid container spacing={3}>
                                     <Grid item xs={6}>
-                                        <Box mt={'15px'}>
+                                        <Box mt={'15px'} padding={"0px 0px 0px 40px"}>
                                             <Typography sx={styles.namehead}>
                                                 Name :   <span
                                                     style={styles.nametext}>B Harish Rao</span>
@@ -75,8 +77,8 @@ const OtherDetails = () => {
                                         </Box>
                                     </Grid>
                                 </Grid>
-                                <Box mt={'15px'}>
-                                    <Typography sx={styles.namehead}>
+                                <Box mt={'24px'} padding={"0px 0px 0px 40px"}>
+                                    <Typography sx={styles.namehead} >
                                         Attendee Contact No : <span
                                             style={styles.nametext}> 80139 81781 </span>
                                     </Typography>
@@ -100,7 +102,7 @@ const OtherDetails = () => {
                                         </Box>
                                     </Grid>
                                     <Grid item xs={6}>
-                                        <Box mt={'15px'}>
+                                        <Box mt={'24px'}>
                                             <Typography sx={styles.namehead}>
                                                 Referral Relation :  <span
                                                     style={styles.nametext}>Doctor</span>

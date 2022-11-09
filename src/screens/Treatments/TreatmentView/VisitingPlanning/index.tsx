@@ -1,177 +1,201 @@
 import React from 'react'
 import { Box, Grid, Typography, withStyles } from '@mui/material';
 import { styles } from './styles';
-import CustomTable from '../../../../components/Table';
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import CustomTable from '../../../../components/Tabel';
 import { Link as RouterLink } from 'react-router-dom';
-import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import Checkbox from '@mui/material/Checkbox';
 import Image from '../../../../assets/delete.svg'
+
 const VisitingPlanning = () => {
 
-    const columns: GridColDef[] = [
-        {
-            field: "Select",
-            headerName: "Select",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <Checkbox size='small' />
-                );
-            },
-        },
-        {
-            field: "Visits",
-            headerName: "Visits",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.Visits}</Typography>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Treatment",
-            headerName: "Treatment",
-            width: 130,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Box
-                            display={"flex"}
-                            flexDirection={"column"}
-                            gap={"15px"}>
-                            <Typography sx={styles.rowData}>{params.row.Treatment1}</Typography>
-                            <Typography sx={styles.rowData}>{params.row.Treatment2}</Typography>
-                        </Box>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Date & Time",
-            headerName: "Date & Time",
-            width: 160,
-            renderCell: (params) => {
-                return (
-                    <>
-                        <Box
-                            display={"flex"}
-                            flexDirection={"column"}
-                            alignItems={"center"}
-                            gap={'15px'}>
-                            <Box
-                                display={"flex"} gap={"3px"}>
-                                <Typography sx={styles.rowData}>{params.row.Date1}</Typography>
-                                <Typography sx={styles.rowData}>{params.row.Time1}</Typography>
-                            </Box>
-                            <Box
-                                display={"flex"} gap={"3px"} >
-                                <Typography sx={styles.rowData}>{params.row.Date2}</Typography>
-                                <Typography sx={styles.rowData}>{params.row.Time2}</Typography>
-                            </Box>
-                        </Box>
-                    </>
-                );
-            },
-        },
-        {
-            field: "Cost",
-            headerName: "Cost",
-            width: 130,
-            renderCell: (params) => {
 
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.Cost}</Typography>
-                    </>
-                );
-
-            },
-        },
-        {
-            field: "Treatment Status",
-            headerName: "Treatment Status",
-            width: 180,
-            renderCell: (params) => {
-
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.TreatmentStatus}</Typography>
-                    </>
-                );
-
-            },
-        },
-        {
-            field: "PaymentStatus",
-            headerName: "PaymentStatus",
-            width: 180,
-            renderCell: (params) => {
-
-                return (
-                    <>
-                        <Typography sx={styles.rowData}>{params.row.PaymentStatus}</Typography>
-                    </>
-                );
-
-            },
-        },
-        {
-            field: "Actions",
-            headerName: "Actions",
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <Grid
-                        container
-                        flexDirection="row"
-                        gap={"10px"}
-                    >
-                        <>
-                            <img src={Image} alt="" style={styles.notes} />
-                            <RouterLink to="/BookingsView"><Typography sx={styles.rowData}> Delete </Typography></RouterLink>
-                        </>
-                    </Grid>
-                )
-            },
-        },
+    const tableHeadData = [
+        "Select",
+        "Visits",
+        "Treatment",
+        "Date & Time",
+        "Cost",
+        'Treatment Status',
+        "Payment Status",
+        "Actions"
     ];
 
     const rows = [
         {
             id: 1,
-            Visits: "Visit 1",
-            Treatment1: "Root Canal",
-            Treatment2: "Tooth Whitening",
-            Date1: "31 Aug 2022",
-            Time1: "06:00 Pm",
-            Date2: "31 Aug 2022",
-            Time2: "06:00 Pm",
-            Cost: "7000",
-            TreatmentStatus: "Status",
-            PaymentStatus: 'Status',
+            Select: '',
+            Visits: 'Visits 1',
+            Treatment: 'Treatment 1',
+            Date: "31 Aug 2022",
+            Time: "06:00 Pm",
+            Cost: 7000,
+            TreatmentStatus: "Pending",
+            PaymentStatus: "Done",
+            Actions: ""
         },
-        {
-            id: 2,
-            Visits: "Visit 1",
-            Treatment2: "Root Canal",
-            Date2: "31 Aug 2022",
-            Time2: "06:00 Pm",
-            Cost: "7000",
-            TreatmentStatus: "Status",
-            PaymentStatus: 'Status',
-        },
-
     ];
-
 
 
     return (
         <>
-            <CustomTable coloumns={columns} rows={rows} itemsPerPage={5} rowsPerPage={5} rowHeight={100} 
-            onCellClick={""}/>
+            <Box sx={styles.screenContainer}>
+                <Grid container spacing={1}>
+                    <Grid item md={12}>
+                        <Box sx={styles.tableContainer}>
+                            <CustomTable header={tableHeadData}>
+                                {rows.map((row) => (
+                                    <TableRow key={row.id}>
+                                        <TableCell>
+                                            <Checkbox size="small" />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography sx={styles.tableCell}>
+                                                {row.Visits}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Box
+                                                display={"flex"}
+                                                flexDirection={"column"}
+                                                gap={"20px"}
+                                                justifyContent={"center"}
+                                                alignItems={"center"}>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.Treatment}
+                                                </Typography>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.Treatment}
+                                                </Typography>
+                                            </Box>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Box
+                                                display={"flex"}
+                                                flexDirection={"column"}
+                                                gap={"20px"}
+                                                justifyContent={"center"}
+                                                alignItems={"center"}>
+
+                                                <Box
+                                                    display={"flex"}
+                                                    gap={"5px"}
+                                                    justifyContent={"center"}
+                                                    alignItems={"baseline"}>
+                                                    <Box>
+                                                        <Typography sx={styles.tableCell}>
+                                                            {row.Date}
+                                                        </Typography>
+                                                    </Box>
+                                                    <Box>
+                                                        <Typography sx={styles.time}>
+                                                            {row.Time}
+                                                        </Typography>
+                                                    </Box>
+                                                </Box>
+                                                <Box
+                                                    display={"flex"}
+                                                    gap={"5px"}
+                                                    justifyContent={"center"}
+                                                    alignItems={"baseline"}>
+                                                    <Box>
+                                                        <Typography sx={styles.tableCell}>
+                                                            {row.Date}
+                                                        </Typography>
+                                                    </Box>
+                                                    <Box>
+                                                        <Typography sx={styles.time}>
+                                                            {row.Time}
+                                                        </Typography>
+                                                    </Box>
+                                                </Box>
+                                            </Box>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Box
+                                                display={"flex"}
+                                                flexDirection={"column"}
+                                                gap={"20px"}
+                                                justifyContent={"center"}
+                                                alignItems={"center"}>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.Cost}
+                                                </Typography>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.Cost}
+                                                </Typography>
+                                            </Box>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Box
+                                                display={"flex"}
+                                                flexDirection={"column"}
+                                                gap={"20px"}
+                                                justifyContent={"center"}
+                                                alignItems={"center"}>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.TreatmentStatus}
+                                                </Typography>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.TreatmentStatus}
+                                                </Typography>
+                                            </Box>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Box 
+                                               display={"flex"}
+                                               flexDirection={"column"}
+                                               gap={"20px"}
+                                               justifyContent={"center"}
+                                               alignItems={"center"}>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.PaymentStatus}
+                                                </Typography>
+                                                <Typography sx={styles.tableCell}>
+                                                    {row.PaymentStatus}
+                                                </Typography>
+                                            </Box>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Grid
+                                                container
+                                                flexDirection="row"
+                                                spacing={2}
+                                                justifyContent={'space-around'}
+                                                alignItems={'center'}>
+                                                <Grid item>
+                                                    <Grid container flexDirection="row"
+                                                        gap={"5px"} alignItems={"center"}>
+                                                        <Box component={"img"}
+                                                            alt={"pencil"}
+                                                            src={Image}
+                                                            width={"18px"}
+                                                            height={"18px"}
+                                                            fontSize={"18px"}>
+
+                                                        </Box>
+                                                        <RouterLink
+                                                            to="/"
+                                                            style={{ textDecoration: "none" }}
+                                                        >
+                                                            <Typography sx={styles.tableCell} 
+                                                            style={{"color":"#CE0505"}}>
+                                                                {" "}
+                                                                Delete{" "}
+                                                            </Typography>
+                                                        </RouterLink>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </CustomTable>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </Box>
         </>
     )
 }

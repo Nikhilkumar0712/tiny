@@ -5,9 +5,9 @@ import { styles } from './styles'
 const TreatmentDetailsHeader = () => {
     return (
         <>
-            <Box>
-                <Box mt={'10px'}>
-                    <CustomCard>
+            <Box sx={styles.cardContainer}>
+                <CustomCard>
+                    <Box p={2}>
                         <Grid container spacing={2}>
                             <Grid item xs={6}>
                                 <Box>
@@ -29,15 +29,15 @@ const TreatmentDetailsHeader = () => {
                                         22 Sept 2022
                                     </span>
                                 </Typography>
-                                <Typography sx={styles.name}  mt={"10px"}>
+                                <Typography sx={styles.name} mt={"10px"}>
                                     Doctor Name : <span style={styles.nameanswer}>
                                         Surendra
                                     </span>
                                 </Typography>
                             </Grid>
                         </Grid>
-                    </CustomCard>
-                </Box>
+                    </Box>
+                </CustomCard>
             </Box>
         </>
     )

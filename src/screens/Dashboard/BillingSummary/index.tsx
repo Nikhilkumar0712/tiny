@@ -127,14 +127,16 @@ export const DashboardBillingSummary = () => {
             </Box>
             <Box mt={2}>
                 <CustomCard>
-                    {
-                        BillingSummaryData.map((item) => {
-                            return (
-                                <BillingSummary
-                                    item={item} />
-                            )
-                        })
-                    }
+                    <Box p={2}>
+                        {
+                            BillingSummaryData.map((item) => {
+                                return (
+                                    <BillingSummary
+                                        item={item} />
+                                )
+                            })
+                        }
+                    </Box>
                 </CustomCard>
             </Box>
         </>

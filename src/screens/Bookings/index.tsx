@@ -144,7 +144,7 @@ const Bookings = () => {
           />
         </Grid>
         <Grid item md={4}>
-          <Typography sx={styles.heading}>New Booking</Typography>
+
         </Grid>
       </Grid>
 
