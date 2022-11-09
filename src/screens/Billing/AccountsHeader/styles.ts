@@ -27,8 +27,12 @@ export const styles = {
     },
     actionIcon : {
         color : '#204289',
-        fontSize : 18,
-        
+        fontSize : 17,
+    },
+    actionIcon1 : {
+        color : '#204289',
+        fontSize : 30,
+        marginTop : 1
     },
     rowData : {
         fontFamily : 'Poppins',
@@ -36,5 +40,18 @@ export const styles = {
         color : 'primary.main',
         marginLeft : 0.5
     },
+    dropdownContainer : {
+        padding : 2,
+        position : 'absolute',
+        zIndex : 99999,
+        top : 0,
+        backgroundColor : 'white'
+    },
+    name : {
+        fontFamily : 'Poppins',
+        fontSize : 12,
+        color : 'primary.main',
+        marginLeft : 0.5
+    }
    
 }

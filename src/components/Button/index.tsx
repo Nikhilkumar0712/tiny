@@ -20,6 +20,7 @@ interface CustomButtonInterface {
   fontsize:string,
   border: string,
   endIcon?:any
+  width? : any
 }
 interface ButtonStylesprops {
   backgroundcolor: string,
@@ -33,7 +34,8 @@ interface ButtonStylesprops {
   | "info"
   | "warning",
   border: string,
-  fontsize:string
+  fontsize:string,
+  width? : any
 }
 const BootstrapButton = styled(Button)((props: ButtonStylesprops) => ({
   textTransform: 'none',
@@ -75,7 +77,9 @@ const CustomButton = (props: CustomButtonInterface) => {
       border={props.border}
       fontsize={props.fontsize}
       color={props.color}
+      sx={{width : props.width ? props.width : undefined}}
       endIcon={props.endIcon}>
+      
       {title}
     </BootstrapButton >
 

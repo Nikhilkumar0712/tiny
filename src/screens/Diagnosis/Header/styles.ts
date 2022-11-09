@@ -3,7 +3,8 @@ export const styles  = {
         border: "1px solid #204289 !important",
         boxShadow: "0px 0px 10px #00000014",
         borderRadius : '10px',
-        height : 43
+        height : 43,
+        width : 500
     },
     activeTabItemContainer : {
         backgroundColor : 'primary.main',
