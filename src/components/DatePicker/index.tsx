@@ -4,6 +4,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { withStyles } from '@material-ui/styles';
+import AccessibleIcon from "@mui/icons-material/Accessible";
 
 
 interface DatePickerWidth {
@@ -37,7 +38,10 @@ const CustomDatePicker = (props:DatePickerWidth ) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
-      toolbarPlaceholder="hi"
+        // components={{
+        //   OpenPickerIcon: AccessibleIcon
+        // }}
+        toolbarPlaceholder="hi"
         value={value}
         onChange={(newValue: any) => {
           setValue(newValue);

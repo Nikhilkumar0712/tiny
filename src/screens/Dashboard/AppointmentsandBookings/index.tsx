@@ -64,25 +64,7 @@ const AppointmentsData = [
     title: 'Nikhil',
     timeanddate: '6 Sep 2022 | 06:00 Pm',
     op: 'OP'
-  },
-  {
-    id: 3,
-    title: 'Nikhil',
-    timeanddate: '6 Sep 2022 | 06:00 Pm',
-    op: 'OP'
-  },
-  {
-    id: 3,
-    title: 'Nikhil',
-    timeanddate: '6 Sep 2022 | 06:00 Pm',
-    op: 'OP'
-  },
-  {
-    id: 3,
-    title: 'Nikhil',
-    timeanddate: '6 Sep 2022 | 06:00 Pm',
-    op: 'OP'
-  },
+  }
 ]
 
 const BookingsData = [

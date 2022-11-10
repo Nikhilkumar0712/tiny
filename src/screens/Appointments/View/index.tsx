@@ -43,7 +43,7 @@ const AppointmentsView = () => {
   return (
     <>
       <Breadcrum title={"Appointment View"} breadcrumbsArr={breadcrumbs} />
-      <Grid container spacing={2} mt={1}>
+      <Grid container spacing={1} mt={1}>
         <Grid item md={8}>
           <CustomCard>
             <Grid
@@ -303,7 +303,10 @@ const AppointmentsView = () => {
           </CustomCard>
         </Grid>
         <Grid item md={4}>
-          <AppointmentandBookings />
+          <Box sx={{marginRight:1}}>
+              <AppointmentandBookings />
+          </Box>
+          
         </Grid>
       </Grid>
     </>

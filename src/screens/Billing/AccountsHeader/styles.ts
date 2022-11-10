@@ -44,8 +44,11 @@ export const styles = {
         padding : 2,
         position : 'absolute',
         zIndex : 99999,
-        top : 0,
-        backgroundColor : 'white'
+        top : 150,
+        backgroundColor : 'white',
+        width : 420,
+        boxShadow: "0px 0px 6px #5D5D5D29",
+        opacity: 1
     },
     name : {
         fontFamily : 'Poppins',
