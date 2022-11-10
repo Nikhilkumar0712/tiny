@@ -202,8 +202,8 @@ const Appointments = () => {
                         >
                           <Box
                             sx={{
-                              height: 60,
-                              width: 0.01,
+                              height: 35,
+                              width: 0.02,
                               backgroundColor: "#3DD230",
                               borderRadius : 10
                             }}
@@ -212,9 +212,9 @@ const Appointments = () => {
                           <Box
                             component="img"
                             sx={{
-                              height: 45,
-                              width: 45,
-                              borderRadius: 22,
+                              height: 34,
+                              width: 34,
+                              borderRadius: 17,
                               marginRight:1
                             }}
                             alt={row.PatientName}
@@ -229,7 +229,6 @@ const Appointments = () => {
                         <Typography sx={styles.appointmentDate}>
                           {row.AppointmentDate}
                         </Typography>
-                        <br />
                         <Typography sx={styles.appointmentTime}>
                           {row.AppointmentTime}
                         </Typography>

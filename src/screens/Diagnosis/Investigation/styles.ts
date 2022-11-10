@@ -7,7 +7,6 @@ export const styles = {
     },
     screenContainer : {
         marginTop  : 2,
-        height : '100vh',
         marginRight : 1,
         marginBottom : 2
 
@@ -50,7 +49,7 @@ export const styles = {
     },
     actionIcon : {
         color : '#204289',
-        fontSize : 17,
+        fontSize : 20,
     },
     filterContainer : {
         padding : 1
@@ -115,6 +114,13 @@ export const styles = {
         color : 'primary.main',
         fontWeight : '500',
         textAlign : 'right'
+    },
+    toothNo : {
+        fontFamily : 'Poppins',
+        fontSize : 13,
+        color : '#021025',
+        fontWeight : '600',
+        textAlign : 'center'
     }
      
 }

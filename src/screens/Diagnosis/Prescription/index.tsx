@@ -11,12 +11,11 @@ import TableRow from "@mui/material/TableRow";
 import { Link as RouterLink } from "react-router-dom";
 import AccountsHeader from "../../Billing/AccountsHeader";
 import Header from "../Header";
-import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
 import CustomButton from "../../../components/Button";
-import CustomDatePicker from "../../../components/DatePicker";
 import CustomSelectPicker from "../../../components/SelectPicker";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import CustomInput from "../../../components/Input"
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 
 const Investigation = () => {
   const navigate = useNavigate();
@@ -131,16 +130,24 @@ const Investigation = () => {
             container
             flexDirection={"row"}
             justifyContent={"space-between"}
-            spacing={16}
+            alignItems={'center'}
             sx={{ padding: 2 }}
           >
-            <Grid item md={6}>
-              <Header path={location.pathname} />
+            <Grid item>
+                <Header path={location.pathname} />
             </Grid>
-            <Grid item md={6}>
-              <Box style={{ width: "50%", marginLeft: "50%" }}>
-                <CustomDatePicker fullWidth={true} />
-              </Box>
+            <Grid item>
+              <CustomButton
+                endIcon={<AddOutlinedIcon />}
+                handleButtonClick={() => {console.log('hii')}}
+                title="Add Prescription"
+                backgroundcolor={"#204289"}
+                bordercolor={"#204289"}
+                border={"1px solid"}
+                fontsize={"13px"}
+                color={"info"}
+                padding={"10px 18px"}
+              />
             </Grid>
           </Grid>
           <Box sx={styles.screenContainer1}>
@@ -157,8 +164,7 @@ const Investigation = () => {
               </Grid>
               <Grid item md={6}>
                 <Typography sx={styles.investigation}>
-                  Select Major Investigation &nbsp;&nbsp; : &nbsp;&nbsp;
-                  Investigation Name
+                &nbsp;&nbsp;&nbsp; Prescription Date &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;22 Sept 2022&nbsp;&nbsp;&nbsp;
                 </Typography>
               </Grid>
             </Grid>
