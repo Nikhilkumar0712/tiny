@@ -161,11 +161,10 @@ const Investigation = () => {
             <Grid item md={6}>
               <Header path={location.pathname} />
             </Grid>
-            <Grid item md={6} >
-              <Box style={{width : '50%',marginLeft : '50%'}}>
-                <CustomDatePicker fullWidth={true}/>
+            <Grid item md={6}>
+              <Box style={{ width: "50%", marginLeft: "50%" }}>
+                <CustomDatePicker fullWidth={true} />
               </Box>
-                
             </Grid>
           </Grid>
           <Box sx={styles.screenContainer1}>
@@ -195,7 +194,7 @@ const Investigation = () => {
                   {rows.map((row) => (
                     <TableRow key={row.id}>
                       <TableCell>
-                        <Typography sx={styles.tableCell}>
+                        <Typography sx={styles.toothNo}>
                           {row.ToothNo}
                         </Typography>
                       </TableCell>
@@ -207,21 +206,70 @@ const Investigation = () => {
                       </TableCell>
 
                       <TableCell>
-                        <Typography sx={styles.tableCell}>
-                          {row.Investigation}
-                        </Typography>
+                        <Grid container sx={{ padding: 1 }}>
+                          <Grid item>
+                            <Box
+                              component="img"
+                              sx={{
+                                height: 30,
+                                width: 30,
+                                borderRadius: 10,
+                              }}
+                              alt={row.Investigation}
+                              src={require("../../../assets/avtar.png")}
+                            />
+                          </Grid>
+                          <Grid item>
+                            <Typography sx={styles.tableCell}>
+                              {row.Investigation}
+                            </Typography>
+                          </Grid>
+                        </Grid>
+                        <Grid container sx={{ padding: 1 }}>
+                          <Grid item>
+                            <Box
+                              component="img"
+                              sx={{
+                                height: 30,
+                                width: 30,
+                                borderRadius: 10,
+                              }}
+                              alt={row.Investigation}
+                              src={require("../../../assets/avtar.png")}
+                            />
+                          </Grid>
+                          <Grid item>
+                            <Typography sx={styles.tableCell}>
+                              {row.Investigation}
+                            </Typography>
+                          </Grid>
+                        </Grid>
                       </TableCell>
                       <TableCell>
-                        <CustomButton
-                          title={"+ Add"}
-                          handleButtonClick={buttonClicked}
-                          backgroundcolor={"#204289"}
-                          bordercolor={"#204289"}
-                          border={"1px solid"}
-                          fontsize={"12px"}
-                          color={"info"}
-                          padding={"2px 2px"}
-                        />
+                        <Box sx={{ padding: 1 }}>
+                          <CustomButton
+                            title={"+ Add"}
+                            handleButtonClick={buttonClicked}
+                            backgroundcolor={"#204289"}
+                            bordercolor={"#204289"}
+                            border={"1px solid"}
+                            fontsize={"12px"}
+                            color={"info"}
+                            padding={"2px 2px"}
+                          />
+                        </Box>
+                        <Box sx={{ padding: 1 }}>
+                          <CustomButton
+                            title={"+ Add"}
+                            handleButtonClick={buttonClicked}
+                            backgroundcolor={"#204289"}
+                            bordercolor={"#204289"}
+                            border={"1px solid"}
+                            fontsize={"12px"}
+                            color={"info"}
+                            padding={"2px 2px"}
+                          />
+                        </Box>
                       </TableCell>
                       <TableCell>
                         <Typography sx={styles.tableCell}>
@@ -262,9 +310,10 @@ const Investigation = () => {
                             backgroundcolor={"#FFFFFF"}
                             bordercolor={"#9DA2AB"}
                             padding={"4px 40px"}
-                            border={"1px solid"}
+                            border={"1.5px solid"}
                             fontsize={"13px"}
                             color={"primary"}
+                            width={300}
                           />
                           <Box sx={{ marginTop: 1 }}>
                             <CustomButton
@@ -272,10 +321,11 @@ const Investigation = () => {
                               handleButtonClick={buttonClicked}
                               backgroundcolor={"#FFFFFF"}
                               bordercolor={"#9DA2AB"}
-                              padding={"4px 50px"}
-                              border={"1px solid"}
+                              padding={"4px 40px"}
+                              border={"1.5px solid"}
                               fontsize={"13px"}
                               color={"primary"}
+                              width={300}
                             />
                           </Box>
                           <Box sx={{ marginTop: 1 }}>
@@ -285,9 +335,10 @@ const Investigation = () => {
                               backgroundcolor={"#FFFFFF"}
                               bordercolor={"#9DA2AB"}
                               padding={"4px 50px"}
-                              border={"1px solid"}
+                              border={"1.5px solid"}
                               fontsize={"13px"}
                               color={"primary"}
+                              width={300}
                             />
                           </Box>
                         </Grid>
@@ -321,6 +372,63 @@ const Investigation = () => {
             </Grid>
           </Grid>
         </CustomCard>
+      </Box>
+      <Box sx={styles.screenContainer}>
+        <Grid
+          container
+          flexDirection={"row"}
+          justifyContent={"flex-end"}
+          spacing={2}
+        >
+          <Grid item>
+            <CustomButton
+              title={"Cancel"}
+              handleButtonClick={buttonClicked}
+              backgroundcolor={"#FFFFFF"}
+              bordercolor={"#9DA2AB"}
+              padding={"4px 40px"}
+              border={"1px solid"}
+              fontsize={"13px"}
+              color={"primary"}
+            />
+          </Grid>
+          <Grid item>
+            <CustomButton
+              title={"Save"}
+              handleButtonClick={buttonClicked}
+              backgroundcolor={"#204289"}
+              bordercolor={"#204289"}
+              border={"1px solid"}
+              fontsize={"13px"}
+              color={"info"}
+              padding={"4px 40px"}
+            />
+          </Grid>
+          <Grid item>
+            <CustomButton
+              title={"Submit"}
+              handleButtonClick={buttonClicked}
+              backgroundcolor={"#204289"}
+              bordercolor={"#204289"}
+              border={"1px solid"}
+              fontsize={"13px"}
+              color={"info"}
+              padding={"4px 40px"}
+            />
+          </Grid>
+          <Grid item>
+            <CustomButton
+              title={"Continue Treatment"}
+              handleButtonClick={buttonClicked}
+              backgroundcolor={"#204289"}
+              bordercolor={"#204289"}
+              border={"1px solid"}
+              fontsize={"13px"}
+              color={"info"}
+              padding={"4px 40px"}
+            />
+          </Grid>
+        </Grid>
       </Box>
     </>
   );

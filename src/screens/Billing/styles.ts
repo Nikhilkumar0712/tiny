@@ -53,7 +53,7 @@ export const styles = {
         padding : 1
     },
     tableContainer : {
-         marginTop : 2
+      
     },
     tableCell : {
         fontFamily : 'Poppins',

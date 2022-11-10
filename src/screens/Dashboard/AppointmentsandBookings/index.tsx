@@ -1,3 +1,4 @@
+import React from 'react'
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabList from '@mui/lab/TabList';
@@ -6,7 +7,8 @@ import CustomInput from '../../../components/Input';
 import CustomSelectPicker from '../../../components/SelectPicker';
 import CustomDatePicker from '../../../components/DatePicker';
 import TabPanel from '@mui/lab/TabPanel';
-import React, { useState } from 'react'
+import Popover from '@mui/material/Popover';
+import PopOverMenu from '../../Treatments/PopOverMenu';
 import CustomCard from '../../../components/Card';
 import Typography from '@mui/material/Typography'
 import { Styles } from './styles';
@@ -25,7 +27,8 @@ const selectData = [
   },
 ];
 interface CheckBoxProps {
-  checkbox: any
+  checkbox: any,
+  handleClick: any
   ml: any,
   item: {
     title: any,
@@ -64,25 +67,7 @@ const AppointmentsData = [
     title: 'Nikhil',
     timeanddate: '6 Sep 2022 | 06:00 Pm',
     op: 'OP'
-  },
-  {
-    id: 3,
-    title: 'Nikhil',
-    timeanddate: '6 Sep 2022 | 06:00 Pm',
-    op: 'OP'
-  },
-  {
-    id: 3,
-    title: 'Nikhil',
-    timeanddate: '6 Sep 2022 | 06:00 Pm',
-    op: 'OP'
-  },
-  {
-    id: 3,
-    title: 'Nikhil',
-    timeanddate: '6 Sep 2022 | 06:00 Pm',
-    op: 'OP'
-  },
+  }
 ]
 
 const BookingsData = [
@@ -125,8 +110,53 @@ const AppointmentandBookings = () => {
   const classes = useStyles();
   const tabClasses = { root: classes.tab };
 
+  const [PopOver, setPopOver] = React.useState<HTMLDivElement | null>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    setPopOver(event.currentTarget);
+  };
+  const handle = (event: React.MouseEvent<HTMLDivElement>) => {
+    setPopOver(event.currentTarget);
+  };
+
+  const handleClose = (event: MouseEvent) => {
+    setPopOver(null);
+  };
+  const open = Boolean(PopOver);
+  const id = open ? 'simple-popover' : undefined;
+
   return (
     <>
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={PopOver}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}>
+        <PopOverMenu />
+      </Popover>
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={PopOver}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}>
+        <h1>Hi</h1>
+      </Popover>
       <Box
         display={"flex"}
         justifyContent={"space-between"}
@@ -189,7 +219,8 @@ const AppointmentandBookings = () => {
                               <CustomDashboardTabAppointmentsandBookings
                                 item={item}
                                 checkbox="Checkbox"
-                                ml={""} />
+                                ml={""}
+                                handleClick={handle} />
                             </>
                           )
                         })
@@ -220,7 +251,8 @@ const AppointmentandBookings = () => {
                         />
                       </Box>
                       <Box>
-                        <CustomDatePicker fullWidth={"fullWidth"} />
+                        <CustomDatePicker fullWidth={"fullWidth"}
+                        />
                       </Box>
                     </Box>
                   </Box>
@@ -233,7 +265,8 @@ const AppointmentandBookings = () => {
                               <CustomDashboardTabAppointmentsandBookings
                                 item={item}
                                 checkbox=""
-                                ml={"10px"} />
+                                ml={"10px"}
+                                handleClick={handleClick} />
                             </>
                           )
                         })
@@ -249,6 +282,8 @@ const AppointmentandBookings = () => {
     </>
   )
 }
+
+
 export const CustomDashboardTabAppointmentsandBookings = (props: CheckBoxProps) => {
   return (
     <>
@@ -320,14 +355,8 @@ export const CustomDashboardTabAppointmentsandBookings = (props: CheckBoxProps) 
                   width={"20px"}>
                 </Box>
               </Box>
-              <Box padding={"3px 15px"}
-                bgcolor={"#204289"}
-                borderRadius={"4px"}
-                color={"#fff"}
-                fontSize={"12px"}
-                fontFamily={"poppins"}
-                textAlign={"center"}
-                fontWeight={"400"}>
+              <Box sx={Styles.treatment}
+                onClick={props.handleClick}>
                 {props.item.op}
               </Box>
             </Box>

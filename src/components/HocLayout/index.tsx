@@ -69,6 +69,7 @@ const HocLayout = (Component: any) => {
           </Grid>
         </Grid>
         <Component />
+        <Box sx={{margin:8}}></Box>
       </Grid>
     </Grid>
   );

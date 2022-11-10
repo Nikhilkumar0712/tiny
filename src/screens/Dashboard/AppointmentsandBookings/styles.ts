@@ -30,8 +30,8 @@ export const Styles = {
     TabColor: {
         textTransform: "none",
         padding: '0px',
-        '.css-1t4y33s-MuiButtonBase-root-MuiTab-root':{
-            minHeight:"0px !important"
+        '.css-1t4y33s-MuiButtonBase-root-MuiTab-root': {
+            minHeight: "0px !important"
         }
 
     },
@@ -40,7 +40,7 @@ export const Styles = {
     },
     Tablist: {
         '.css-heg063-MuiTabs-flexContainer': {
-            display:"flex !important",
+            display: "flex !important",
             gap: "15px !important"
         }
     },
@@ -55,4 +55,17 @@ export const Styles = {
         fontSize: 12,
         color: 'primary.main'
     },
+    treatment: {
+        padding: "4px",
+        backgroundColor: "#fff",
+        width: "83px",
+        borderRadius: "14px",
+        color: "primary",
+        fontSize: "12px",
+        border: "1px solid",
+        borderColor: "#204289",
+        fontFamily: "poppins",
+        textAlign: "center",
+        fontWeight: "400"
+    }
 }

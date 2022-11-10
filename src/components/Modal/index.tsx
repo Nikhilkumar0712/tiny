@@ -11,24 +11,19 @@ interface CustoModalProps {
    open:any
 }
 
-
 const style = {
    position: 'absolute' as 'absolute',
    top: '50%',
    left: '50%',
    transform: 'translate(-50%, -50%)',
    width: 400,
-   bgcolor: 'background.paper',
-   border: '2px solid #000',
+   bgcolor: '#fff',
+   borderRadius:"23px",
    boxShadow: 24,
-   p: 4,
+   p: 3,
 };
 
-
 const CustomModal = (props: CustoModalProps) => {
-   const [open, setOpen] = React.useState(false);
-   const handleOpen = () => setOpen(true);
-   const handleClose = () => setOpen(false);
 
    return (
       <>
@@ -37,9 +32,9 @@ const CustomModal = (props: CustoModalProps) => {
                open={props.open}
                onClose={props.handleClose}
                aria-labelledby="modal-modal-title"
-               aria-describedby="modal-modal-description"
-            >
+               aria-describedby="modal-modal-description">
                <Box sx={style}>
+                  
                   {props.children}
                </Box>
             </Modal>

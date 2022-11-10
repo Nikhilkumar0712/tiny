@@ -4,10 +4,11 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { withStyles } from '@material-ui/styles';
+import AccessibleIcon from "@mui/icons-material/Accessible";
 
 
 interface DatePickerWidth {
-  fullWidth:any
+  fullWidth:any,
 }
 
 const CustomDatePicker = (props:DatePickerWidth ) => {
@@ -37,12 +38,22 @@ const CustomDatePicker = (props:DatePickerWidth ) => {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
-      toolbarPlaceholder="hi"
+        // components={{
+        //   OpenPickerIcon: AccessibleIcon
+        // }}
+        toolbarPlaceholder="hi"
         value={value}
         onChange={(newValue: any) => {
           setValue(newValue);
         }}
-        renderInput={(params) => <StyledTextField {...params} size={'small'} fullWidth={props.fullWidth}/>}
+        renderInput={(params) => <StyledTextField {...params} size={'small'} 
+        fullWidth={props.fullWidth}
+          inputProps={{
+                ...params.inputProps,
+                placeholder: "Date of Birth"
+              }}
+          
+      />}
       />
     </LocalizationProvider>
   )

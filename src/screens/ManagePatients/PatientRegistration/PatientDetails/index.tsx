@@ -31,7 +31,7 @@ const PatientDetails = () => {
     const Nationality = [
         {
             value: 1,
-            name: "Indian",
+            name: "Select Nationality",
         },
         {
             value: 2,
@@ -42,10 +42,10 @@ const PatientDetails = () => {
     const State = [
         {
             value: 1,
-            name: 'Telangana',
+            name: 'Select State',
         },
         {
-            value: 1,
+            value: 2,
             name: 'Andhra Pradesh',
         },
     ]
@@ -53,7 +53,7 @@ const PatientDetails = () => {
     const MaterialStatus = [
         {
             value: 1,
-            name: "Married"
+            name: "Select Martial Status"
         },
         {
             value: 2,
@@ -64,7 +64,7 @@ const PatientDetails = () => {
     const Gender = [
         {
             value: 1,
-            name: 'Male'
+            name: 'Gender'
         },
         {
             value: 2,

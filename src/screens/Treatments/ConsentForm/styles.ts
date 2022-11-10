@@ -22,67 +22,77 @@ export const styles = {
     },
     DownloadImage: {
         width: "1em",
-        height:"1em",
+        height: "1em",
         color: '#204289',
         fontSize: 18,
     },
-    chairColor : {
-        color : '#E5050B',
-        fontSize : 12
+    chairColor: {
+        color: '#E5050B',
+        fontSize: 12
     },
-    chairColorText : {
-        fontFamily : 'Poppins',
-        fontSize : 12,
-        color : '#E5050B',
+    chairColorText: {
+        fontFamily: 'Poppins',
+        fontSize: 12,
+        color: '#E5050B',
     },
-    notesIcon : {
-        color : '#204289',
-        fontSize : 25
+    notesIcon: {
+        color: '#204289',
+        fontSize: 25
     },
     // actionIcon : {
     //     color : '#204289',
     //     fontSize : 17,
     // },
-    filterContainer : {
-        padding : 1
+    filterContainer: {
+        padding: 1
     },
-    tableContainer : {
-       // marginTop : 1
+    tableContainer: {
+        // marginTop : 1
     },
-    tableCell : {
-        fontFamily : 'Poppins',
-        fontSize : 12,
-        color : '#204289',
-        textAlign : 'center',
+    tableCell: {
+        fontFamily: 'Poppins',
+        fontSize: 12,
+        color: '#204289',
+        textAlign: 'center',
         textDecoration: 'none',
     },
-    appointmentDate : {
-        fontFamily : 'Poppins',
-        fontSize : 13,
-        fontWeight : 400,
-        color : '#204289',
+    appointmentDate: {
+        fontFamily: 'Poppins',
+        fontSize: 13,
+        fontWeight: 400,
+        color: '#204289',
     },
-    appointmentTime : {
-        fontFamily : 'Poppins',
-        fontSize : 11,
-        color : '#204289'
+    appointmentTime: {
+        fontFamily: 'Poppins',
+        fontSize: 11,
+        color: '#204289'
     },
-    Chair : {
-        fontFamily : 'Poppins',
-        fontSize : 11,
-        color : 'red'
+    Chair: {
+        fontFamily: 'Poppins',
+        fontSize: 11,
+        color: 'red'
     },
-    heading : {
-        fontFamily : 'Poppins',
-        fontSize : 15,
-        color : '#021025',
-        fontWeight : '600',
-        marginTop : 6,
-        marginLeft : 1
+    heading: {
+        fontFamily: 'Poppins',
+        fontSize: 15,
+        color: '#021025',
+        fontWeight: '600',
+        marginTop: 6,
+        marginLeft: 1
     },
-    verticalLine : {
-      position : 'absolute',
-      //top : 40,
-      zIndex : 99999
+    verticalLine: {
+        position: 'absolute',
+        //top : 40,
+        zIndex: 99999
+    },
+    closeicon: {
+        color: "#104076",
+        cursor:"pointer"
+    },
+    ModalHeading:{
+        fontFamily: 'Poppins',
+        fontSize: 22,
+        color: '#204289',
+        fontWeight: '600',
     }
 }

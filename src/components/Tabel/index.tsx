@@ -51,6 +51,7 @@ const styles = {
   paper: {
     boxShadow: "none",
     backgroundColor: "none",
-    padding: "20px"
+    padding  :1
+    //padding: "20px"
   }
 }

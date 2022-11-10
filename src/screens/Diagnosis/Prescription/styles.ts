@@ -49,7 +49,7 @@ export const styles = {
     },
     actionIcon : {
         color : 'red',
-        fontSize : 19,
+        fontSize : 23,
     },
     filterContainer : {
         padding : 1

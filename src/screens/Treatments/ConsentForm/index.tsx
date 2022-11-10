@@ -16,18 +16,17 @@ import Image from '../../../assets/print.svg'
 import CustomButton from '../../../components/Button';
 import HocLayout from '../../../components/HocLayout';
 import EditPencil from '../../../assets/edit pencil.svg'
+import CustomModal from '../../../components/Modal';
+import CloseIcon from '@mui/icons-material/Close';
+import AddConsentForm from './AddConsentForm';
 
 const ConsentForm = () => {
-
-
-
 
   const navigate = useNavigate();
 
   const handleOnClickBreadcrumItem = () => {
     navigate("./Dashboard");
   };
-
 
   const breadcrumbs = [
     <Link
@@ -48,7 +47,7 @@ const ConsentForm = () => {
     </Typography>,
   ];
 
-  const buttonClicked = () => { }
+
 
   const tableHeadData = [
     "Consent Date",
@@ -83,9 +82,28 @@ const ConsentForm = () => {
     },
   ];
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <>
+      <CustomModal open={open}
+        handleClose={''}
+        handleOpen={handleOpen}>
+        <Box
+          display={"flex"}
+          justifyContent={"space-between"}
+          alignItems={"center"}>
+          <Typography sx={styles.ModalHeading}>
+            Add Consent Form
+          </Typography>
+          <CloseIcon onClick={handleClose} sx={styles.closeicon} />
+        </Box>
+        <Box mt={"20px"}>
+          <AddConsentForm />
+        </Box>
+      </CustomModal>
       <Grid container flexDirection={"row"} justifyContent={"space-between"}>
         <Breadcrumbs title={"Visiting Plan"} breadcrumbsArr={breadcrumbs} />
         <AccountsHeader />
@@ -98,7 +116,7 @@ const ConsentForm = () => {
                 <Box display={"flex"}
                   justifyContent={"end"}>
                   <CustomButton title={"Add Consent Form +"}
-                    handleButtonClick={buttonClicked}
+                    handleButtonClick={handleOpen}
                     backgroundcolor={"#204289"}
                     bordercolor={"#204289"}
                     border={"1px solid"}

@@ -33,16 +33,16 @@ const AppointmentsView = () => {
       onClick={handleOnClickBreadcrumItem}
       sx={styles.breadcrumbSubtext}
     >
-      Appointments
+      Bookings
     </Link>,
     <Typography key="2" sx={styles.breadcrumbSubtext}>
-      View Appointments
+      Booking View
     </Typography>,
   ];
 
   return (
     <>
-      <Breadcrum title={"Appointment View"} breadcrumbsArr={breadcrumbs} />
+      <Breadcrum title={"Booking View"} breadcrumbsArr={breadcrumbs} />
       <Grid container spacing={2} mt={1}>
         <Grid item md={8}>
           <CustomCard>
@@ -275,7 +275,9 @@ const AppointmentsView = () => {
           </CustomCard>
         </Grid>
         <Grid item md={4}>
-          <AppointmentandBookings />
+          <Box sx={{marginRight:1}}>
+            <AppointmentandBookings />
+          </Box>
         </Grid>
       </Grid>
     </>

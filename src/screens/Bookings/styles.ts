@@ -54,7 +54,7 @@ export const styles = {
         padding : 1
     },
     tableContainer : {
-        marginTop : 1
+       // marginTop : 1
     },
     tableCell : {
         fontFamily : 'Poppins',
