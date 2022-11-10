@@ -7,10 +7,7 @@ export const styles = {
     },
     screenContainer : {
         marginTop  : 2,
-        height : '100vh',
         marginRight : 1
-       
-
     },
     cardHeaderContainer : {
         display : 'flex',

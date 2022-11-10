@@ -20,6 +20,7 @@ import Investigation from '../screens/Diagnosis/Investigation';
 import Prescription from '../screens/Diagnosis/Prescription';
 import Expenses from '../screens/Expenses';
 import TreatmentViewhoc from '../screens/Treatments/TreatmentView';
+import Labshoc from '../screens/Labs';
 
 const Navigation = () => {
     return (
@@ -46,7 +47,7 @@ const Navigation = () => {
                 <Route path="/Billing" element={Billing} />
                 <Route path="/Receipt" element={Receipt} />
                 <Route path="/Invoices" element={Dashboard} />
-                <Route path="/Labs" element={Dashboard} />
+                <Route path="/Labs" element={Labshoc} />
                 <Route path="/Settings" element={Dashboard} />
                 <Route path="/Accounts" element={Dashboard} />
                 <Route path="/Inventory" element={Dashboard} />

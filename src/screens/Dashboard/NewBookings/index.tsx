@@ -10,7 +10,7 @@ import { Styles } from "./styles";
 const selectData = [
   {
     value: 1,
-    name: "Male",
+    name: "Gender",
   },
   {
     value: 2,
@@ -27,16 +27,39 @@ const TimeData = [
     name: "Pm",
   },
 ];
-const SelectDoctor = [
+const SelectChair = [
   {
     value: 1,
-    name: "Nikhil",
+    name: "Select Chair",
   },
   {
-    value: 1,
+    value: 2,
     name: "Sunny",
   },
 ];
+
+const SelectChairType = [
+  {
+    value: 1,
+    name: "Select Chair Type",
+  },
+  {
+    value: 2,
+    name: "Sunny",
+  },
+];
+
+const SelectDoctor = [
+  {
+    value: 1,
+    name: "SelectDoctor",
+  },
+  {
+    value: 2,
+    name: "Sunny",
+  },
+];
+
 const NewBookings = () => {
   const buttonClicked = () => { };
   return (
@@ -67,7 +90,7 @@ const NewBookings = () => {
               />
             </Box>
             <Box mt={2}>
-              <CustomDatePicker fullWidth={"fullWidth"} />
+              <CustomDatePicker fullWidth={"fullWidth"}              />
             </Box>
             <Box mt={2}>
               <CustomInput placeholder={"Age"} InputProps={""} size={"small"} />
@@ -83,7 +106,9 @@ const NewBookings = () => {
               />
             </Box>
             <Box mt={2}>
-              <CustomDatePicker fullWidth={"fullWidth"} />
+              <CustomDatePicker fullWidth={"fullWidth"}
+                
+              />
             </Box>
             <Box display={"flex"} gap={"15px"} alignItems={"center"} mt={2}>
               <Box>
@@ -111,31 +136,29 @@ const NewBookings = () => {
                 fullWidth={true}
                 handleSelectValue={(val: any) => console.log("hii")}
                 width={"100%"}
+                selectData={SelectChair}
+              />
+            </Box>
+            <Box mt={2}>
+              <CustomSelectPicker
+                selectValue={1}
+                size={"small"}
+                fullWidth={true}
+                handleSelectValue={(val: any) => console.log("hii")}
+                width={"100%"}
+                selectData={SelectChairType}
+              />
+            </Box>
+            <Box mt={2}>
+              <CustomSelectPicker
+                selectValue={1}
+                size={"small"}
+                fullWidth={true}
+                handleSelectValue={(val: any) => console.log("hii")}
+                width={"100%"}
                 selectData={SelectDoctor}
               />
             </Box>
-            <Box mt={2}>
-              <CustomInput
-                placeholder={"Referred By"}
-                InputProps={""}
-                size={"small"}
-              />
-            </Box>{" "}
-            <Box mt={2}>
-              <CustomInput
-                placeholder={"Referred Title"}
-                InputProps={""}
-                size={"small"}
-              />
-            </Box>{" "}
-            <Box mt={2}>
-              <CustomInput
-                placeholder={"Referred Contact Number"}
-                InputProps={""}
-                size={"small"}
-              />
-            </Box>
-
             <Box display={"flex"} gap={1} justifyContent={"flex-end"} mt={2}>
               <CustomButton
                 title={"Cancel"}
@@ -157,7 +180,6 @@ const NewBookings = () => {
                 fontsize={"14px"}
                 color={"info"}
                 padding={"4px 40px"}
-                endIcon={""}
               />
             </Box>
           </Box>

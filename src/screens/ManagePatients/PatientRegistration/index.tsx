@@ -1,6 +1,11 @@
 import React from 'react'
 import HocLayout from '../../../components/HocLayout'
 import Breadcrum from '../../../components/Breadcrum'
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import { Link as RouterLink } from 'react-router-dom';
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import CustomTable from '../../../components/Tabel';
 import { useNavigate } from "react-router-dom";
 import { Typography, Link, Grid, Box } from "@mui/material"
 import { styles } from './styles'
@@ -69,49 +74,107 @@ const PatientRegistration = () => {
   const classes = useStyles();
   const tabClasses = { root: classes.tab };
 
+  const tableHeadData = [
+    "Document Name",
+    "File Type",
+    "Actions",
+  ];
+
+  const rows = [
+    {
+      id: 1,
+      DocumentName: "P1245",
+      FileType: "Teeth Whitening",
+      Actions: "",
+    },
+  ];
+
+
   return (
     <>
       <Breadcrum title={"Patient Registration"} breadcrumbsArr={breadcrumbs} />
       <Box sx={styles.screenContainer}>
         <CustomCard>
           <Box p={2}>
-            <Grid container>
-              <Grid item md={12}>
-                <Grid>
-                  <Box>
-                    <TabContext value={value}>
-                      <Box>
-                        <TabList aria-label="lab API tabs example" onChange={handleChange}
-                          sx={styles.Tablist}>
-                          <Tab label="Patient Details" value="1"
-                            sx={styles.TabColor}
-                            classes={tabClasses} />
-                          <Tab label="Attendee and Referral Details" value="2"
-                            classes={tabClasses}
-                            sx={styles.TabColor} />
-                          <Tab label="Scheme Details" value="3"
-                            classes={tabClasses}
-                            sx={styles.TabColor} />
-                        </TabList>
-                      </Box>
-                      <TabPanel value="1" sx={styles.Tabpanel}>
-                        <PatientDetails />
-                      </TabPanel>
-                      <TabPanel value="2" sx={styles.Tabpanel}>
-                        <AttendReferralDetails />
-                      </TabPanel>
-                      <TabPanel value="3" sx={styles.Tabpanel}>
-                        <SchemeDetails />
-                      </TabPanel>
-                    </TabContext>
-                  </Box>
-                </Grid>
-              </Grid>
-            </Grid>
+            <TabContext value={value}>
+              <TabList aria-label="lab API tabs example" onChange={handleChange}
+                sx={styles.Tablist}>
+                <Tab label="Patient Details" value="1"
+                  sx={styles.TabColor}
+                  classes={tabClasses} />
+                <Tab label="Attendee and Referral Details" value="2"
+                  classes={tabClasses}
+                  sx={styles.TabColor} />
+                <Tab label="Scheme Details" value="3"
+                  classes={tabClasses}
+                  sx={styles.TabColor} />
+              </TabList>
+              <TabPanel value="1" sx={styles.Tabpanel}>
+                <PatientDetails />
+              </TabPanel>
+              <TabPanel value="2" sx={styles.Tabpanel}>
+                <AttendReferralDetails />
+              </TabPanel>
+              <TabPanel value="3" sx={styles.Tabpanel}>
+                <SchemeDetails />
+              </TabPanel>
+            </TabContext>
           </Box>
         </CustomCard>
-      </Box >
-
+        <Box mt={"20px"}>
+          <TabContext value={value}>
+            <TabPanel value='3' sx={styles.Tabpanel}>
+              <CustomCard>
+                <Box p={2}>
+                  <Typography sx={styles.SchemeDocuments}>
+                    Scheme Documents
+                  </Typography>
+                  <CustomTable header={tableHeadData}>
+                    {rows.map((row) => (
+                      <TableRow key={row.id}>
+                        <TableCell>
+                          <Typography sx={styles.tableCell}>
+                            {row.DocumentName}
+                          </Typography>
+                        </TableCell>
+                        <TableCell>
+                          <Typography sx={styles.tableCell}>
+                            {row.FileType}
+                          </Typography>
+                        </TableCell>       
+                        <TableCell>
+                          <Grid
+                            container
+                            flexDirection="row"
+                            spacing={2}
+                            justifyContent={'space-around'}
+                            alignItems={'center'}>
+                            <Grid item>
+                              <Grid container flexDirection="row"
+                                gap={"5px"} alignItems={"center"}>
+                                <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
+                                <RouterLink
+                                  to="/"
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Typography sx={styles.tableCell}>
+                                    {" "}
+                                    View{" "}
+                                  </Typography>
+                                </RouterLink>
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </CustomTable>
+                </Box>
+              </CustomCard>
+            </TabPanel>
+          </TabContext>
+        </Box>
+      </Box>
     </>
   )
 }

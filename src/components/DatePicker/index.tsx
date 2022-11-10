@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/styles';
 
 
 interface DatePickerWidth {
-  fullWidth:any
+  fullWidth:any,
 }
 
 const CustomDatePicker = (props:DatePickerWidth ) => {
@@ -42,7 +42,14 @@ const CustomDatePicker = (props:DatePickerWidth ) => {
         onChange={(newValue: any) => {
           setValue(newValue);
         }}
-        renderInput={(params) => <StyledTextField {...params} size={'small'} fullWidth={props.fullWidth}/>}
+        renderInput={(params) => <StyledTextField {...params} size={'small'} 
+        fullWidth={props.fullWidth}
+          inputProps={{
+                ...params.inputProps,
+                placeholder: "Date of Birth"
+              }}
+          
+      />}
       />
     </LocalizationProvider>
   )
