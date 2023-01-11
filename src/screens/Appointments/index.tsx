@@ -47,90 +47,54 @@ const Appointments = () => {
 
   const tableHeadData = [
     "Patient Name",
-    "Appointment Time",
+    " Appt Date & Time",
+    "Duration",
     "Doctor",
     "Chair",
+    "Appt Name",
     "Type",
-    "Notes",
+    "Assistant",
     "Actions",
   ];
 
   const rows = [
     {
       id: 1,
-      PatientName: "Vijay Reddy",
+      PatientName: "Vijay",
       AppointmentDate: "31 Aug 2022",
-      AppointmentTime: "06:00 Pm",
+      AppointmentTime: "06:00 Pm - 06:15Am",
+      Duration: '30 Mins',
       Doctor: "Dr.Basava",
       Chair: "Red",
+      ApptName: 'Root Canal',
       Type: "OP",
-      Notes: "",
+      Assistant: "Harish",
       Actions: "",
     },
     {
       id: 2,
-      PatientName: "Vijay Reddy",
+      PatientName: "Vijay",
       AppointmentDate: "31 Aug 2022",
-      AppointmentTime: "06:00 Pm",
+      AppointmentTime: "06:00 Pm - 06:15Am",
+      Duration: '30 Mins',
       Doctor: "Dr.Basava",
       Chair: "Red",
+      ApptName: 'Root Canal',
       Type: "OP",
-      Notes: "",
+      Assistant: "Harish",
       Actions: "",
     },
     {
       id: 3,
-      PatientName: "Vijay Reddy",
+      PatientName: "Vijay",
       AppointmentDate: "31 Aug 2022",
-      AppointmentTime: "06:00 Pm",
+      AppointmentTime: "06:00 Pm - 06:15Am",
+      Duration: '30 Mins',
       Doctor: "Dr.Basava",
       Chair: "Red",
+      ApptName: 'Root Canal',
       Type: "OP",
-      Notes: "",
-      Actions: "",
-    },
-    {
-      id: 4,
-      PatientName: "Vijay Reddy",
-      AppointmentDate: "31 Aug 2022",
-      AppointmentTime: "06:00 Pm",
-      Doctor: "Dr.Basava",
-      Chair: "Red",
-      Type: "OP",
-      Notes: "",
-      Actions: "",
-    },
-    {
-      id: 5,
-      PatientName: "Vijay Reddy",
-      AppointmentDate: "31 Aug 2022",
-      AppointmentTime: "06:00 Pm",
-      Doctor: "Dr.Basava",
-      Chair: "Red",
-      Type: "OP",
-      Notes: "",
-      Actions: "",
-    },
-    {
-      id: 6,
-      PatientName: "Vijay Reddy",
-      AppointmentDate: "31 Aug 2022",
-      AppointmentTime: "06:00 Pm",
-      Doctor: "Dr.Basava",
-      Chair: "Red",
-      Type: "OP",
-      Notes: "",
-      Actions: "",
-    },
-    {
-      id: 7,
-      PatientName: "Vijay Reddy",
-      AppointmentDate: "31 Aug 2022",
-      AppointmentTime: "06:00 Pm",
-      Doctor: "Dr.Basava",
-      Chair: "Red",
-      Type: "OP",
-      Notes: "",
+      Assistant: "Harish",
       Actions: "",
     },
   ];
@@ -144,8 +108,7 @@ const Appointments = () => {
             breadcrumbsArr={breadcrumbs}
           />
         </Grid>
-        <Grid item md={4}>
-        </Grid>
+        <Grid item md={4}></Grid>
       </Grid>
       <Box sx={styles.screenContainer}>
         <Grid container spacing={1}>
@@ -196,33 +159,24 @@ const Appointments = () => {
                     <TableRow key={row.id}>
                       <TableCell sx={{ padding: 0 }}>
                         <Grid
-                          container
-                          justifyContent={"space-around"}
-                          alignItems={"center"}
-                        >
-                          <Box
-                            sx={{
-                              height: 35,
-                              width: 0.02,
-                              backgroundColor: "#3DD230",
-                              borderRadius : 10
-                            }}
-                          />
-
-                          <Box
-                            component="img"
-                            sx={{
-                              height: 34,
-                              width: 34,
-                              borderRadius: 17,
-                              marginRight:1
-                            }}
-                            alt={row.PatientName}
-                            src={require("../../assets/avtar.png")}
-                          />
-                          <Typography sx={styles.tableCell}>
-                            {row.PatientName}
-                          </Typography>
+                          container alignItems={"center"}>
+                          <Grid item xs={6}>
+                            <Box
+                              component="img"
+                              sx={{
+                                height: 40,
+                                width: 40,
+                                borderRadius: 20
+                              }}
+                              alt={row.PatientName}
+                              src={require("../../assets/avtar.png")}
+                            />
+                          </Grid>
+                          <Grid item xs={6}>
+                            <Typography sx={styles.patientName}>
+                              {row.PatientName}
+                            </Typography>
+                          </Grid>
                         </Grid>
                       </TableCell>
                       <TableCell>
@@ -231,6 +185,11 @@ const Appointments = () => {
                         </Typography>
                         <Typography sx={styles.appointmentTime}>
                           {row.AppointmentTime}
+                        </Typography>
+                      </TableCell>
+                      <TableCell>
+                        <Typography sx={styles.tableCell}>
+                          {row.Duration}
                         </Typography>
                       </TableCell>
                       <TableCell>
@@ -252,45 +211,43 @@ const Appointments = () => {
                       </TableCell>
                       <TableCell>
                         <Typography sx={styles.tableCell}>
+                          {row.ApptName}
+                        </Typography>
+                      </TableCell>
+                      <TableCell>
+                        <Typography sx={styles.tableCell}>
                           {row.Type}
+                        </Typography>
+                      </TableCell>
+                      <TableCell>
+                        <Typography sx={styles.tableCell}>
+                          {row.Assistant}
                         </Typography>
                       </TableCell>
                       <TableCell>
                         <Grid
                           container
-                          justifyContent={"space-around"}
                           alignItems={"center"}
-                        >
-                          <Box
-                            component="img"
-                            sx={{
-                              height: 25,
-                              width: 25,
-                              borderRadius: 22,
-                            }}
-                            alt={row.PatientName}
-                            src={require("../../assets/activeaccounts.svg")}
-                          />{" "}
-                          <Typography sx={styles.tableCell}>Notes</Typography>
-                        </Grid>
-                      </TableCell>
-                      <TableCell>
-                        <Grid
-                          container
-                          flexDirection="row"
-                          justifyContent={"space-between"}
-                        >
-                          <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                          <RouterLink
-                            to="/AppointmentsView"
-                            style={{ textDecoration: "none" }}
-                          >
-                            <Typography sx={styles.tableCell}>
-                              {" "}
-                              View{" "}
-                            </Typography>
-                          </RouterLink>
-                          <MoreVertIcon sx={styles.actionIcon} />
+                          justifyContent={'center'}
+                          spacing={2}>
+                          <Grid item xs={4} alignItems={"center"}>
+                            <RemoveRedEyeOutlinedIcon
+                              sx={styles.actionIcon}
+                            />
+                          </Grid>
+                          <Grid item xs={4} alignItems={"center"}>
+                            <RouterLink
+                              to="/AppointmentsView"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Typography sx={styles.tableCell}>
+                                View
+                              </Typography>
+                            </RouterLink>
+                          </Grid>
+                          <Grid item xs={4}>
+                            <MoreVertIcon sx={styles.actionIcon} />
+                          </Grid>
                         </Grid>
                       </TableCell>
                     </TableRow>
@@ -299,7 +256,7 @@ const Appointments = () => {
               </Box>
             </CustomCard>
           </Grid>
-          <Grid item md={4}>
+          <Grid item md={4} paddingLeft={"16px"} mt={"-34px"}>
             <NewBookings />
           </Grid>
         </Grid>

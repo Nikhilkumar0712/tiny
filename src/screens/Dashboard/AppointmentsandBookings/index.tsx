@@ -8,12 +8,12 @@ import CustomSelectPicker from '../../../components/SelectPicker';
 import CustomDatePicker from '../../../components/DatePicker';
 import TabPanel from '@mui/lab/TabPanel';
 import Popover from '@mui/material/Popover';
-import PopOverMenu from '../../Treatments/PopOverMenu';
 import CustomCard from '../../../components/Card';
 import Typography from '@mui/material/Typography'
 import { Styles } from './styles';
 import Checkbox from '@mui/material/Checkbox';
 import makeStyles from "@material-ui/styles/makeStyles";
+import ConfirmedAppointmentsMenu, { BookedAppointmentMenu } from './popMenu';
 
 
 const selectData = [
@@ -28,6 +28,7 @@ const selectData = [
 ];
 interface CheckBoxProps {
   checkbox: any,
+  onClose:any,
   handleClick: any
   ml: any,
   item: {
@@ -112,8 +113,12 @@ const AppointmentandBookings = () => {
 
   const [PopOver, setPopOver] = React.useState<HTMLDivElement | null>(null);
 
+  const [PopOverBooking, setPopOverBooking] = React.useState<HTMLDivElement | null>(null);
+
+
+
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    setPopOver(event.currentTarget);
+    setPopOverBooking(event.currentTarget);
   };
   const handle = (event: React.MouseEvent<HTMLDivElement>) => {
     setPopOver(event.currentTarget);
@@ -121,10 +126,13 @@ const AppointmentandBookings = () => {
 
   const handleClose = (event: MouseEvent) => {
     setPopOver(null);
+    setPopOverBooking(null)
   };
   const open = Boolean(PopOver);
   const id = open ? 'simple-popover' : undefined;
 
+  const bookingPopOver = Boolean(PopOverBooking);
+  const openBook = bookingPopOver ? 'simple-popover' : undefined
   return (
     <>
       <Popover
@@ -140,12 +148,12 @@ const AppointmentandBookings = () => {
           vertical: 'top',
           horizontal: 'right',
         }}>
-        <PopOverMenu />
+        <ConfirmedAppointmentsMenu/>
       </Popover>
       <Popover
-        id={id}
-        open={open}
-        anchorEl={PopOver}
+        id={openBook}
+        open={bookingPopOver}
+        anchorEl={PopOverBooking}
         onClose={handleClose}
         anchorOrigin={{
           vertical: 'bottom',
@@ -155,7 +163,7 @@ const AppointmentandBookings = () => {
           vertical: 'top',
           horizontal: 'right',
         }}>
-        <h1>Hi</h1>
+      <BookedAppointmentMenu />
       </Popover>
       <Box
         display={"flex"}
@@ -219,6 +227,7 @@ const AppointmentandBookings = () => {
                               <CustomDashboardTabAppointmentsandBookings
                                 item={item}
                                 checkbox="Checkbox"
+                                onClose={''}
                                 ml={""}
                                 handleClick={handle} />
                             </>
@@ -266,6 +275,7 @@ const AppointmentandBookings = () => {
                                 item={item}
                                 checkbox=""
                                 ml={"10px"}
+                                onClose=""
                                 handleClick={handleClick} />
                             </>
                           )
@@ -350,13 +360,14 @@ export const CustomDashboardTabAppointmentsandBookings = (props: CheckBoxProps) 
                 </Box>
                 <Box
                   component={"img"}
+                  onClick={props.handleClick}
+                  sx={Styles.cursor}
                   alt=" Appointment"
                   src={require("../../../assets/meetballicon.svg")}
                   width={"20px"}>
                 </Box>
               </Box>
-              <Box sx={Styles.treatment}
-                onClick={props.handleClick}>
+              <Box sx={Styles.treatment}>
                 {props.item.op}
               </Box>
             </Box>

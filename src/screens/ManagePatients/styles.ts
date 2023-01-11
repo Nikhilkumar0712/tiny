@@ -25,6 +25,10 @@ export const styles = {
         color: '#204289',
         fontSize: 18,
     },
+    plusIcon: {
+        color: '#ffffff',
+        fontSize: 20,
+    },
     chairColor: {
         color: '#E5050B',
         fontSize: 12
@@ -71,5 +75,11 @@ export const styles = {
         position: 'absolute',
         //top : 40,
         zIndex: 99999
-    }
+    },
+    patientName : {
+        fontFamily : 'Poppins',
+        fontSize : 12,
+        fontWeight : 600,
+        color : '#021025'
+    },
 }

@@ -68,17 +68,30 @@ const TreatmentView = () => {
   const buttonClicked = () => { }
   return (
     <>
-      <Grid container spacing={2}>
-        <Grid item xs={3}>
+      {/* <Grid container spacing={2}>
+        <Grid item xs={4}>
           <Breadcrumbs title={"Treatment View"} breadcrumbsArr={breadcrumbs} />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={4}>
           <TreatmentDetailsHeader />
         </Grid>
         <Grid item xs={4}>
           <AccountsHeader />
         </Grid>
-      </Grid>
+      </Grid> */}
+      <Box 
+      display={"flex"}
+      justifyContent={"space-between"}>
+        <Box>
+          <Breadcrumbs title={"Treatment View"} breadcrumbsArr={breadcrumbs} />
+        </Box>
+        <Box width={"45%"}>
+          <TreatmentDetailsHeader />
+        </Box>
+        <Box>
+          <AccountsHeader />
+        </Box>
+      </Box>
       <Box sx={Styles.screencontaner}>
         <CustomCard>
           <Box p={2}>
@@ -134,13 +147,13 @@ const TreatmentView = () => {
                       endIcon={""} />
                   </Box>
                 </TabPanel>
-                <TabPanel value="3"  sx={Styles.Tabpanel}>
+                <TabPanel value="3" sx={Styles.Tabpanel}>
                   <TreatmentCaseHistory />
                 </TabPanel>
-                <TabPanel value="4"  sx={Styles.Tabpanel}>
+                <TabPanel value="4" sx={Styles.Tabpanel}>
                   <TreatmentExamination />
                 </TabPanel>
-                <TabPanel value="5"  sx={Styles.Tabpanel}>
+                <TabPanel value="5" sx={Styles.Tabpanel}>
                   <TreatmentPrescription />
                 </TabPanel>
                 <TabPanel value="6" sx={Styles.Tabpanel}>

@@ -4,6 +4,7 @@ import Breadcrum from '../../../components/Breadcrum'
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Link as RouterLink } from 'react-router-dom';
 import TableCell from "@mui/material/TableCell";
+import { useLocation } from "react-router-dom";
 import TableRow from "@mui/material/TableRow";
 import CustomTable from '../../../components/Tabel';
 import { useNavigate } from "react-router-dom";
@@ -18,6 +19,7 @@ import AttendReferralDetails from './AttendeReferralsDetails';
 import SchemeDetails from './SchemeDetails';
 import TabContext from '@mui/lab/TabContext';
 import makeStyles from "@material-ui/styles/makeStyles";
+import TabHeader from './TabHeader';
 
 const useStyles = makeStyles({
   tab: {
@@ -31,9 +33,12 @@ const useStyles = makeStyles({
 
 const PatientRegistration = () => {
 
-  const buttonClicked = () => { };
+  const location = useLocation();
 
   const navigate = useNavigate();
+
+  const buttonClicked = () => { };
+
 
   const handleOnClickBreadcrumItem = () => {
     navigate("/ManagePatients")
@@ -67,8 +72,12 @@ const PatientRegistration = () => {
   ];
 
   const [value, setValue] = React.useState('1');
+  const [first, setfirst] = React.useState('1')
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
+  };
+  let handleChangeValue = (event: React.SyntheticEvent, newValue: string) => {
+    setfirst(newValue);
   };
 
   const classes = useStyles();
@@ -88,92 +97,105 @@ const PatientRegistration = () => {
       Actions: "",
     },
   ];
-
-
   return (
     <>
       <Breadcrum title={"Patient Registration"} breadcrumbsArr={breadcrumbs} />
       <Box sx={styles.screenContainer}>
+        {/* <div>
+          <CustomCard>
+            <Box p={2}>
+              <TabContext value={value}>
+                <TabList aria-label="lab API tabs example" onChange={handleChange}
+                  sx={styles.Tablist}>
+                  <Tab label="Patient Details" value="1"
+                    sx={styles.TabColor}
+                    classes={tabClasses} />
+                  <Tab label="Attendee and Referral Details" value="2"
+                    classes={tabClasses}
+                    sx={styles.TabColor} />
+                  <Tab label="Scheme Details" value="3"
+                    classes={tabClasses}
+                    sx={styles.TabColor} />
+                </TabList>
+                <TabPanel value="1" sx={styles.Tabpanel}>
+                  <PatientDetails />
+                </TabPanel>
+                <TabPanel value="2" sx={styles.Tabpanel}>
+                  <AttendReferralDetails />
+                </TabPanel>
+                <TabPanel value="3" sx={styles.Tabpanel}>
+                  <SchemeDetails />
+                  <Box mt={"20px"}>
+                <CustomCard>
+                  <TabContext value={first}>
+                    <TabList onChange={handleChangeValue}>
+                      <Tab label="Photos" value="1"
+                        sx={styles.TabColor}
+                        classes={tabClasses} />
+                      <Tab label="Documents" value="2"
+                        sx={styles.TabColor}
+                        classes={tabClasses} />
+                    </TabList>
+                    <TabPanel value="1" sx={styles.Tabpanel}>
+                      <TabContext value={first}>
+                        <TabPanel value='1' sx={styles.Tabpanel}>
+                          <CustomTable header={tableHeadData}>
+                            {rows.map((row) => (
+                              <TableRow key={row.id}>
+                                <TableCell>
+                                  <Typography sx={styles.tableCell}>
+                                    {row.DocumentName}
+                                  </Typography>
+                                </TableCell>
+                                <TableCell>
+                                  <Typography sx={styles.tableCell}>
+                                    {row.FileType}
+                                  </Typography>
+                                </TableCell>
+                                <TableCell>
+                                  <Grid
+                                    container
+                                    flexDirection="row"
+                                    spacing={2}
+                                    justifyContent={'space-around'}
+                                    alignItems={'center'}>
+                                    <Grid item>
+                                      <Grid container flexDirection="row"
+                                        gap={"5px"} alignItems={"center"}>
+                                        <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
+                                        <RouterLink
+                                          to="/"
+                                          style={{ textDecoration: "none" }}
+                                        >
+                                          <Typography sx={styles.tableCell}>
+                                            {" "}
+                                            View{" "}
+                                          </Typography>
+                                        </RouterLink>
+                                      </Grid>
+                                    </Grid>
+                                  </Grid>
+                                </TableCell>
+                              </TableRow>
+                            ))}
+                          </CustomTable>
+
+                        </TabPanel>
+                      </TabContext>
+                    </TabPanel>
+                  </TabContext>
+                </CustomCard>
+              </Box>
+                </TabPanel>
+              </TabContext>
+            </Box>
+          </CustomCard>
+        </div> */}
         <CustomCard>
-          <Box p={2}>
-            <TabContext value={value}>
-              <TabList aria-label="lab API tabs example" onChange={handleChange}
-                sx={styles.Tablist}>
-                <Tab label="Patient Details" value="1"
-                  sx={styles.TabColor}
-                  classes={tabClasses} />
-                <Tab label="Attendee and Referral Details" value="2"
-                  classes={tabClasses}
-                  sx={styles.TabColor} />
-                <Tab label="Scheme Details" value="3"
-                  classes={tabClasses}
-                  sx={styles.TabColor} />
-              </TabList>
-              <TabPanel value="1" sx={styles.Tabpanel}>
-                <PatientDetails />
-              </TabPanel>
-              <TabPanel value="2" sx={styles.Tabpanel}>
-                <AttendReferralDetails />
-              </TabPanel>
-              <TabPanel value="3" sx={styles.Tabpanel}>
-                <SchemeDetails />
-              </TabPanel>
-            </TabContext>
+          <Box>
+            {/* <PatientDetails /> */}
           </Box>
         </CustomCard>
-        <Box mt={"20px"}>
-          <TabContext value={value}>
-            <TabPanel value='3' sx={styles.Tabpanel}>
-              <CustomCard>
-                <Box p={2}>
-                  <Typography sx={styles.SchemeDocuments}>
-                    Scheme Documents
-                  </Typography>
-                  <CustomTable header={tableHeadData}>
-                    {rows.map((row) => (
-                      <TableRow key={row.id}>
-                        <TableCell>
-                          <Typography sx={styles.tableCell}>
-                            {row.DocumentName}
-                          </Typography>
-                        </TableCell>
-                        <TableCell>
-                          <Typography sx={styles.tableCell}>
-                            {row.FileType}
-                          </Typography>
-                        </TableCell>       
-                        <TableCell>
-                          <Grid
-                            container
-                            flexDirection="row"
-                            spacing={2}
-                            justifyContent={'space-around'}
-                            alignItems={'center'}>
-                            <Grid item>
-                              <Grid container flexDirection="row"
-                                gap={"5px"} alignItems={"center"}>
-                                <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                                <RouterLink
-                                  to="/"
-                                  style={{ textDecoration: "none" }}
-                                >
-                                  <Typography sx={styles.tableCell}>
-                                    {" "}
-                                    View{" "}
-                                  </Typography>
-                                </RouterLink>
-                              </Grid>
-                            </Grid>
-                          </Grid>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </CustomTable>
-                </Box>
-              </CustomCard>
-            </TabPanel>
-          </TabContext>
-        </Box>
       </Box>
     </>
   )

@@ -11,7 +11,11 @@ import CustomTable from '../../components/Tabel';
 import CustomButton from '../../components/Button';
 import CustomCard from '../../components/Card';
 import { Link as RouterLink } from "react-router-dom";
+import CloseIcon from '@mui/icons-material/Close';
 import HocLayout from '../../components/HocLayout';
+import CustomModal from '../../components/Modal';
+import ReceiveWork from './ReceiveWork';
+
 const Labs = () => {
 
   const navigate = useNavigate();
@@ -87,13 +91,37 @@ const Labs = () => {
     },
   ];
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
+      <CustomModal
+        open={open}
+        handleClose={''}
+        handleOpen={handleOpen}
+        width={"600px"}>
+        <Box >
+          <Box
+            display={"flex"}
+            justifyContent={"space-between"}
+            alignItems={"center"}>
+            <Typography sx={styles.ModalHeading}>
+              Receive Work
+            </Typography>
+            <CloseIcon onClick={handleClose} sx={styles.closeicon} />
+          </Box>
+          <Box mt={"20px"}></Box>
+        </Box>
+        <ReceiveWork />
+      </CustomModal>
       <Box
         display={"flex"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        gap={"10px"}>
+        gap={"10px"}
+        mr={1}>
         <Box>
           <Breadcrumbs title={"Lab works list"} breadcrumbsArr={breadcrumbs} />
         </Box>
@@ -116,8 +144,8 @@ const Labs = () => {
           <Box>
             <CustomButton
               title={"Recieve Item"}
-              handleButtonClick={buttonClicked}
               backgroundcolor={"#204289"}
+              handleButtonClick={handleOpen}
               bordercolor={"#204289"}
               border={"1px solid"}
               fontsize={"14px"}
@@ -249,7 +277,7 @@ const Labs = () => {
                             <Grid container flexDirection="row">
                               <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
                               <RouterLink
-                                to="/"
+                                to="/LabCreation"
                                 style={{ textDecoration: "none" }}
                               >
                                 <Typography sx={styles.tableCell}>

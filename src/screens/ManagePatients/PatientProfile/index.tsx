@@ -72,6 +72,7 @@ const PatientProfile = () => {
                     bordercolor={"#204289"}
                     border={"1px solid"}
                     fontsize={"14px"}
+                    width={130}
                     color={"info"}
                     padding={"4px 20px"}
                     endIcon={''} />

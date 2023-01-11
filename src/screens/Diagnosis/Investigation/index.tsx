@@ -144,11 +144,12 @@ const Investigation = () => {
 
   return (
     <>
-      <Grid container alignItems={"center"} justifyContent={"space-between"}>
-        <Breadcrumbs title={"Diagnosis"} breadcrumbsArr={breadcrumbs} />
-        <AccountsHeader />
-      </Grid>
-
+      <Box sx={{marginRight:1}}>
+        <Grid container alignItems={"center"} justifyContent={"space-between"} >
+          <Breadcrumbs title={"Diagnosis"} breadcrumbsArr={breadcrumbs} />
+          <AccountsHeader />
+        </Grid>
+      </Box>
       <Box sx={styles.screenContainer}>
         <CustomCard>
           <Grid
@@ -251,11 +252,9 @@ const Investigation = () => {
                             title={"+ Add"}
                             handleButtonClick={buttonClicked}
                             backgroundcolor={"#204289"}
-                            bordercolor={"#204289"}
-                            border={"1px solid"}
-                            fontsize={"12px"}
-                            color={"info"}
-                            padding={"2px 2px"}
+                            color={"#fffff"}
+                            width={70}
+                            padding={3}
                           />
                         </Box>
                         <Box sx={{ padding: 1 }}>
@@ -263,11 +262,9 @@ const Investigation = () => {
                             title={"+ Add"}
                             handleButtonClick={buttonClicked}
                             backgroundcolor={"#204289"}
-                            bordercolor={"#204289"}
-                            border={"1px solid"}
-                            fontsize={"12px"}
-                            color={"info"}
-                            padding={"2px 2px"}
+                            color={"#fffff"}
+                            width={70}
+                            padding={3}
                           />
                         </Box>
                       </TableCell>
@@ -308,24 +305,18 @@ const Investigation = () => {
                             title={"Access opening and BMP done"}
                             handleButtonClick={buttonClicked}
                             backgroundcolor={"#FFFFFF"}
-                            bordercolor={"#9DA2AB"}
-                            padding={"4px 40px"}
-                            border={"1.5px solid"}
-                            fontsize={"13px"}
-                            color={"primary"}
-                            width={300}
+                            bordercolor={"#204289"}
+                            color={"#204289"}
+                            width={260}
                           />
                           <Box sx={{ marginTop: 1 }}>
                             <CustomButton
                               title={"Access opening"}
                               handleButtonClick={buttonClicked}
                               backgroundcolor={"#FFFFFF"}
-                              bordercolor={"#9DA2AB"}
-                              padding={"4px 40px"}
-                              border={"1.5px solid"}
-                              fontsize={"13px"}
-                              color={"primary"}
-                              width={300}
+                              bordercolor={"#204289"}
+                              color={"#204289"}
+                              width={260}
                             />
                           </Box>
                           <Box sx={{ marginTop: 1 }}>
@@ -333,12 +324,9 @@ const Investigation = () => {
                               title={"+ Add Treatment"}
                               handleButtonClick={buttonClicked}
                               backgroundcolor={"#FFFFFF"}
-                              bordercolor={"#9DA2AB"}
-                              padding={"4px 50px"}
-                              border={"1.5px solid"}
-                              fontsize={"13px"}
-                              color={"primary"}
-                              width={300}
+                              bordercolor={"#204289"}
+                              color={"#204289"}
+                              width={260}
                             />
                           </Box>
                         </Grid>
@@ -378,42 +366,36 @@ const Investigation = () => {
           container
           flexDirection={"row"}
           justifyContent={"flex-end"}
-          spacing={2}
+          spacing={1}
         >
           <Grid item>
             <CustomButton
-              title={"Cancel"}
+              title={"Back"}
               handleButtonClick={buttonClicked}
               backgroundcolor={"#FFFFFF"}
-              bordercolor={"#9DA2AB"}
-              padding={"4px 40px"}
-              border={"1px solid"}
-              fontsize={"13px"}
-              color={"primary"}
+              bordercolor={"#204289"}
+              color={"#204289"}
+              width={120}
             />
           </Grid>
           <Grid item>
             <CustomButton
-              title={"Save"}
+              title={"Save & Exit"}
               handleButtonClick={buttonClicked}
               backgroundcolor={"#204289"}
-              bordercolor={"#204289"}
-              border={"1px solid"}
-              fontsize={"13px"}
-              color={"info"}
-              padding={"4px 40px"}
+              color={"#fff"}
+              padding={7}
+              width={120}
             />
           </Grid>
           <Grid item>
             <CustomButton
-              title={"Submit"}
+              title={"Save & Next"}
               handleButtonClick={buttonClicked}
               backgroundcolor={"#204289"}
-              bordercolor={"#204289"}
-              border={"1px solid"}
-              fontsize={"13px"}
-              color={"info"}
-              padding={"4px 40px"}
+              color={"#fff"}
+              padding={7}
+              width={120}
             />
           </Grid>
           <Grid item>
@@ -421,11 +403,9 @@ const Investigation = () => {
               title={"Continue Treatment"}
               handleButtonClick={buttonClicked}
               backgroundcolor={"#204289"}
-              bordercolor={"#204289"}
-              border={"1px solid"}
-              fontsize={"13px"}
-              color={"info"}
-              padding={"4px 40px"}
+              color={"#fff"}
+              padding={7}
+              width={170}
             />
           </Grid>
         </Grid>

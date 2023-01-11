@@ -12,9 +12,14 @@ import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { Link as RouterLink } from "react-router-dom";
 import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlined";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
+import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 import AccountsHeader from "../Billing/AccountsHeader";
+import CustomButton from "../../components/Button";
+import CustomModal from "../../components/Modal";
+
 
 const Receipt = () => {
+  const [showModal,setShowModal] = React.useState(false)
   const navigate = useNavigate();
 
 
@@ -142,6 +147,191 @@ const Receipt = () => {
 
   return (
     <>
+    <CustomModal
+        open={showModal}
+        handleClose={() => setShowModal(false)}
+        width={850}
+      >
+        <Box>
+          <Grid
+            container
+            rowSpacing={4}
+            spacing={1}
+            justifyContent={"flex-end"}
+          >
+            <Grid item md={12}>
+              <Grid container justifyContent={"space-between"}>
+                <Grid item>
+                  <Typography sx={styles.modalHeader}>
+                    Receipt View
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Grid container spacing={2} justifyContent={'center'} alignItems={'center'}>
+                    <Grid item>
+                      <CustomButton
+                        title={"Download"}
+                        handleButtonClick={() => {console.log('hii')}}
+                        backgroundcolor={"#204289"}
+                        bordercolor={"#204289"}
+                        color={"#fffff"}
+                        width={100}
+                      /> 
+                    </Grid>
+                    <Grid item>
+                      <CustomButton
+                        title={"Print"}
+                        handleButtonClick={() => {console.log('hii')}}
+                        backgroundcolor={"#204289"}
+                        bordercolor={"#204289"}
+                        color={"#fffff"}
+                        width={100}
+                      />
+                    </Grid>
+                      
+                      <Grid item>
+                        <ClearOutlinedIcon
+                          onClick={() => setShowModal(false)}
+                          sx={styles.actionIcon}
+                        />
+                      </Grid>
+                  </Grid>
+                 
+                </Grid>
+              </Grid>
+              </Grid>
+              <Grid item md={12}>
+                <Grid
+                  container
+                  rowSpacing={4}
+                  justifyContent={'space-between'}
+                >
+                  
+                  <Grid item md={4}>
+                    <Grid container flexDirection={"row"} spacing={1} justifyContent={'flex-start'} alignItems={'center'}>
+                      <Grid item>
+                        <Typography sx={styles.heading}>Receipt No</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.heading}>:</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.value}>235</Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+
+                  <Grid item md={4}>
+                    <Grid container flexDirection={"row"} spacing={1} justifyContent={'flex-start'} alignItems={'center'}>
+                      <Grid item>
+                        <Typography sx={styles.heading}>Receipt Date</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.heading}>:</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.value}>22 Sept 2022</Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+
+                  <Grid item md={4}>
+                    <Grid container flexDirection={"row"} spacing={1} justifyContent={'flex-start'} alignItems={'center'}>
+                      <Grid item>
+                        <Typography sx={styles.heading}>Bill No</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.heading}>:</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.value}>156</Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+                  <Grid item md={4}>
+                    <Grid container flexDirection={"row"} spacing={1} justifyContent={'flex-start'} alignItems={'center'}>
+                      <Grid item>
+                        <Typography sx={styles.heading}>Bill Date</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.heading}>:</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.value}>22 Sept 2022</Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+
+                  <Grid item md={8}>
+                    <Grid container flexDirection={"row"} spacing={1} justifyContent={'flex-start'} alignItems={'center'}>
+                      <Grid item>
+                        <Typography sx={styles.heading}>Treatment Name</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.heading}>:</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.value}> Root Canal</Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+
+                  <Grid item md={4}>
+                    <Grid container flexDirection={"row"} spacing={1} justifyContent={'flex-start'} alignItems={'center'}>
+                      <Grid item>
+                        <Typography sx={styles.heading}>Treatment Type</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.heading}>:</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.value}>OP</Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+
+                  <Grid item md={4}>
+                    <Grid container flexDirection={"row"} spacing={1} justifyContent={'flex-start'} alignItems={'center'}>
+                      <Grid item>
+                        <Typography sx={styles.heading}>Payment Mode</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.heading}>:</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.value}>Cash</Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+
+                  <Grid item md={4}>
+                    <Grid container flexDirection={"row"} spacing={1} justifyContent={'flex-start'} alignItems={'center'}>
+                      <Grid item>
+                        <Typography sx={styles.amountHeading}>Amount</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.heading}>:</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography sx={styles.amount}>7000 RS</Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+
+
+
+                </Grid>
+              </Grid>
+          </Grid>
+        </Box>
+      </CustomModal>
       <Grid container  alignItems={"center"} justifyContent={'space-between'}>
          <Breadcrumbs title={"Receipt"} breadcrumbsArr={breadcrumbs} />
          <AccountsHeader />
@@ -200,16 +390,11 @@ const Receipt = () => {
                         >
                           <Grid item>
                             <Grid container flexDirection="row">
-                              <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
-                              <RouterLink
-                                to="/"
-                                style={{ textDecoration: "none" }}
-                              >
+                              <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} onClick={() => setShowModal(true)} />
                                 <Typography sx={styles.tableCell}>
                                   {" "}
                                   View{" "}
                                 </Typography>
-                              </RouterLink>
                             </Grid>
                           </Grid>
                           <Grid item>

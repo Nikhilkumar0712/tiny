@@ -76,43 +76,7 @@ const Investigation = () => {
       Quantity: "",
       Instructions: "",
       Actions: "",
-    },
-    {
-      id: 3,
-      Sno: 3,
-      Type: "",
-      TradeName: "",
-      Dosage: "",
-      Frequency: "",
-      Duration: "",
-      Quantity: "",
-      Instructions: "",
-      Actions: "",
-    },
-    {
-      id: 4,
-      Sno: 4,
-      Type: "",
-      TradeName: "",
-      Dosage: "",
-      Frequency: "",
-      Duration: "",
-      Quantity: "",
-      Instructions: "",
-      Actions: "",
-    },
-    {
-      id: 5,
-      Sno: 5,
-      Type: "",
-      TradeName: "",
-      Dosage: "",
-      Frequency: "",
-      Duration: "",
-      Quantity: "",
-      Instructions: "",
-      Actions: "",
-    },
+    }
   ];
 
   const buttonClicked = () => {};
@@ -123,7 +87,6 @@ const Investigation = () => {
         <Breadcrumbs title={"Diagnosis"} breadcrumbsArr={breadcrumbs} />
         <AccountsHeader />
       </Grid>
-
       <Box sx={styles.screenContainer}>
         <CustomCard>
           <Grid
@@ -140,13 +103,13 @@ const Investigation = () => {
               <CustomButton
                 endIcon={<AddOutlinedIcon />}
                 handleButtonClick={() => {console.log('hii')}}
-                title="Add Prescription"
+                title="Add Drug"
                 backgroundcolor={"#204289"}
                 bordercolor={"#204289"}
                 border={"1px solid"}
                 fontsize={"13px"}
                 color={"info"}
-                padding={"10px 18px"}
+                width={130}
               />
             </Grid>
           </Grid>
@@ -300,37 +263,52 @@ const Investigation = () => {
             
           </CustomCard>
         </Box>
-        <Box sx={styles.screenContainer1}>
-          <Grid
-            container
-            flexDirection={"row"}
-            justifyContent={"flex-end"}
-            alignItems={"center"}
-          >
+        <Box sx={styles.screenContainer}>
+        <Grid
+          container
+          flexDirection={"row"}
+          justifyContent={"flex-end"}
+          spacing={1}
+        >
+          <Grid item>
             <CustomButton
               title={"Cancel"}
               handleButtonClick={buttonClicked}
               backgroundcolor={"#FFFFFF"}
-              bordercolor={"#9DA2AB"}
-              padding={"4px 50px"}
-              border={"1px solid"}
-              fontsize={"14px"}
-              color={"primary"}
+              bordercolor={"#204289"}
+              color={"#204289"}
+              width={120}
             />
-            <Box sx={{ marginLeft: 1 }}>
-              <CustomButton
-                title={"Submit"}
-                handleButtonClick={buttonClicked}
-                backgroundcolor={"#204289"}
-                bordercolor={"#204289"}
-                border={"1px solid"}
-                fontsize={"14px"}
-                color={"info"}
-                padding={"4px 50px"}
-              />
-            </Box>
           </Grid>
-        </Box>
+          <Grid item>
+            <CustomButton
+              title={"Save & Exit"}
+              handleButtonClick={buttonClicked}
+              backgroundcolor={"#204289"}
+              color={"#fffff"}
+              width={120}
+            />
+          </Grid>
+          <Grid item>
+            <CustomButton
+              title={"Save & Next"}
+              handleButtonClick={buttonClicked}
+              backgroundcolor={"#204289"}
+              color={"#fffff"}
+              width={120}
+            />
+          </Grid>
+          <Grid item>
+            <CustomButton
+              title={"Continue Treatment"}
+              handleButtonClick={buttonClicked}
+              backgroundcolor={"#204289"}
+              color={"#fffff"}
+              width={170}
+            />
+          </Grid>
+        </Grid>
+      </Box>
       </Box>
     </>
   );

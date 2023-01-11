@@ -75,9 +75,17 @@ const sideMenuList = [
     name: "Inventory",
     image: require("../../assets/activeinvoices.svg"),
     inactiveImage: require("../../assets/inactiveinvoices.svg"),
-    isCollapsible: false,
+    isCollapsible: true,
     screenName: "/Inventory",
   },
+  {
+    id: 10,
+    name: "Prescriptions",
+    image: require("../../assets/activeinvoices.svg"),
+    inactiveImage: require("../../assets/inactiveinvoices.svg"),
+    isCollapsible: false,
+    screenName: "/Prescriptions",
+  }
 ];
 
 interface sidemenuInterface {
@@ -93,7 +101,9 @@ interface sidemenuInterface {
 
 const SideMenuItem = (props: sidemenuInterface) => {
   const [open, setOpen] = React.useState<boolean | false>(false);
-  const [openAccounts, setopenAccounts] = React.useState<boolean | false>(false);
+  const [openAccounts, setopenAccounts] = React.useState<boolean | false>(
+    false
+  );
 
   const { item } = props;
   const location = useLocation();
@@ -103,8 +113,8 @@ const SideMenuItem = (props: sidemenuInterface) => {
   };
 
   const handleAccoutsClick = () => {
-    setopenAccounts(!openAccounts)
-  }
+    setopenAccounts(!openAccounts);
+  };
 
   return (
     <>
@@ -112,132 +122,180 @@ const SideMenuItem = (props: sidemenuInterface) => {
         <>
           {item.name == "Accounts" ? (
             <>
-            <Box
-              style={
-                location.pathname === "/Billing" || location.pathname ===  "Receipt"
-                  ? styles.menuItemsActive
-                  : styles.menuItems
-              }
-              onClick={handleAccoutsClick}
-            >
-              <Box sx={styles.row}>
-                <Box
-                  component="img"
-                  sx={styles.menuImage}
-                  alt="Logo"
-                  src={
-                    location.pathname === "/Billing" || location.pathname ===  "Receipt" || location.pathname === "Expenses"
-                      ? item.image
-                      : item.inactiveImage
-                  }
-                />
-                <Typography
-                  sx={
-                    location.pathname === "/Billing" || location.pathname ===  "Receipt" || location.pathname === "Expenses"
-                      ? styles.menuTextActive
-                      : styles.menuText
-                  }
-                >
-                  {item.name}
-                </Typography>
-                {open ? (
-                  <ExpandLess style={styles.iconColor} />
-                ) : (
-                  <ExpandMore style={styles.iconColor} />
-                )}
+              <Box
+                style={
+                  location.pathname === "/Billing" ||
+                  location.pathname === "Receipt"
+                    ? styles.menuItemsActive
+                    : styles.menuItems
+                }
+                onClick={handleAccoutsClick}
+              >
+                <Box sx={styles.row}>
+                  <Box
+                    component="img"
+                    sx={styles.menuImage}
+                    alt="Logo"
+                    src={
+                      location.pathname === "/Billing" ||
+                      location.pathname === "Receipt" ||
+                      location.pathname === "Expenses"
+                        ? item.image
+                        : item.inactiveImage
+                    }
+                  />
+                  <Typography
+                    sx={
+                      location.pathname === "/Billing" ||
+                      location.pathname === "Receipt" ||
+                      location.pathname === "Expenses"
+                        ? styles.menuTextActive
+                        : styles.menuText
+                    }
+                  >
+                    {item.name}
+                  </Typography>
+                  {open ? (
+                    <ExpandLess style={styles.iconColor} />
+                  ) : (
+                    <ExpandMore style={styles.iconColor} />
+                  )}
+                </Box>
               </Box>
-            </Box>
-            <Collapse in={openAccounts} timeout="auto" unmountOnExit>
-            <Link to={`/Billing`} style={styles.link}>
-              <Box style={styles.menuItems}>
-                <Typography sx={styles.subMenuText}>
-                  Billing
-                </Typography>
-              </Box>
-            </Link>
+              <Collapse in={openAccounts} timeout="auto" unmountOnExit>
+                <Link to={`/Billing`} style={styles.link}>
+                  <Box style={styles.menuItems}>
+                    <Typography sx={styles.subMenuText}>Billing</Typography>
+                  </Box>
+                </Link>
 
-            <Link to={`/Receipt`} style={styles.link}>
-              <Box style={styles.menuItems}>
-                <Typography sx={styles.subMenuText}>Receipt</Typography>
-              </Box>
-            </Link>
+                <Link to={`/Receipt`} style={styles.link}>
+                  <Box style={styles.menuItems}>
+                    <Typography sx={styles.subMenuText}>Receipt</Typography>
+                  </Box>
+                </Link>
 
-            <Link to={`/Expenses`} style={styles.link}>
-              <Box style={styles.menuItems}>
-                <Typography sx={styles.subMenuText}>Expenses</Typography>
-              </Box>
-            </Link>
-
-          </Collapse>
+                <Link to={`/Expenses`} style={styles.link}>
+                  <Box style={styles.menuItems}>
+                    <Typography sx={styles.subMenuText}>Expenses</Typography>
+                  </Box>
+                </Link>
+              </Collapse>
             </>
-            
+          ) : item.name == "Inventory" ? (
+            <>
+              <Box
+                style={
+                  location.pathname === "/UnderUsageInventory" || location.pathname === "/Inventory" || location.pathname === "/AddInventory" || location.pathname === "/AddInventoryStep2"  || location.pathname === "/InventoryDetails"  || location.pathname === "/InvoiceDetails"
+                    ? styles.menuItemsActive
+                    : styles.menuItems
+                }
+                onClick={handleClick}
+              >
+                <Box sx={styles.row}>
+                  <Box
+                    component="img"
+                    sx={styles.menuImage}
+                    alt="Logo"
+                    src={
+                      location.pathname === "/UnderUsageInventory" || location.pathname === "/Inventory" || location.pathname === "/AddInventory" || location.pathname === "/AddInventoryStep2"  || location.pathname === "/InventoryDetails"  || location.pathname === "/InvoiceDetails"
+                        ? item.image
+                        : item.inactiveImage
+                    }
+                  />
+                  <Typography
+                    sx={
+                      location.pathname === "/UnderUsageInventory" || location.pathname === "/Inventory" || location.pathname === "/AddInventory" || location.pathname === "/AddInventoryStep2"  || location.pathname === "/InventoryDetails"  || location.pathname === "/InvoiceDetails"
+                        ? styles.menuTextActive
+                        : styles.menuText
+                    }
+                  >
+                    {item.name}
+                  </Typography>
+                  {open ? (
+                    <ExpandLess style={styles.iconColor} />
+                  ) : (
+                    <ExpandMore style={styles.iconColor} />
+                  )}
+                </Box>
+              </Box>
+              <Collapse in={open} timeout="auto" unmountOnExit>
+                <Link to={`/Inventory`} style={styles.link}>
+                  <Box style={styles.menuItems}>
+                    <Typography sx={styles.subMenuText}>View</Typography>
+                  </Box>
+                </Link>
+                <Link to={`/UnderUsageInventory`} style={styles.link}>
+                  <Box style={styles.menuItems}>
+                    <Typography sx={styles.subMenuText}>Under usage</Typography>
+                  </Box>
+                </Link>
+              </Collapse>
+            </>
           ) : (
             <>
-            <Box
-              style={
-                location.pathname === "/Appointments" ||
-                location.pathname === "/Bookings"
-                  ? styles.menuItemsActive
-                  : styles.menuItems
-              }
-              onClick={handleClick}
-            >
-              <Box sx={styles.row}>
-                <Box
-                  component="img"
-                  sx={styles.menuImage}
-                  alt="Logo"
-                  src={
-                    location.pathname === "/Appointments" ||
-                    location.pathname === "/Bookings"
-                      ? item.image
-                      : item.inactiveImage
-                  }
-                />
-                <Typography
-                  sx={
-                    location.pathname === "/Appointments" ||
-                    location.pathname === "/Bookings"
-                      ? styles.menuTextActive
-                      : styles.menuText
-                  }
-                >
-                  {item.name}
-                </Typography>
-                {open ? (
-                  <ExpandLess style={styles.iconColor} />
-                ) : (
-                  <ExpandMore style={styles.iconColor} />
-                )}
+              <Box
+                style={
+                  location.pathname === "/Appointments" ||
+                  location.pathname === "/Bookings"
+                    ? styles.menuItemsActive
+                    : styles.menuItems
+                }
+                onClick={handleClick}
+              >
+                <Box sx={styles.row}>
+                  <Box
+                    component="img"
+                    sx={styles.menuImage}
+                    alt="Logo"
+                    src={
+                      location.pathname === "/Appointments" ||
+                      location.pathname === "/Bookings"
+                        ? item.image
+                        : item.inactiveImage
+                    }
+                  />
+                  <Typography
+                    sx={
+                      location.pathname === "/Appointments" ||
+                      location.pathname === "/Bookings"
+                        ? styles.menuTextActive
+                        : styles.menuText
+                    }
+                  >
+                    {item.name}
+                  </Typography>
+                  {open ? (
+                    <ExpandLess style={styles.iconColor} />
+                  ) : (
+                    <ExpandMore style={styles.iconColor} />
+                  )}
+                </Box>
               </Box>
-            </Box>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-            <Link to={`/SlotsView`} style={styles.link}>
-              <Box style={styles.menuItems}>
-                <Typography sx={styles.subMenuText}>Calendar</Typography>
-              </Box>
-            </Link>
-            <Link to={`/Appointments`} style={styles.link}>
-              <Box style={styles.menuItems}>
-                <Typography sx={styles.subMenuText}>
-                  View Confirmed
-                </Typography>
-              </Box>
-            </Link>
+              <Collapse in={open} timeout="auto" unmountOnExit>
+                <Link to={`/SlotsView`} style={styles.link}>
+                  <Box style={styles.menuItems}>
+                    <Typography sx={styles.subMenuText}>Calendar</Typography>
+                  </Box>
+                </Link>
+                <Link to={`/Appointments`} style={styles.link}>
+                  <Box style={styles.menuItems}>
+                    <Typography sx={styles.subMenuText}>
+                      View Confirmed
+                    </Typography>
+                  </Box>
+                </Link>
 
-            <Link to={`/Bookings`} style={styles.link}>
-              <Box style={styles.menuItems}>
-                <Typography sx={styles.subMenuText}>View Bookings</Typography>
-              </Box>
-            </Link>
-
-            
-          </Collapse>
+                <Link to={`/Bookings`} style={styles.link}>
+                  <Box style={styles.menuItems}>
+                    <Typography sx={styles.subMenuText}>
+                      View Bookings
+                    </Typography>
+                  </Box>
+                </Link>
+              </Collapse>
             </>
-            
           )}
-
-          
         </>
       ) : (
         <Box

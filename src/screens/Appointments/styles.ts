@@ -7,7 +7,6 @@ export const styles = {
     },
     screenContainer : {
         marginTop  : 2,
-        height : '100vh'
     },
     cardHeaderContainer : {
         display : 'flex',
@@ -23,9 +22,8 @@ export const styles = {
     patientName : {
         fontFamily : 'Poppins',
         fontSize : 12,
-        fontWeight : 400,
-        color : 'black',
-        marginLeft : 1
+        fontWeight : 500,
+        color : '#021025'
     },
     avatarImage : {
         width : 40,
@@ -47,7 +45,7 @@ export const styles = {
     },
     actionIcon : {
         color : '#204289',
-        fontSize : 17,
+        fontSize : 24,
     },
     filterContainer : {
         padding : 1
@@ -59,8 +57,7 @@ export const styles = {
         fontFamily : 'Poppins',
         fontSize : 12,
         color : '#204289',
-        textAlign : 'center',
-        textDecoration: 'none'
+        textDecoration: 'none',
     },
     appointmentDate : {
         fontFamily : 'Poppins',

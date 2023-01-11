@@ -3,7 +3,7 @@ export const styles = {
         fontFamily: 'Poppins',
         fontSize: 11,
         color: '#021025',
-        fontWeight:"550"
+        fontWeight:"550",
     },
     nameanswer: {
         fontFamily: 'Poppins',

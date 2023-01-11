@@ -1,45 +1,32 @@
-import React from 'react'
-import CustomTable from '../../components/Tabel';
-import HocLayout from '../../components/HocLayout'
-import { Box, Link, Typography, Grid, InputAdornment, Avatar } from "@mui/material";
-import AddIcon from '@mui/icons-material/Add';
+import React from "react";
+import CustomTable from "../../components/Tabel";
+import HocLayout from "../../components/HocLayout";
+import {
+  Box,
+  Typography,
+  Grid,
+} from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 import Breadcrum from "../../components/Breadcrum";
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { styles } from "./styles";
-import { Link as RouterLink } from 'react-router-dom';
-import EditPencil from '../../assets/edit pencil.svg'
-import CustomButton from '../../components/Button';
+import { Link as RouterLink } from "react-router-dom";
+import EditPencil from "../../assets/edit pencil.svg";
+import CustomButton from "../../components/Button";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import { useNavigate } from "react-router-dom";
-import CustomCard from '../../components/Card';
-import CustomSwitch from '../../components/Switch';
+import CustomCard from "../../components/Card";
+import CustomSwitch from "../../components/Switch";
 const ManagePatients = () => {
-
-
   const navigate = useNavigate();
 
   const handleOnClickBreadcrumItem = () => {
     navigate("");
   };
   const buttonClicked = () => {
-    navigate("/PatientRegistration")
-  }
-  const breadcrumbs = [
-    <Link
-      underline="hover"
-      key="1"
-      color="inherit"
-      href="/Dashboard"
-      onClick={handleOnClickBreadcrumItem}
-      sx={styles.breadcrumbSubtext}
-    >
-      Dashboard
-    </Link>,
-    <Typography key="2" sx={styles.breadcrumbSubtext}>
-      Patients
-    </Typography>
-  ];
+    navigate("/PatientDetails");
+  };
 
   const tableHeadData = [
     "Patient Name",
@@ -60,7 +47,7 @@ const ManagePatients = () => {
       DateofBirth: "22 Sept 2022",
       Age: "27",
       Gender: "Male",
-      ContactNo: "1234565432",
+      ContactNo: "+91 1234565432",
       Actions: "",
     },
     {
@@ -71,7 +58,7 @@ const ManagePatients = () => {
       DateofBirth: "22 Sept 2022",
       Age: "27",
       Gender: "Male",
-      ContactNo: "1234565432",
+      ContactNo: "+91 1234565432",
       Actions: "",
     },
     {
@@ -82,7 +69,7 @@ const ManagePatients = () => {
       DateofBirth: "22 Sept 2022",
       Age: "27",
       Gender: "Male",
-      ContactNo: "1234565432",
+      ContactNo: "+91 1234565432",
       Actions: "",
     },
     {
@@ -93,7 +80,7 @@ const ManagePatients = () => {
       DateofBirth: "22 Sept 2022",
       Age: "27",
       Gender: "Male",
-      ContactNo: "1234565432",
+      ContactNo: "+91 1234565432",
       Actions: "",
     },
     {
@@ -104,28 +91,22 @@ const ManagePatients = () => {
       DateofBirth: "22 Sept 2022",
       Age: "27",
       Gender: "Male",
-      ContactNo: "1234565432",
+      ContactNo: "+91 1234565432",
       Actions: "",
     },
-
   ];
   return (
     <>
-      <Box
-        display={"flex"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        mr={1}>
-        <Breadcrum title={"Patients"} breadcrumbsArr={breadcrumbs} />
-        <CustomButton title={"New Patient Registration"}
+      <Box display={"flex"} justifyContent={"space-between"} mr={1} mt={2}>
+        <Breadcrum title={"Patients"} breadcrumbsArr={[]} />
+        <CustomButton
+          title={"New Patient Registration"}
           handleButtonClick={buttonClicked}
           backgroundcolor={"#204289"}
-          bordercolor={"#204289"}
-          border={"1px solid"}
-          fontsize={"14px"}
-          color={"info"}
-          padding={"4px 20px"}
-          endIcon={<AddIcon />} />
+          padding={7}
+          endIcon={<AddIcon sx={styles.plusIcon} />}
+          width={230}
+        />
       </Box>
       <Box sx={styles.screenContainer}>
         <CustomCard>
@@ -134,43 +115,41 @@ const ManagePatients = () => {
               {rows.map((row) => (
                 <TableRow key={row.id}>
                   <TableCell>
+                    <Typography sx={styles.tableCell}>
+                      {row.PatientID}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
                     <Box
                       display={"flex"}
                       alignItems={"center"}
-                      gap={"10px"}
-                      justifyContent={"center"}>
+                      gap={"18px"}
+                      justifyContent={"center"}
+                    >
                       <Box
                         component={"img"}
                         alt=" Appointment"
                         src={row.image}
                         width={"40px"}
                         height={"40px"}
-                        borderRadius={"50%"}>
-                      </Box>
-                      <Typography sx={styles.tableCell}>
+                        borderRadius={"50%"}
+                      ></Box>
+                      <Typography sx={styles.patientName}>
                         {row.PatientName}
                       </Typography>
                     </Box>
                   </TableCell>
-                  <TableCell>
-                    <Typography sx={styles.tableCell}>
-                      {row.PatientID}
-                    </Typography>
-                  </TableCell>
+
                   <TableCell>
                     <Typography sx={styles.tableCell}>
                       {row.DateofBirth}
                     </Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography sx={styles.tableCell}>
-                      {row.Age}
-                    </Typography>
+                    <Typography sx={styles.tableCell}>{row.Age}</Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography sx={styles.tableCell}>
-                      {row.Gender}
-                    </Typography>
+                    <Typography sx={styles.tableCell}>{row.Gender}</Typography>
                   </TableCell>
                   <TableCell>
                     <Typography sx={styles.tableCell}>
@@ -178,66 +157,41 @@ const ManagePatients = () => {
                     </Typography>
                   </TableCell>
                   <TableCell>
-                    <Box
-                      display={"flex"}
-
-                      justifyContent={"space-between"}
-                      alignItems={"center"}>
-                      <Box
-                        display={"flex"}
-                        flexDirection="column"
-                        gap={"3px"} alignItems={"center"}>
+                    <Grid container spacing={4} justifyContent={'center'} alignItems={'center'}>
+                      <Grid item>
                         <RemoveRedEyeOutlinedIcon sx={styles.actionIcon} />
                         <RouterLink
                           to="/PatientProfile"
                           style={{ textDecoration: "none" }}
                         >
-                          <Typography sx={styles.tableCell}>
-                            {" "}
-                            View{" "}
-                          </Typography>
+                          <Typography sx={styles.tableCell}> View </Typography>
                         </RouterLink>
-                      </Box>
-                      <Box
-                        display={"flex"}
-                        flexDirection="column"
-                        gap={"3px"} alignItems={"center"}>
+                      </Grid>
+                      <Grid item>
                         <Box
                           component={"img"}
                           alt=" Appointment"
                           src={EditPencil}
                           width={"18px"}
                           height={"18px"}
-                          fontSize={"18px"}>
-                        </Box>
-                        <RouterLink
-                          to="/"
-                          style={{ textDecoration: "none" }}
-                        >
-                          <Typography sx={styles.tableCell}>
-                            {" "}
-                            Edit{" "}
-                          </Typography>
+                          fontSize={"18px"}
+                        />
+                        <RouterLink to="/" style={{ textDecoration: "none" }}>
+                          <Typography sx={styles.tableCell}> Edit </Typography>
                         </RouterLink>
-                      </Box>
-                      <Box
-                        display={"flex"}
-                        flexDirection="column"
-                        alignItems={"center"}>
+                      </Grid>
+                      <Grid item>
                         <Box>
                           <CustomSwitch />
                         </Box>
-                        <RouterLink
-                          to="/"
-                          style={{ textDecoration: "none" }}
-                        >
+                        <RouterLink to="/" style={{ textDecoration: "none" }}>
                           <Typography sx={styles.tableCell}>
                             {" "}
                             Active{" "}
                           </Typography>
                         </RouterLink>
-                      </Box>
-                    </Box>
+                      </Grid>
+                    </Grid>
                   </TableCell>
                 </TableRow>
               ))}
@@ -246,8 +200,7 @@ const ManagePatients = () => {
         </CustomCard>
       </Box>
     </>
-
-  )
-}
-const ManagePatientshoc = HocLayout(ManagePatients)
-export default ManagePatientshoc
+  );
+};
+const ManagePatientshoc = HocLayout(ManagePatients);
+export default ManagePatientshoc;

@@ -195,7 +195,6 @@ const Diagnosis = () => {
         <Breadcrumbs title={"Diagnosis"} breadcrumbsArr={breadcrumbs} />
         <AccountsHeader />
       </Grid>
-
       <Box sx={styles.screenContainer}>
         <CustomCard>
           <Grid
@@ -203,8 +202,7 @@ const Diagnosis = () => {
             flexDirection={"row"}
             justifyContent={"space-between"}
             spacing={16}
-            sx={{ padding: 2 }}
-          >
+            sx={{ padding: 2 }}>
             <Grid item md={6}>
               <Header path={location.pathname} />
             </Grid>
@@ -397,32 +395,35 @@ const Diagnosis = () => {
               </Box>
             </Box>
           </Box>
-
           <Box sx={styles.buttonContainer}>
-            <Grid container flexDirection={"row"} justifyContent={"flex-end"}>
-              <CustomButton
-                title={"Cancel"}
-                handleButtonClick={buttonClicked}
-                backgroundcolor={"#FFFFFF"}
-                bordercolor={"#9DA2AB"}
-                padding={"4px 50px"}
-                border={"1.5px solid"}
-                fontsize={"14px"}
-                color={"primary"}
-              />
-              <Box sx={{ marginLeft: 1 }}>
-                <CustomButton
-                  title={"Next"}
-                  handleButtonClick={goToExamination}
-                  backgroundcolor={"#204289"}
-                  bordercolor={"#204289"}
-                  border={"1.5px solid"}
-                  fontsize={"14px"}
-                  color={"info"}
-                  padding={"4px 50px"}
-                />
-              </Box>
-            </Grid>
+              <Grid
+                container
+                flexDirection={"row"}
+                spacing={1}
+                justifyContent={"flex-end"}
+                alignItems={"center"}
+              >
+                <Grid item>
+                  <CustomButton
+                    title={"Cancel"}
+                    handleButtonClick={buttonClicked}
+                    backgroundcolor={"#FFFFFF"}
+                    bordercolor={"#204289"}
+                    color={"#204289"}
+                    width={100}
+                  />
+                </Grid>
+                <Grid item>
+                  <CustomButton
+                    title={"Next"}
+                    handleButtonClick={buttonClicked}
+                    backgroundcolor={"#204289"}
+                    bordercolor={"#204289"}
+                    color={"#fffff"}
+                    width={100}
+                  />
+                </Grid>
+              </Grid>
           </Box>
         </CustomCard>
       </Box>

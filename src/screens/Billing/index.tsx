@@ -309,11 +309,9 @@ const paymentModes = [
                 title={"Cancel"}
                 handleButtonClick={buttonClicked}
                 backgroundcolor={"#FFFFFF"}
-                bordercolor={"#9DA2AB"}
-                padding={"4px 50px"}
-                border={"1px solid"}
-                fontsize={"14px"}
-                color={"primary"}
+                bordercolor={"#204289"}
+                color={"#204289"}
+                width={120}
               />
             </Grid>
             <Grid item>
@@ -321,11 +319,9 @@ const paymentModes = [
                 title={"Save"}
                 handleButtonClick={buttonClicked}
                 backgroundcolor={"#204289"}
-                bordercolor={"#204289"}
-                border={"1px solid"}
-                fontsize={"14px"}
-                color={"info"}
-                padding={"4px 50px"}
+                color={"#fffff"}
+                padding={7}
+                width={120}
               />
             </Grid>
               
@@ -353,7 +349,7 @@ const paymentModes = [
                         border={"1px solid"}
                         fontsize={"13px"}
                         color={"info"}
-                        padding={"10px 18px"}
+                        width={140}
                       />
                   </Grid>
               </Grid>

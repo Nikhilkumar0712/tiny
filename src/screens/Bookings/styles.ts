@@ -48,10 +48,10 @@ export const styles = {
     },
     actionIcon : {
         color : '#204289',
-        fontSize : 17,
+        fontSize : 24,
     },
     filterContainer : {
-        padding : 1
+        padding : 1 
     },
     tableContainer : {
        // marginTop : 1
@@ -61,7 +61,8 @@ export const styles = {
         fontSize : 12,
         color : '#204289',
         textAlign : 'center',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        margin : 0.5
     },
     appointmentDate : {
         fontFamily : 'Poppins',

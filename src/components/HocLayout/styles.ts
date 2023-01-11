@@ -1,6 +1,6 @@
 export const styles = {
     sidebarGrid : {
-        zIndex : 99999
+        zIndex : 1
     },
     mainGrid : {
         backgroundColor : '#f7f7f7'

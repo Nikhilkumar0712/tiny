@@ -21,4 +21,14 @@ export const styles ={
         color : '#204289',
         fontSize : 17,
     },
+    ModalHeading: {
+        fontFamily: 'Poppins',
+        fontSize: 22,
+        color: '#204289',
+        fontWeight: '600',
+    },
+    closeicon: {
+        color: "#104076",
+        cursor: "pointer"
+    },
 }

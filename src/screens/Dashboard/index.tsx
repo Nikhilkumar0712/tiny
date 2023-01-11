@@ -18,7 +18,7 @@ const Dashboard = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={8} >
                         <Grid item xs={12}>
-                            <Analytics />
+                            <Analytics /> 
                         </Grid>
                         <Grid container spacing={2} mt={1}>
                             <Grid item lg={6} xl={7}>

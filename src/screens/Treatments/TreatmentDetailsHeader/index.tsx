@@ -7,7 +7,7 @@ const TreatmentDetailsHeader = () => {
         <>
             <Box sx={styles.cardContainer}>
                 <CustomCard>
-                    <Box p={2}>
+                    <Box m={1}>
                         <Grid container spacing={2}>
                             <Grid item xs={6}>
                                 <Box>

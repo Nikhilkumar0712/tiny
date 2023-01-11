@@ -21,6 +21,7 @@ const CustomPopOver = (props: PopOverProps) => {
     <>
       <div>
         <Popover
+        disableEnforceFocus={false}
           open={props.open}
           onClose={props.onClose}
           anchorOrigin={props.anchorOrigin}

@@ -1,8 +1,7 @@
-import React from "react";
-import { Select, MenuItem, FormControl, Box, Typography,Grid } from "@mui/material";
-import { styles } from "./styles";
-import makeStyles from "@material-ui/styles/makeStyles";
+import React from 'react';
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
+import { Box, Grid, MenuItem, Select, Typography } from "@mui/material";
+import { styles } from "./styles";
 
 interface CustomSelectPickerInterface {
   selectValue: any;
@@ -15,22 +14,6 @@ interface CustomSelectPickerInterface {
   placeholderText?: any;
 }
 
-const useStyles = makeStyles({
-  customOutline: {
-    "& .MuiSelect-select": {
-      fontSize: "13px",
-      color: "#104076",
-    },
-    "& .MuiOutlinedInput-notchedOutline": {
-      borderRadius: `10px`,
-      borderColor: `#9DA2AB`,
-      boxShadow: "0px 0px 10px #00000014",
-      borderWidth: 1,
-      padding: "12px",
-      width: "100%",
-    },
-  },
-});
 
 const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
   const {
@@ -43,7 +26,6 @@ const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
     placeholderText,
   } = props;
 
-  const classes = useStyles();
 
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
@@ -57,15 +39,21 @@ const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
   };
 
   return (
-    <FormControl
-      variant="outlined"
-      classes={{ root: classes.customOutline }}
-      style={{ minWidth: width }}
-    >
+    <>
       {multiple ? (
         <Select
+          sx={{
+            borderRadius: `10px`,
+            borderColor: `#9DA2AB`,
+            boxShadow: "0px 0px 10px #00000014",
+            borderWidth: 1,
+            width : '100%',
+            color : '#9DA2AB',
+            fontSize : 12
+          }}
           multiple
           displayEmpty
+          fullWidth={true}
           value={selectValue}
           onChange={handleSelectValue}
           size={size}
@@ -92,10 +80,21 @@ const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
         </Select>
       ) : (
         <Select
+          sx={{
+            borderRadius: `10px`,
+            borderColor: `#9DA2AB`,
+            boxShadow: "0px 0px 10px #00000014",
+            borderWidth: 1,
+            width : '100%',
+            color : '#9DA2AB',
+            fontSize : 12,
+            padding : 0.3
+          }}
           size={size}
           value={selectValue}
           onChange={handleSelectValue}
           displayEmpty
+          fullWidth={true}
           renderValue={
             selectValue !== ""
               ? undefined
@@ -113,7 +112,7 @@ const CustomSelectPicker = (props: CustomSelectPickerInterface) => {
           })}
         </Select>
       )}
-    </FormControl>
+    </>
   );
 };
 

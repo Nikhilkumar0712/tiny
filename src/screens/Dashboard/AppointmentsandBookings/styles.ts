@@ -11,7 +11,7 @@ export const Styles = {
         fontSize: 13,
         color: '#021025',
         fontWeight: "600"
-    },
+    }, 
     subHeading: {
         fontFamily: 'Poppins',
         fontSize: 12,
@@ -46,13 +46,13 @@ export const Styles = {
     },
     MainHeading: {
         fontFamily: 'Poppins',
-        fontSize: 12,
+        fontSize: 13,
         color: '#021025',
         fontWeight: "550"
     },
     SideHeading: {
         fontFamily: 'Poppins',
-        fontSize: 12,
+        fontSize: 13,
         color: 'primary.main'
     },
     treatment: {
@@ -67,5 +67,8 @@ export const Styles = {
         fontFamily: "poppins",
         textAlign: "center",
         fontWeight: "400"
+    },
+    cursor:{
+        cursor:"pointer"
     }
 }

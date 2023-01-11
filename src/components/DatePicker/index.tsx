@@ -50,7 +50,7 @@ const CustomDatePicker = (props:DatePickerWidth ) => {
         fullWidth={props.fullWidth}
           inputProps={{
                 ...params.inputProps,
-                placeholder: "Date of Birth"
+                placeholder: "Date"
               }}
           
       />}

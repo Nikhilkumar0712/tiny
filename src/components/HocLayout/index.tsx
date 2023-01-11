@@ -7,7 +7,7 @@ import { Search } from "@mui/icons-material";
 
 const HocLayout = (Component: any) => {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{zIndex:"1 !important"}}>
       <Grid item md={2} sx={styles.sidebarGrid}>
         <SideBar />
       </Grid>

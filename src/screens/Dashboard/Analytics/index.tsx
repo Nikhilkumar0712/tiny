@@ -74,7 +74,7 @@ const Analytics = () => {
                                         width={"50px"}
                                         src={require("../../../assets/Analytics Appointemnts Icons.svg")}>
                                     </Box>
-                                </Box>
+                                </Box> 
                                 <Box>
                                     <Typography sx={Styles.TotalAppointments}>
                                         25
